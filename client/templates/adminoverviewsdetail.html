@@ -1,0 +1,59 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=2">
+
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a a href="/adminoverviews">New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>
+
+<div class="overviewForm">
+ <div ng-show="tab == 1">
+
+<form name="calForm" ng-submit="createOverview()">
+  <select ng-model="overPage" required>
+    <option>About</option>
+    <option>Services</option>
+    <option>Events</option>
+    <option>Volunteer</option>
+    <option>Give</option>
+    <option>Contact</option>
+  </select>
+  <input type="hidden" placeholder="Page" ng-model="overPage" required>
+  <textarea type="text" placeholder="Summary" ng-model="overContents" required></textarea>
+  <br>
+  <button class="addAdmin" type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+ <select ng-model="query" required>
+    <option value="" selected>Select</option>
+    <option>___________________</option>
+    <option>About</option>
+    <option>Services</option>
+    <option>Events</option>
+    <option>Volunteer</option>
+    <option>Give</option>
+    <option>Contact</option>
+  </select>
+
+
+
+ <h2>Edit Overview</h1>
+  <div class="editableOverview" ng-repeat="over in overview | filter: {page:query}">
+  <div text-angular ng-model="over.contents"></div>
+<!--  <div> <a href="#" editable-textarea="over.contents" ng-model="over.contents"><p>{{ over.contents || 'empty' }}</p></a></div>-->
+  <div><input type="hidden" ng-model="over.contents"></div>
+  <div><input type="hidden" ng-model="over.page"></div>
+  <a class="editOverview" ng-click="editOverview(over._id, over.contents, over.page)" >Edit</a>
+</div><!--Editable-->
+  </div>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+</div><!--ServiceData-->
+</div><!--Layout-->

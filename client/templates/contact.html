@@ -1,0 +1,51 @@
+ <header>
+   
+    <div class="heroevents">
+    <h1>Contact</h1>
+    </div><!-- hero -->
+   </header>
+
+<section class="content">
+<div class="indexContact">
+  <ul>
+   <a href="/volunteer/"><li>Contact Overview</li></a>
+      <li ng-repeat="cont in contact"><a href="/contact/{{cont.shortname}}">{{cont.title}}</li></a>
+  </ul>
+</div>
+
+
+<div id="contactUnique" class="offerings">
+<!--  <h3>What we offer</h3>-->
+ <article class="serviceslist">
+ 
+ <div ng-repeat="over in overview | filter: {page:'contact'}">
+ <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>
+ </div>
+ 
+
+</article>
+  
+
+  
+</div>
+
+
+
+
+
+
+</section>
+
+
+<!--</div>Body container for slider logic-->
+
+<div class="sb-slidebar sb-left">
+    <ul ng-repeat="service in services">
+    <% appdata.services.forEach(function(item) { %>
+      <a href="/services/{{service.name}}"><li>{{service.name}}</li></a>
+  </ul>
+
+
+
+
+

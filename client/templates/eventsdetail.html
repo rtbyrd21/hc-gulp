@@ -1,0 +1,117 @@
+ <header>
+   
+    <div class="heroevents">
+    <h1>{{month}}</h1>
+    </div><!-- hero -->
+   </header>
+
+<section class="content">
+<div class="months">
+<!--
+  <ul>
+   <a href="/events"><li>Events Overview</li></a>
+      <li ng-repeat="(key, val) in calendar[0].year |orderBy:'value'">
+      <a href="/events/{{key}}">{{key}}</a></li>
+
+  </ul>
+-->
+    <ul>
+   <a href="/events"><li>Events Overview</li></a>
+
+    <li><a href="/events/January">January</a></li>
+      <li><a href="/events/February">February</a></li>
+      <li><a href="/events/March">March</a></li>
+      <li><a href="/events/April">April</a></li>
+      <li><a href="/events/May">May</a></li>
+      <li><a href="/events/June">June</a></li>
+      <li><a href="/events/July">July</a></li>
+      <li><a href="/events/August">August</a></li>
+      <li><a href="/events/September">September</a></li>
+      <li><a href="/events/October">October</a></li>
+      <li><a href="/events/November">November</a></li>
+      <li><a href="/events/December">December</a></li> 
+
+  </ul>
+</div>
+
+
+<!--
+<div class="calDynamic" data-ng-repeat="n in [] | range:100">
+<div ng-repeat="cal in calendar[n].year | filterKey:month ">
+ <div ng-if="cal != '' ">
+  <p>{{cal}}</p>
+
+  </div>
+  </div>
+  </div>
+-->
+
+<div class="calwrapper">
+
+<div ng-repeat="items in super | filter: {month:month} | orderBy:'day'">
+  <div class="calendar">
+
+        <a href="/events/{{items.day}}">
+          <article class="eventslist">
+           <div class="numberedDate">
+               <h3>{{items.day}}</h3>
+            </div>
+            <div class="calInfo">
+              <h5>{{items.title}}</h5>
+               <p>{{items.summary}}&nbsp;<a>more</a></p>
+            </div>
+           </article>
+         
+
+      </div>
+</div>
+</div>
+
+
+
+<!--
+
+
+<div class="calDynamic" data-ng-repeat="n in [] | range:100">
+<div ng-repeat="cal in calendar[n].year | filterKey:month">
+  <div ng-if="cal != '' ">
+    <div class="calendar">
+
+    <p>{{super}}</p>
+<div ng-repeat="items in cal ">
+
+        <a href="/events/{{items.day}}">
+          <article class="eventslist">
+           <div class="numberedDate">
+               <h3>{{items.day}}</h3>
+            </div>
+            <div class="calInfo">
+              <h5>{{items.title}}</h5>
+               <p>{{items.summary}}&nbsp;<a>more</a></p>
+            </div>
+           </article>
+         
+
+      </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->
+
+
+
+
+
+</section>
+<div class="sb-slidebar sb-left">
+    <ul ng-repeat="service in services">
+    <% appdata.services.forEach(function(item) { %>
+      <a href="/services/{{service.name}}"><li>{{service.name}}</li></a>
+  </ul>
+
+
+
+
+

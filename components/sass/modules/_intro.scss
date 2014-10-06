@@ -1,0 +1,92 @@
+header {
+  .fullheight {
+   @include backImage('../images/img_hero_brightspace-homepage.png');
+    .hgroup {
+      @include full;
+      @include span(6 at 4 of 12 isolate);
+      padding: 200px 0 50px 0px;
+      text-align: center;
+      h3{
+        display: block;
+        font-weight: $light;
+        font-size:2rem;
+        color:grey;
+      }
+    } //hgroup
+    section{
+      @include full;
+      @include span(6 of 12 nest);
+      @include push(3);
+       @include breakpoint($small $medium) {
+         @include span(8 of 12);
+      @include push(2);
+       
+       }
+      @include breakpoint($narrow $small) {
+         @include span(12 of 12);
+       
+       }
+      .serviceBox{
+       @include span(first 2 of 6);
+      cursor: pointer;
+      position: relative;
+      // display: inline-block;
+        height:span(2 of 6);
+        background-color: white;
+         @include box-shadow;
+        @include border-radius;
+        p{
+        font-size: 1.5rem; 
+        display: block;  
+        position:absolute;
+        bottom:0px;
+        //margin-left: 20%;
+        text-transform: uppercase;
+        text-align: center;
+          font-weight: $normal;
+        }
+      }//serviceBox
+      .volunteerBox{
+        @include span(2 of 6);
+      cursor: pointer;
+      position: relative;
+        display: inline-block;
+        height:span(2 of 6);
+        background-color: white;
+         @include box-shadow;
+        @include border-radius;
+        p{
+        display: block;
+        position:absolute;
+        bottom:0px;
+        text-transform: uppercase;
+        text-align: center;
+          font-size: 1.5rem;
+          font-weight: $normal;
+        }
+      }//serviceBox
+        .partnerBox{
+           @include span(last 2 of 6);
+      cursor: pointer;
+      position: relative;
+        display: inline-block;
+        height:span(2 of 6);
+        background-color: white;
+         @include box-shadow;
+        @include border-radius;
+        p{
+        display: block;
+        position:absolute;
+        bottom:0px;
+        text-transform: uppercase;
+        text-align: center;
+          
+          font-size: 1.5rem;
+          font-weight: $normal;
+        }
+      }//serviceBox
+       
+    }
+  } //fullheight
+} //header
+

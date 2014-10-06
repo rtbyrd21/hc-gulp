@@ -1,0 +1,47 @@
+ <header>
+   
+    <div class="heroservices">
+    </div><!-- hero -->
+   </header>
+
+<section class="content">
+<div class="indexAbout">
+  <ul>
+   <a href="/about/"><li>About Overview</li></a>
+      <li ng-repeat="abo in about"><a href="/about/{{abo.shortname}}">{{abo.title}}</li></a>
+  </ul>
+</div>
+
+
+<div id="aboutUnique" class="offerings">
+
+<!--  <h3>What we offer</h3>-->
+ <article class="serviceslist">
+   <a href="/about"><i class="fa fa-chevron-left"></i>&nbsp;back</a>
+    <div class="services" ng-repeat="abo in about | filter:json">
+        <article class="service group">
+       <a href="/about/{{abo.shortname }}"><h3><pre>{{abo.title }}</pre> </h3></a> 
+       <div ng-bind-html="'{{abo.contents}}' | to_trusted"></div>
+       </article>
+       
+    </div>
+</article>
+  
+
+  
+</div>
+</section>
+
+ <% include partials/template/footer.ejs %>
+</div><!--Body container for slider logic-->
+
+<div class="sb-slidebar sb-left">
+    <ul ng-repeat="vol in volunteer">
+    <% appdata.services.forEach(function(item) { %>
+      <a href="/volunteer/{{vol.name}}"><li>{{vol.name}}</li></a>
+  </ul>
+
+
+
+
+

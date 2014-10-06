@@ -1,0 +1,48 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=1">
+
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a>New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>
+
+<div class="serviceForm">
+ <div ng-show="tab == 1">
+
+<form name="adminForm" ng-submit="adminForm.$valid && createVolunteer()" novalidate>
+  <input type="text" placeholder="Volunteer title" ng-model="volunteerTitle" required>
+  <input type="text" placeholder="Volunteer /url" ng-model="volunteerShortname" required>
+  <textarea type="text" placeholder="Volunteer contents" ng-model="volunteerContents" required></textarea>
+  <br>
+  <button class="addAdmin" type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+  <ul class="admin-list" ng-repeat="vol in volunteer">
+     <li> <a href="/admin/{{vol.shortname}}">{{vol.title}}<a></li>
+     
+     <li> <a class="edit" href="/adminvolunteer/{{vol.shortname}}" >Edit</a></li>
+      <li><a class="delete" ng-click="removeVolunteer(vol._id)" >Remove</a></li>
+      
+  </ul>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+<div class="dynamic">
+<p>healingcenter.com/volunteer/{{volunteerShortname}}</p>
+<h4>{{volunteerTitle}}</h4>
+<h2>{{volunteerSummary}}</h2>
+<h2>{{volunteerContents}}</h2>
+</div><!--Dynamic-->
+</div><!--ServiceData-->
+</div><!--Layout-->
+
+
+<!--
+<a class="edit" ng-click="editItem(service._id)" >Edit</a>
+<a class="delete" ng-click="removeItem(service._id)" >Remove</a>-->

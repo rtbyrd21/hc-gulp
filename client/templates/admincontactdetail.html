@@ -1,0 +1,45 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=2">
+ 
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a href="/admin">New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>  
+ 
+
+<div class="serviceForm">
+<div ng-show="tab == 1">
+<form name="adminForm" ng-submit="adminForm.$valid && createContact()" novalidate>
+  <input type="text" placeholder="Contact title" ng-model="contactTitle" required>
+  <input type="text" placeholder="Contact /url" ng-model="contactShortname" required>
+  <textarea type="text" placeholder="Contact contents" ng-model="contactContents" required></textarea>
+  <br>
+  <button class="addAdmin" type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+  <ul class="admin-list" ng-repeat="cont in contact">
+     <li> <a href="/admin/{{cont.shortname}}">{{cont.title}}<a></li>
+     
+     <li> <a class="edit" href="/admincontact/{{cont.shortname}}">Edit</a></li>
+      <li><a class="delete" ng-click="removeContact(cont._id)" >Remove</a></li>
+      
+  </ul>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+<h2>Edit service</h1>
+
+  <div class="editable" ng-repeat="cont in contact | filter:json">
+  <div> <a href="#" editable-text="cont.title" ng-model="cont.title"><h4>{{ cont.title || 'empty' }}</h4></a></div>
+  <div> <a href="#" editable-textarea="cont.contents" ng-model="cont.contents"><p>{{ cont.contents || 'empty' }}</p></a></div>
+  <div><input type="hidden" ng-model="cont.shortname"></div>
+  <li><a class="edit" ng-click="editContact(cont._id, cont.shortname, cont.title, cont.contents)" >Edit</a></li>
+</div><!--Editable-->
+</div><!--ServiceData-->
+</div><!--Layout-->

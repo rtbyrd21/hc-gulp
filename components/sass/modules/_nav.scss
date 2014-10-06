@@ -1,0 +1,66 @@
+header #nav {
+  //@include clearfix;
+  //@include background-image(rgba(255,255,255,.5));
+  @include layout($nav);
+  @include full;
+  z-index: 1000;
+  background-color: rgba(255,255,255,1);
+  position: absolute;
+  border-bottom: 1px solid black;
+  max-height: 90px;
+  .navbar {
+    @include container;
+    margin-bottom: 0px;
+    .brand {
+      @include span(1.75);
+      float: left;
+      //@include backImage('../images/hc_logo.svg');
+      height:70px;
+      margin-top: 0px;
+    } //brand
+    img{
+    @include span(1.75);
+      margin-left: span(.5); 
+    }
+    ul {
+      @include span(last 7);
+      height: 100%;
+      padding-top:45px;
+      padding-bottom: 1rem;
+      li {
+        float: left;
+        display: inline-block;
+        font-size: 1.1rem;
+        a {
+          color: $blue;
+          font: $mainFont;
+          font-size: 1em;
+          display: inline-block;
+          padding: 10px 10px 10px 25px;
+          text-decoration: none;
+          font-weight: $normal;
+          //icon styles
+          background-size: 35px;
+          background-repeat: no-repeat;
+          background-position: 2px;
+
+          &:hover {
+
+          } //hover
+
+        
+
+          @include breakpoint($small $medium) {
+            padding-left: 10px;
+            &.icon { background-image: none; }
+          } //breakpoint
+
+          &.active {
+            background-color: $red;
+            color: $light;
+          }
+        } //a
+      } //li
+    } //ul
+  } //navbar
+} //header #nav

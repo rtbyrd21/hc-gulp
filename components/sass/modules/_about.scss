@@ -1,0 +1,15 @@
+.content {
+  @include clearfix;
+  @include container(100%);
+
+.indexAbout{
+    background-color: grey;
+    @include span(first 3);
+    min-height: 60em;
+    padding-top: 1em;
+    a{
+    color:white;
+    text-decoration: none;
+    }
+}
+}

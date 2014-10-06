@@ -1,0 +1,45 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=2">
+ 
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a href="/admin">New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>  
+ 
+
+<div class="serviceForm">
+<div ng-show="tab == 1">
+<form name="adminForm" ng-submit="adminForm.$valid && giveVolunteer()" novalidate>
+  <input type="text" placeholder="Give title" ng-model="giveTitle" required>
+  <input type="text" placeholder="Give /url" ng-model="giveShortname" required>
+  <textarea type="text" placeholder="Give contents" ng-model="giveContents" required></textarea>
+  <br>
+  <button class="addAdmin" type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+  <ul class="admin-list" ng-repeat="giv in give">
+     <li> <a href="/admin/{{giv.shortname}}">{{giv.title}}<a></li>
+     
+     <li> <a class="edit" href="/admingive/{{giv.shortname}}">Edit</a></li>
+      <li><a class="delete" ng-click="removeGive(giv._id)" >Remove</a></li>
+      
+  </ul>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+<h2>Edit service</h1>
+
+  <div class="editable" ng-repeat="giv in give | filter:json">
+  <div> <a href="#" editable-text="giv.title" ng-model="giv.title"><h4>{{ giv.title || 'empty' }}</h4></a></div>
+  <div> <a href="#" editable-textarea="giv.contents" ng-model="giv.contents"><p>{{ giv.contents || 'empty' }}</p></a></div>
+  <div><input type="hidden" ng-model="giv.shortname"></div>
+  <li><a class="edit" ng-click="editGive(giv._id, giv.shortname, giv.title, giv.contents)" >Edit</a></li>
+</div><!--Editable-->
+</div><!--ServiceData-->
+</div><!--Layout-->

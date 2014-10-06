@@ -1,0 +1,45 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=2">
+ 
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a href="/admin">New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>  
+ 
+
+<div class="serviceForm">
+<div ng-show="tab == 1">
+<form name="adminForm" ng-submit="adminForm.$valid && createService()" novalidate>
+  <input type="text" placeholder="Service title" ng-model="serviceTitle" required>
+  <input type="text" placeholder="Service /url" ng-model="serviceShortname" required>
+  <input type="text" placeholder="Service summary" ng-model="serviceSummary" required>
+  <textarea type="text" placeholder="Service description" ng-model="serviceDescription" required></textarea>
+  <button type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+  <ul class="admin-list" ng-repeat="service in services">
+     <li> <a href="/admin/{{service.shortname}}">{{service.title}}<a></li>
+     
+     <li> <a class="edit" href="/admin/{{service.shortname}}" ng-click="editItem(service._id)" >Edit</a></li>
+      <li><a class="delete" ng-click="removeItem(service._id)" >Remove</a></li>
+      
+  </ul>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+<h2>Edit service</h1>
+
+  <div class="editable" ng-repeat="service in services | filter:json">
+  <div> <a href="#" editable-text="service.title" ng-model="service.title"><h4>{{ service.title || 'empty' }}</h4></a></div>
+  <div> <a href="#" editable-textarea="service.summary" ng-model="service.summary"><p>{{ service.summary || 'empty' }}</p></a></div>
+  <div> <a href="#" editable-textarea="service.description" ng-model="service.descrip"><p>{{ service.description || 'empty' }}</p></a></div>
+  <li><a class="edit" ng-click="editService(service._id, service.title, service.shortname, service.summary, service.description)" >Edit</a></li>
+</div><!--Editable-->
+</div><!--ServiceData-->
+</div><!--Layout-->

@@ -1,0 +1,11 @@
+
+
+<div class="login">
+<h1>Admin Login</h1>
+<form ng-hide="identity.isAuthenticated()">
+  <input type="text" placeholder="email" ng-model="username"> 
+  <input placeholder="password" ng-model="password" type="password"> 
+  <a ng-click="signin(username, password)">Sign In</a>
+</form>
+</div>
+

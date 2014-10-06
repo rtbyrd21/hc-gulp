@@ -1,0 +1,52 @@
+ <header>
+   
+    <div class="heroevents">
+    <h1>Events and Classes</h1>
+    </div><!-- hero -->
+   </header>
+
+<section class="content">
+<div class="months">
+  <ul>
+   <a href="/events"><li>Events Overview</li></a>
+
+    <li><a href="/events/January">January</a></li>
+      <li><a href="/events/February">February</a></li>
+      <li><a href="/events/March">March</a></li>
+      <li><a href="/events/April">April</a></li>
+      <li><a href="/events/May">May</a></li>
+      <li><a href="/events/January">June</a></li>
+      <li><a href="/events/July">July</a></li>
+      <li><a href="/events/August">August</a></li>
+      <li><a href="/events/September">September</a></li>
+      <li><a href="/events/October">October</a></li>
+      <li><a href="/events/November">November</a></li>
+      <li><a href="/events/December">December</a></li> 
+
+  </ul>
+</div>
+
+<div class="calendar">  
+
+<div ng-repeat="over in overview | filter: {page:'events'}">
+ <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>
+ </div>
+
+
+
+</div>
+</section>
+
+
+
+<div class="sb-slidebar sb-left">
+    <ul ng-repeat="service in services">
+    <% appdata.services.forEach(function(item) { %>
+      <a href="/services/{{service.name}}"><li>{{service.name}}</li></a>
+  </ul>
+</div>
+
+
+
+
+

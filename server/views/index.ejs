@@ -1,0 +1,186 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<!-- Google Map -->
+	
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvS3QYHnKV6qRLdc_rCwhK6scf9HE9Az8"></script>
+     
+     
+      
+    
+    
+    <script type="text/javascript" src="//use.typekit.net/fqm6pmc.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<base href="/">
+
+	<title>Healing Center</title>
+    
+	<!-- CSS -->
+	
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="libs/angular-xeditable/dist/css/xeditable.css">
+   <link rel="stylesheet" href="libs/Slidebars/development/slidebars.css">
+   <link rel="stylesheet" href="libs/toastr/toastr.min.css">
+    <link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../builds/development/css/style.css"> <!-- custom styles -->
+    
+	<!-- JS -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+    
+    <!--<script src="js/js/script.js"></script>-->
+    <script src="../../builds/development/js/script.js"></script>
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.min.js"></script>
+    <script src="libs/angular-ui-utils/ui-utils.min.js"></script>
+    <script src="libs/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <script src="libs/toastr/toastr.js"></script>
+    
+    <script src="libs/angular-ui/angular-ui.min.js"></script>
+    <script src="libs/textangular/textAngular-sanitize.min.js"></script>
+    <script src="libs/textangular/textAngular.min.js"></script>
+
+    <!-- TYPEKIT FONTS -->
+    <script type="text/javascript" src="//use.typekit.net/elj6ncw.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+	<!-- ANGULAR CUSTOM -->
+    <script src="js/app.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/services/ServicesFinder.js"></script>
+    <script src="js/services/CalendarData.js"></script>
+    <script src="js/services/loginUser.js"></script>
+    <script src="js/services/loginIdentifier.js"></script>
+    <script src="js/services/loginNotifier.js"></script>
+    <script src="js/services/loginAuth.js"></script>
+    <script src="js/services/OverviewData.js"></script>
+    <script src="js/services/VolunteerData.js"></script>
+    <script src="js/services/GiveData.js"></script>
+    <script src="js/services/AboutData.js"></script>
+    <script src="js/services/ContactData.js"></script>
+	<script src="js/controllers/ServicesCtrl.js"></script>
+	<script src="js/controllers/ServiceDetail.js"></script>
+	<script src="js/controllers/UserCtrl.js"></script>
+	<script src="js/controllers/homeCtrl.js"></script>
+	
+</head>
+
+
+<body ng-app="hcApp">
+ <% if (bootstrappedUser!= undefined) { %>
+  <script>
+    
+  window.bootstrappedUserObject = <%- JSON.stringify(bootstrappedUser) %> 
+
+</script>
+<% } %> 
+<!-- HEADER -->
+<% if (page!= 'admin') { %>
+
+ <header id="intro">
+   <nav id="nav">
+      <div class="navbar"><img src="/builds/development/images/hc_logo.svg">
+        <div class="brand"><a href="#welcome"></span></a></div>
+        <ul>
+          <li class="homeClick"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/volunteer">Volunteer</a></li>
+          <li><a href="/give">Give</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div><!-- navbar -->
+    </nav>
+    <article class="fullheight">
+      <div class="hgroup">
+        <h3>Providing help to residents of Greater Cincinnati when challenges invade their lives</h3>
+       </div>
+      
+      <section>
+        <div class="serviceBox">
+          <a><p>Services</p></a>
+        </div>
+        <div class="volunteerBox">
+          <a><p>Volunteer</p></a>
+        </div>
+        <div class="partnerBox">
+          <a><p>Partners</p></a>
+        </div>       
+      </section>      
+    </article>   
+  </header>
+
+    
+    
+  <% } %>
+<div id="sb-site">
+
+
+	
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div ng-view>
+	  
+	  
+	</div>
+
+
+<% if (page!= 'admin') { %>
+<footer>
+  <div id="socialmedia">
+   
+    <ul>
+      <li><a><i class="fa fa-facebook"></i></a></li>
+      <li><a><i class="fa fa-twitter"></i></a></li>
+      <li><a href="/contact/hcstaff" class="link">Healing Center Staff</a></li>
+      <li><a href="/contact/hcboard" class="link">Healing Center Board</a></li>
+      <li>©2014 Healing Center Cincinnati</li>
+    </ul>
+  </div><!-- social media icons -->
+</footer><!-- footer -->
+</div><!-- slider -->
+
+
+<div class="sb-slidebar sb-left">
+      <ul>
+    <% if (page!= 'home') { %>
+        <a href="/"><li>home</li></a>
+        <li>nav 2</li>
+        <li>nav 3</li>
+    <% } else{ %>  
+      <a href="/"><li>homemmmm</li></a>
+        <li>nav 2</li>
+        <li>nav 3</li>
+    <% } %>  
+        
+      </ul>
+    </div>
+
+
+<script src="libs/Slidebars/development/slidebars.js"></script>
+ <script>   
+  (function($) {
+    $(document).ready(function() {
+      var mySlidebars = new $.slidebars();
+      $('.fa-bars').on('click', function(event) {
+        event.preventDefault();
+        console.log("yes");
+        mySlidebars.slidebars.toggle('left');
+      });
+      });
+  }) (jQuery);
+  </script>
+  <script>
+  (function($) {
+    $(document).ready(function() {
+      $.slidebars();
+    });
+  }) (jQuery);
+</script>
+<% } %>
+
+
+</body>
+</html>

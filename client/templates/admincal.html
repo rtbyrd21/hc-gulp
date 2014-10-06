@@ -1,0 +1,82 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=1">
+
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a>New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>
+
+<div class="serviceForm">
+ <div ng-show="tab == 1">
+
+<form name="calForm" ng-submit="createEvent()">
+  <select ng-model="calMonth" required>
+    <option>January</option>
+    <option>February</option>
+    <option>March</option>
+    <option>April</option>
+    <option>May</option>
+    <option>June</option>
+    <option>July</option>
+    <option>August</option>
+    <option>September</option>
+    <option>October</option>
+    <option>November</option>
+    <option>December</option>
+  </select>
+  <input type="text" placeholder="Month" ng-model="calMonth" required>
+  <input type="text" placeholder="Day" ng-model="calDay" required>
+  <input type="text" placeholder="Title" ng-model="calTitle" required>
+  <textarea type="text" placeholder="Summary" ng-model="calSummary" required></textarea>
+  <br>
+  <button class="addAdmin" type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+ <select ng-model="query" required>
+    <option>January</option>
+    <option>February</option>
+    <option>March</option>
+    <option>April</option>
+    <option>May</option>
+    <option>June</option>
+    <option>July</option>
+    <option>August</option>
+    <option>September</option>
+    <option>October</option>
+    <option>November</option>
+    <option>December</option>
+  </select>
+    <div class="calDynamic" data-ng-repeat="n in [] | range:100">
+<div ng-repeat="cal in calendar[n].year | filterKey:query">
+  <div ng-if="cal != '' ">
+    <div class="calendar">
+   <ul class="admin-list">
+     <li>{{cal[0].title}}</li>
+     <li><a class="delete" ng-click="removeEvent(calendar[n]._id)" >Remove</a></li>
+   </ul>
+    
+
+</div><!-- calendar -->
+</div><!-- ng-if cal -->
+</div><!-- ng-repeat cal -->
+</div><!-- calDynamic -->
+  </div>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+<!--
+<div class="dynamic">
+<h4>{{calMonth}}</h4>
+<h4>{{calDay}}</h4>
+<h2>{{calTitle}}</h2>
+<h2>{{calSummary}}</h2>
+</div>Dynamic
+-->
+</div><!--ServiceData-->
+</div><!--Layout-->

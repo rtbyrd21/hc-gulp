@@ -1,0 +1,15 @@
+{
+  "name": "nagular",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-ui-utils": "latest",
+    "angular-xeditable": "latest",
+    "angular-resource": "latest",
+    "jquery": "latest",
+    "toastr": "latest",
+    "Slidebars": "~0.10.2"
+  }
+}
