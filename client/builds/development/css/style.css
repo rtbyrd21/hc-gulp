@@ -964,6 +964,7 @@ footer #socialmedia ul li {
 }
 /* line 12, ../../../../components/sass/modules/_footer.scss */
 footer #socialmedia ul li a {
+  color: white;
   width: 30px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
