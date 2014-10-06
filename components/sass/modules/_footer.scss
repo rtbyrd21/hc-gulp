@@ -10,6 +10,7 @@ footer {
         display: inline-block;
         padding: 0 10px;
         a {
+          color:white;
           width: 30px;
           @include border-radius(50%);
         } // img
