@@ -1,4 +1,4 @@
-header {
+
   .fullheight {
    @include backImage('../images/img_hero_brightspace-homepage.png');
     .hgroup {
@@ -6,11 +6,24 @@ header {
       @include span(6 at 4 of 12 isolate);
       padding: 200px 0 50px 0px;
       text-align: center;
+      @include breakpoint($narrow $small) {
+         @include span(10 at 2 of 12 isolate);     
+       }
       h3{
+        span{
+        font-size:5rem;
+        font-weight: $normal;
+          @include breakpoint($narrow $small) {
+         font-size:3.5rem;
+       }//breakpoint
+        }//span
         display: block;
-        font-weight: $light;
-        font-size:2rem;
+        font-weight: $normal;
+        font-size:1.25rem;
         color:grey;
+         @include breakpoint($narrow $small) {
+         font-size:1.5rem;
+       }
       }
     } //hgroup
     section{
@@ -26,67 +39,49 @@ header {
          @include span(12 of 12);
        
        }
-      .serviceBox{
-       @include span(first 2 of 6);
+      .serviceBox, .volunteerBox, .partnerBox{
+       @include span(2 of 6);
+        @include breakpoint($narrow $small) {
+         @include span(12 of 12);
+          height:70px;
+          margin-bottom: 10px;
+       }//breakpoint narrow
       cursor: pointer;
       position: relative;
       // display: inline-block;
-        height:span(2 of 6);
+        height:200px;
+       
         background-color: white;
          @include box-shadow;
         @include border-radius;
         p{
+        @include container;
         font-size: 1.5rem; 
         display: block;  
-        position:absolute;
+        padding-top: 160px;
+        @include breakpoint($narrow $small) {
+         padding-top: 25px; 
+       }//breakpoint narrow
         bottom:0px;
-        //margin-left: 20%;
         text-transform: uppercase;
         text-align: center;
           font-weight: $normal;
         }
       }//serviceBox
-      .volunteerBox{
-        @include span(2 of 6);
-      cursor: pointer;
-      position: relative;
-        display: inline-block;
-        height:span(2 of 6);
-        background-color: white;
-         @include box-shadow;
-        @include border-radius;
-        p{
-        display: block;
-        position:absolute;
-        bottom:0px;
-        text-transform: uppercase;
-        text-align: center;
-          font-size: 1.5rem;
-          font-weight: $normal;
-        }
-      }//serviceBox
+      .serviceBox{
+        @include span(first 2 of 6); 
+        @include breakpoint($narrow $small) {
+         @include span(12 of 12);
+       }
+      }//volunteerBox
         .partnerBox{
            @include span(last 2 of 6);
-      cursor: pointer;
-      position: relative;
-        display: inline-block;
-        height:span(2 of 6);
-        background-color: white;
-         @include box-shadow;
-        @include border-radius;
-        p{
-        display: block;
-        position:absolute;
-        bottom:0px;
-        text-transform: uppercase;
-        text-align: center;
-          
-          font-size: 1.5rem;
-          font-weight: $normal;
-        }
-      }//serviceBox
+          @include breakpoint($narrow $small) {
+         @include span(12 of 12);
+       }
+      }//partnerBox
        
     }
   } //fullheight
-} //header
+
 
