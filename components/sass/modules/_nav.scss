@@ -1,3 +1,16 @@
+//.feature{
+//  @include span(first 6);
+//  height: 60px;
+//  margin-top: 80px;
+//  background-color: $blue;
+//  margin-left: 0px;
+//   @include display-flex();
+//    @include align-items(center);
+//    @include justify-content(center);
+//  font-size: 2rem;
+//  font-weight: $normal;
+//  }
+
 #nav {
   @include layout($nav);
   @include container(100%);
@@ -41,11 +54,11 @@
           } //breakpoint
         
         a {
-          color: $blue;
+          color: black;
           font: $mainFont;
           font-size: 1em;
           display: inline-block;
-          padding: 10px 10px 10px 25px;
+          padding: 10px 10px 5px 25px;
           text-decoration: none;
           font-weight: $normal;
           //icon styles
@@ -54,7 +67,7 @@
           background-position: 2px;
 
           &:hover {
-
+            border-bottom: 4px solid $blue;
           } //hover
 
         

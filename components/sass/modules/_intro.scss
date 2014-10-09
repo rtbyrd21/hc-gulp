@@ -1,10 +1,15 @@
 
+    
   .fullheight {
-   @include backImage('../images/img_hero_brightspace-homepage.png');
+   @include backImage('../images/img_hero_brightspace-homepage.png', to top, 0, 0, top);
+    @include breakpoint($narrow $small) {
+        @include backImage('../images/img_hero_brightspace-homepage.png', to top, 0, 0, 70% top);   
+       }//breakpoint
+  
     .hgroup {
       @include full;
       @include span(6 at 4 of 12 isolate);
-      padding: 200px 0 50px 0px;
+      padding: 140px 10px 50px 0px;
       text-align: center;
       @include breakpoint($narrow $small) {
          @include span(10 at 2 of 12 isolate);     
@@ -20,7 +25,8 @@
         display: block;
         font-weight: $normal;
         font-size:1.25rem;
-        color:grey;
+        color:white;
+        //@include text-shadow($dark 0 0 20px);
          @include breakpoint($narrow $small) {
          font-size:1.5rem;
        }
@@ -28,8 +34,8 @@
     } //hgroup
     section{
       @include full;
-      @include span(6 of 12 nest);
-      @include push(3);
+      @include span(10 of 12 nest);
+      @include push(1);
        @include breakpoint($small $medium) {
          @include span(8 of 12);
       @include push(2);
@@ -39,16 +45,35 @@
          @include span(12 of 12);
        
        }
-      .serviceBox, .volunteerBox, .partnerBox{
-       @include span(2 of 6);
+      .serviceBox, .volunteerBox, .partnerBox, .eventBox{
+       //@include backImage('../images/weare.png');
+       @include span(1 of 4);
         @include breakpoint($narrow $small) {
+        @include backImage('');
+          background-color: white;
          @include span(12 of 12);
           height:70px;
           margin-bottom: 10px;
        }//breakpoint narrow
+        a{
+        text-decoration: none;
+        }
+        .bottom{
+        background-color: white;
+        height:40px;
+        margin-top: 160px;
+        @include breakpoint($narrow $small) {
+          margin-top: 20px;
+          @include border-radius(0px);
+        }//breakpoint
+        @include border-radius;
+        @include border-top-radius(0px);
+          p{
+          padding-top: 5px;
+          }
+        }
       cursor: pointer;
       position: relative;
-      // display: inline-block;
         height:200px;
        
         background-color: white;
@@ -58,9 +83,10 @@
         @include container;
         font-size: 1.5rem; 
         display: block;  
-        padding-top: 160px;
+        
         @include breakpoint($narrow $small) {
-         padding-top: 25px; 
+         padding-top: 25px;
+          
        }//breakpoint narrow
         bottom:0px;
         text-transform: uppercase;
@@ -69,14 +95,29 @@
         }
       }//serviceBox
       .serviceBox{
-        @include span(first 2 of 6); 
+        //@include backImage('../images/wedo.png');
+        @include span(first 1 of 4); 
         @include breakpoint($narrow $small) {
+          @include backImage('');
+          background-color: white;
          @include span(12 of 12);
        }
       }//volunteerBox
-        .partnerBox{
-           @include span(last 2 of 6);
+//        .partnerBox{
+//           //@include backImage('../images/expect.png');
+//           @include span(last 2 of 6);
+//          @include breakpoint($narrow $small) {
+//            @include backImage('');
+//          background-color: white;
+//         @include span(12 of 12);
+//       }
+//      }//partnerBox
+      .eventBox{
+           //@include backImage('../images/expect.png');
+           @include span(last 1 of 4);
           @include breakpoint($narrow $small) {
+            @include backImage('');
+          background-color: white;
          @include span(12 of 12);
        }
       }//partnerBox

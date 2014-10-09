@@ -7,8 +7,8 @@
   ) {
   background: linear-gradient(
     $grDir,
-    rgba(0,0,0, $opStart),
-    rgba(0,0,0, $opEnd)
+    rgba(255,255,255, $opStart),
+    rgba(255,255,255, $opEnd)
   ),url($image);
   background-repeat: no-repeat;
   background-position: $bgPos; 

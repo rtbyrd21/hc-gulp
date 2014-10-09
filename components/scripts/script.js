@@ -10,6 +10,10 @@ $(function() {
 
   $(window).resize(function() {
     var wheight = $(window).height(); //get height of the window
+    var aheight = $(window).height()-100; //get height of the window
+    var pheight = aheight/wheight;
+    var theight = pheight * wheight;
+    console.log(theight);
     $('.fullheight').css('height', wheight);
   }) //on resize
 
