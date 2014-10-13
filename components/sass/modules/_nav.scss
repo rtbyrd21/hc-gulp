@@ -1,15 +1,4 @@
-//.feature{
-//  @include span(first 6);
-//  height: 60px;
-//  margin-top: 80px;
-//  background-color: $blue;
-//  margin-left: 0px;
-//   @include display-flex();
-//    @include align-items(center);
-//    @include justify-content(center);
-//  font-size: 2rem;
-//  font-weight: $normal;
-//  }
+
 
 #nav {
   @include layout($nav);
@@ -85,3 +74,5 @@
     } //ul
   } //navbar
  }//#nav
+
+

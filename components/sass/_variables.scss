@@ -38,6 +38,9 @@ $pink       : #CD0069;
 $purple     : #6C71C4;
 $dark       : #000000;
 $light      : #FFFFFF;
+$darkgrey   : #717b85;
+$lightgrey  : #edeff0;
+$midgrey    : #d4d9dd;
 
 $backgroundColor    : $light;
 $typeDefault        : $dark;
@@ -51,11 +54,12 @@ $headersubbg        : $dark;
 $fontfamily       : 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $thin     : 200;
-$normal   : 400;
+$normal   : 300;
+$mid      : 500;
 $bold     : 600;
 $heavy    : 800;
 
 $headFont   : $thin 1.5em/1.5em $fontfamily;
 $mainFont   : $thin 1em/1.5em $fontfamily;
-$headColor  : lighten($blue, 20);
+$headColor  : $blue;
 

@@ -30,7 +30,7 @@
 	<script src="libs/jquery/dist/jquery.min.js"></script>
     
     <!--<script src="js/js/script.js"></script>-->
-    <script src="../../builds/development/js/script.js"></script>
+    
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
     <script src="libs/angular-resource/angular-resource.min.js"></script>
@@ -79,46 +79,35 @@
 <!-- HEADER -->
 <% if (page!= 'admin') { %>
 
+<!--
  <header id="intro">
-   <nav id="nav">
+
+    <article class="fullheight">
+-->
+    
+    <nav id="nav">
       <div class="navbar"><img src="/builds/development/images/hc_logo.svg">
         <ul>
           <i class="fa fa-bars"></i>
           <li><a href="/give">Give</a></li>
-          <li><a href="/volunteer">Volunteer</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="/events">Events</a></li>
+          <li><a href="/volunteer">Volunteer</a></li>
+          <li><a href="/events">Calendar</a></li>
           <li><a href="/services">Services</a></li>
           <li><a href="/about">About</a></li>
           <li class="homeClick"><a href="/">Home</a></li>
         </ul>
-      </div><!-- navbar -->
+      </div> 
     </nav>
-    <div class="feature">
-       <p>Hunger Walk 2015</p>
-     </div>
-    <article class="fullheight">
-     
-      <div class="hgroup">
-        <h3><span>Providing&nbsp;help</span><br><br>to residents of Greater Cincinnati when challenges invade their lives.</h3>
-       </div>
-      
-      <section>
-        <a><div class="serviceBox">
-         <div class="bottom"><p>Services</p></div>
-        </div></a>
-        <a><div class="volunteerBox">
-          <div class="bottom"><p>Volunteer</p></div>
-        </div></a>
-        <a><div class="partnerBox">
-          <div class="bottom"><p>Give</p></div>
-        </div></a>  
-        <a><div class="eventBox">
-          <div class="bottom"><p>Hunger Walk</p></div>
-        </div></a>      
-      </section>      
-    </article>   
-  </header>
+
+
+  
+                     
+<!--
+           </article> 
+            
+         </header>
+-->
 
     
     
@@ -145,8 +134,8 @@
       <li><a href="/contact/hcboard" class="link">Healing Center Board</a></li>
       <li>©2014 Healing Center Cincinnati</li>
     </ul>
-  </div><!-- social media icons -->
-</footer><!-- footer -->
+  </div> social media icons 
+</footer> <!--footer -->
 </div><!-- slider -->
 
 
@@ -167,6 +156,7 @@
 
 
 <script src="libs/Slidebars/development/slidebars.js"></script>
+<script src="../../builds/development/js/script.js"></script>
  <script>   
   (function($) {
     $(document).ready(function() {

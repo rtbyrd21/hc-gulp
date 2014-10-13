@@ -1,21 +1,21 @@
  <header>
    
-    <div class="heroevents">
+    <div class="heroEvents">
     <h1>About Us</h1>
     </div><!-- hero -->
-   </header>
+</header>
 
 <section class="content">
 <div class="indexAbout">
+ 
   <ul>
-   <a href="/about/"><li>About Overview</li></a>
+      <a href="/about/"><li class="activeIndex" >About Overview</li></a>
       <li ng-repeat="abo in about"><a href="/about/{{abo.shortname}}">{{abo.title}}</li></a>
   </ul>
 </div>
 
 
-<div id="aboutUnique" class="offerings">
-<!--  <h3>What we offer</h3>-->
+<div id="contentLeft" class="about">
  <article class="serviceslist">
  
 <div ng-repeat="over in overview | filter: {page:'about'}">

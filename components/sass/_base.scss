@@ -2,6 +2,7 @@ body {
   font: $mainFont;
   background: $backgroundColor;
   color: $typeDefault;
+  min-height: 2000px;
 }
 
 #{headings()} {

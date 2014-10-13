@@ -1,38 +1,59 @@
 
     
   .fullheight {
-   @include backImage('../images/img_hero_brightspace-homepage.png', to top, 0, 0, top);
+    position: relative;
+    height:600px;
+   @include backImage('../images/smiling-man.jpg', to top, 0, 0, bottom right);
     @include breakpoint($narrow $small) {
         @include backImage('../images/img_hero_brightspace-homepage.png', to top, 0, 0, 70% top);   
        }//breakpoint
   
+    .mainLogo{
+    @include container(20%);
+    padding-top: 50px;
+    }
+    
     .hgroup {
-      @include full;
-      @include span(6 at 4 of 12 isolate);
-      padding: 140px 10px 50px 0px;
-      text-align: center;
+      @include container(100%);
+      @include span(6 at 2 of 12 isolate);
+      padding: 20px 0px 20px 0px;
+      text-align: left;
+      margin-top: 15%;
+      
       @include breakpoint($narrow $small) {
          @include span(10 at 2 of 12 isolate);     
        }
       h3{
         span{
-        font-size:5rem;
-        font-weight: $normal;
-          @include breakpoint($narrow $small) {
-         font-size:3.5rem;
-       }//breakpoint
-        }//span
-        display: block;
-        font-weight: $normal;
-        font-size:1.25rem;
+        font-weight: $heavy;
+        font-size:4rem;
+        background-color: rgba(255, 255, 255, 0);
         color:white;
-        //@include text-shadow($dark 0 0 20px);
+        @include text-shadow;
+        margin-left: -20px;
+        }
+        text-transform: uppercase;
+        line-height: 140%;
+        //background-color: rgba(82, 203, 248, 0.77);
+        //background-color: rgba(255, 255, 255, 0.77);
+        padding-left:15px;
+        display: inline;
+        font-weight: $normal;
+        font-size:1.5rem;
+        color:black;
          @include breakpoint($narrow $small) {
          font-size:1.5rem;
        }
       }
     } //hgroup
     section{
+      a{
+      color: $blue;
+      }
+      z-index: 999;
+       position: absolute;
+        bottom:-50px;
+      //margin-top: 90px;
       @include full;
       @include span(10 of 12 nest);
       @include push(1);
@@ -46,8 +67,9 @@
        
        }
       .serviceBox, .volunteerBox, .partnerBox, .eventBox{
-       //@include backImage('../images/weare.png');
-       @include span(1 of 4);
+       
+       @include backImage('../images/weare.png');
+       @include span(3 of 12);
         @include breakpoint($narrow $small) {
         @include backImage('');
           background-color: white;
@@ -95,26 +117,25 @@
         }
       }//serviceBox
       .serviceBox{
-        //@include backImage('../images/wedo.png');
-        @include span(first 1 of 4); 
+        @include backImage('../images/wedo.png');
+        @include span(first 3 of 12); 
         @include breakpoint($narrow $small) {
           @include backImage('');
           background-color: white;
          @include span(12 of 12);
        }
       }//volunteerBox
-//        .partnerBox{
-//           //@include backImage('../images/expect.png');
-//           @include span(last 2 of 6);
-//          @include breakpoint($narrow $small) {
-//            @include backImage('');
-//          background-color: white;
-//         @include span(12 of 12);
-//       }
-//      }//partnerBox
+        .partnerBox{
+          @include backImage('../images/expect.png');
+       @include breakpoint($narrow $small) {
+            @include backImage('');
+         background-color: white;
+       }
+       
+      }//partnerBox
       .eventBox{
-           //@include backImage('../images/expect.png');
-           @include span(last 1 of 4);
+           @include backImage('../images/walk.png');
+           @include span(last 3 of 12);
           @include breakpoint($narrow $small) {
             @include backImage('');
           background-color: white;

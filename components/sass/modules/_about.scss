@@ -1,15 +1,68 @@
-.content {
-  @include clearfix;
-  @include container(100%);
-
-.indexAbout{
-    background-color: grey;
-    @include span(first 3);
-    min-height: 60em;
-    padding-top: 1em;
-    a{
-    color:white;
-    text-decoration: none;
+header{
+  .heroEvents{
+  position: relative;
+  height:400px;
+  background: $blue;
+    h1{
+    position: absolute;
+    color:$light;
+    bottom:10px;
+    left:50px;
+    font-size: 4rem;
+    @include text-shadow;
     }
+  }//heroEvents
+}//header
+
+.content{
+  @include container(100%);
+  min-height: 600px;
+  .indexAbout{
+  @include span(3 of 12);
+  background-color: $lightgrey;
+  font-size: 1.4rem;
+  padding:10px;
+  padding-top: 70px;
+  padding-left:50px;
+  height:100%;
+  }
+  a{
+  text-decoration: none;
+  color: $blue;
+  font-weight: $normal;
+  }
+  ul{
+    li{
+    margin-bottom: 15px;
+      &.activeIndex{
+    border-bottom: 3px solid $darkgrey;
+   }
+     } 
+  }//ul
+
 }
+
+#contentLeft{
+  
+  @include span(9 of 12);
+  padding-top: 50px;
+  padding-right: 40px;
+  h2{
+  font-size:5rem;
+  font-weight: $thin;
+  }//h2
+  h4{
+  text-transform: uppercase;
+  font-weight: $mid;
+  color:$blue;
+  margin-top:20px;
+  font-size:1.2rem;
+  }
+  .serviceslist{
+  @include container(80%);
+    p{
+  font-weight: $normal;
+  }//p
+  }//serviceslist
+  
 }

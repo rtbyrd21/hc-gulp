@@ -1,0 +1,80 @@
+#homeInfo{
+margin-top: 90px;
+@include container();
+  h1{
+  font-size: 4rem;
+  font-weight: $normal;
+  color:black;
+  text-align: center;
+  padding: 30px 0px 0px 0px;
+  @include breakpoint(max-width $small) {
+  font-size: 2rem;
+  
+  }//breakpoint
+  }//h1
+  .underline{
+@include container(30%);
+border-bottom:3px solid $blue;
+margin-bottom: 30px;
+}
+    .visitUs{
+   @include container(80%);
+    
+        .office{
+        text-align: center;
+        @include span(first 4);
+          p{
+          font-weight:$normal;
+          }
+           @include breakpoint(max-width $small) {
+            @include span(12 of 12);
+            }//breakpoint
+        }
+        .service{
+        text-align: center;
+        @include span(4 of 12);
+          p{
+          font-weight:$normal;
+          }
+          @include breakpoint(max-width $small) {
+            @include span(12 of 12);
+            }//breakpoint
+        }
+
+   .ourLocation{
+     text-align: center;
+    @include span(4 of 12);
+     p{
+          font-weight:$normal;
+        }
+    
+      @include breakpoint(max-width $small) {
+            @include span(12 of 12);
+            }//breakpoint
+   }
+  
+    }//visitUs
+
+
+  
+.partners{
+@include container(80%);
+margin-bottom: 70px;
+  img{
+  display: inline;
+    @include gallery(1 of 3);
+    @include breakpoint($small) {
+    @include gallery(1 of 5);
+    }
+  }
+
+}
+  
+  
+  
+  
+  
+}//homeInfo
+
+
+
