@@ -1,12 +1,13 @@
- <header>
    
-    <div class="heroevents">
+<header>
+   
+    <div id="hero" class="aboutServices">
     <h1>{{month}}</h1>
     </div><!-- hero -->
-   </header>
+</header>
 
-<section class="content">
-<div class="months">
+<section id="content">
+<div id="indexLeft">
 <!--
   <ul>
    <a href="/events"><li>Events Overview</li></a>
@@ -15,6 +16,7 @@
 
   </ul>
 -->
+
     <ul>
    <a href="/events"><li>Events Overview</li></a>
 
@@ -46,8 +48,8 @@
   </div>
 -->
 
-<div class="calwrapper">
-
+<div id="contentRight" class="calendar">
+<article class="cmsContent">
 <div ng-repeat="items in super | filter: {month:month} | orderBy:'day'">
   <div class="calendar">
 
@@ -65,6 +67,7 @@
 
       </div>
 </div>
+</article>
 </div>
 
 

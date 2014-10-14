@@ -128,9 +128,9 @@ body:after {
 .fullheight {
   position: relative;
   height: 600px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/smiling-man.jpg");
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/mom_son.jpg");
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: 200% right;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -139,16 +139,17 @@ body:after {
 @media (min-width: 400px) and (max-width: 650px) {
   /* line 3, ../../../../components/sass/modules/_intro.scss */
   .fullheight {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/img_hero_brightspace-homepage.png");
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/mom_son.jpg");
     background-repeat: no-repeat;
-    background-position: 70% top;
+    background-position: 70% top right;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 300px;
   }
 }
-/* line 11, ../../../../components/sass/modules/_intro.scss */
+/* line 12, ../../../../components/sass/modules/_intro.scss */
 .fullheight .mainLogo {
   max-width: 20%;
   margin-left: auto;
@@ -161,18 +162,19 @@ body:after {
   display: block;
   clear: both;
 }
-/* line 16, ../../../../components/sass/modules/_intro.scss */
+/* line 17, ../../../../components/sass/modules/_intro.scss */
 .fullheight .hgroup {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width: 48.33333%;
+  width: 31.66667%;
   float: left;
   margin-left: 9.16667%;
   margin-right: -100%;
   padding: 20px 0px 20px 0px;
   text-align: left;
-  margin-top: 15%;
+  position: absolute;
+  bottom: 80px;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .fullheight .hgroup:after {
@@ -181,7 +183,7 @@ body:after {
   clear: both;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 16, ../../../../components/sass/modules/_intro.scss */
+  /* line 17, ../../../../components/sass/modules/_intro.scss */
   .fullheight .hgroup {
     width: 81.66667%;
     float: left;
@@ -189,36 +191,37 @@ body:after {
     margin-right: -100%;
   }
 }
-/* line 26, ../../../../components/sass/modules/_intro.scss */
+/* line 28, ../../../../components/sass/modules/_intro.scss */
 .fullheight .hgroup h3 {
+  color: white;
   text-transform: uppercase;
   line-height: 140%;
   padding-left: 15px;
   display: inline;
   font-weight: 300;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 1.3rem;
 }
-/* line 27, ../../../../components/sass/modules/_intro.scss */
+/* line 29, ../../../../components/sass/modules/_intro.scss */
 .fullheight .hgroup h3 span {
+  line-height: 97%;
   font-weight: 800;
   font-size: 4rem;
   background-color: rgba(255, 255, 255, 0);
   color: white;
-  text-shadow: 0px 0px 1px #aaa;
+  text-shadow: 0px 0px 2px black;
   margin-left: -20px;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 26, ../../../../components/sass/modules/_intro.scss */
+  /* line 28, ../../../../components/sass/modules/_intro.scss */
   .fullheight .hgroup h3 {
     font-size: 1.5rem;
   }
 }
-/* line 49, ../../../../components/sass/modules/_intro.scss */
+/* line 51, ../../../../components/sass/modules/_intro.scss */
 .fullheight section {
   z-index: 999;
   position: absolute;
-  bottom: -50px;
+  bottom: -150px;
   clear: both;
   width: 98.33333%;
   float: left;
@@ -228,12 +231,12 @@ body:after {
   float: left;
   margin-left: 9.16667%;
 }
-/* line 50, ../../../../components/sass/modules/_intro.scss */
+/* line 52, ../../../../components/sass/modules/_intro.scss */
 .fullheight section a {
   color: #5dc5e2;
 }
 @media (min-width: 650px) and (max-width: 960px) {
-  /* line 49, ../../../../components/sass/modules/_intro.scss */
+  /* line 51, ../../../../components/sass/modules/_intro.scss */
   .fullheight section {
     width: 65%;
     float: left;
@@ -243,7 +246,7 @@ body:after {
   }
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 49, ../../../../components/sass/modules/_intro.scss */
+  /* line 51, ../../../../components/sass/modules/_intro.scss */
   .fullheight section {
     width: 98.33333%;
     float: left;
@@ -251,7 +254,7 @@ body:after {
     margin-right: 0.83333%;
   }
 }
-/* line 69, ../../../../components/sass/modules/_intro.scss */
+/* line 70, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox, .fullheight section .volunteerBox, .fullheight section .partnerBox, .fullheight section .eventBox {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/weare.png");
   background-repeat: no-repeat;
@@ -276,7 +279,7 @@ body:after {
   border-radius: 5px;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 69, ../../../../components/sass/modules/_intro.scss */
+  /* line 70, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .serviceBox, .fullheight section .volunteerBox, .fullheight section .partnerBox, .fullheight section .eventBox {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
     background-repeat: no-repeat;
@@ -294,27 +297,28 @@ body:after {
     margin-bottom: 10px;
   }
 }
-/* line 80, ../../../../components/sass/modules/_intro.scss */
+/* line 81, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox a, .fullheight section .volunteerBox a, .fullheight section .partnerBox a, .fullheight section .eventBox a {
   text-decoration: none;
 }
-/* line 83, ../../../../components/sass/modules/_intro.scss */
+/* line 84, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox .bottom, .fullheight section .volunteerBox .bottom, .fullheight section .partnerBox .bottom, .fullheight section .eventBox .bottom {
-  background-color: white;
+  background-color: #5dc5e2;
+  color: white;
   height: 40px;
-  margin-top: 160px;
+  margin-top: -30px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  -moz-border-radius-topleft: 0px;
-  -webkit-border-top-left-radius: 0px;
-  border-top-left-radius: 0px;
-  -moz-border-radius-topright: 0px;
-  -webkit-border-top-right-radius: 0px;
-  border-top-right-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 83, ../../../../components/sass/modules/_intro.scss */
+  /* line 84, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .serviceBox .bottom, .fullheight section .volunteerBox .bottom, .fullheight section .partnerBox .bottom, .fullheight section .eventBox .bottom {
     margin-top: 20px;
     -moz-border-radius: 0px;
@@ -322,11 +326,11 @@ body:after {
     border-radius: 0px;
   }
 }
-/* line 93, ../../../../components/sass/modules/_intro.scss */
+/* line 95, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox .bottom p, .fullheight section .volunteerBox .bottom p, .fullheight section .partnerBox .bottom p, .fullheight section .eventBox .bottom p {
   padding-top: 5px;
 }
-/* line 104, ../../../../components/sass/modules/_intro.scss */
+/* line 106, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox p, .fullheight section .volunteerBox p, .fullheight section .partnerBox p, .fullheight section .eventBox p {
   max-width: 100%;
   margin-left: auto;
@@ -345,12 +349,12 @@ body:after {
   clear: both;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 104, ../../../../components/sass/modules/_intro.scss */
+  /* line 106, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .serviceBox p, .fullheight section .volunteerBox p, .fullheight section .partnerBox p, .fullheight section .eventBox p {
     padding-top: 25px;
   }
 }
-/* line 119, ../../../../components/sass/modules/_intro.scss */
+/* line 121, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/wedo.png");
   background-repeat: no-repeat;
@@ -365,7 +369,7 @@ body:after {
   margin-right: 0.83333%;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 119, ../../../../components/sass/modules/_intro.scss */
+  /* line 121, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .serviceBox {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
     background-repeat: no-repeat;
@@ -381,7 +385,7 @@ body:after {
     margin-right: 0.83333%;
   }
 }
-/* line 128, ../../../../components/sass/modules/_intro.scss */
+/* line 130, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .partnerBox {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/expect.png");
   background-repeat: no-repeat;
@@ -392,7 +396,7 @@ body:after {
   background-size: cover;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 128, ../../../../components/sass/modules/_intro.scss */
+  /* line 130, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .partnerBox {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
     background-repeat: no-repeat;
@@ -404,7 +408,7 @@ body:after {
     background-color: white;
   }
 }
-/* line 136, ../../../../components/sass/modules/_intro.scss */
+/* line 138, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .eventBox {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/walk.png");
   background-repeat: no-repeat;
@@ -419,7 +423,7 @@ body:after {
   margin-right: 0.83333%;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 136, ../../../../components/sass/modules/_intro.scss */
+  /* line 138, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .eventBox {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
     background-repeat: no-repeat;
@@ -571,7 +575,7 @@ body:after {
 
 /* line 1, ../../../../components/sass/modules/_home.scss */
 #homeInfo {
-  margin-top: 90px;
+  margin-top: 190px;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -1194,20 +1198,20 @@ header #hero h1 {
 }
 
 /* line 20, ../../../../components/sass/modules/_about.scss */
-.content {
+#content {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   min-height: 600px;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
-.content:after {
+#content:after {
   content: " ";
   display: block;
   clear: both;
 }
 /* line 23, ../../../../components/sass/modules/_about.scss */
-.content #indexLeft {
+#content #indexLeft {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1224,22 +1228,22 @@ header #hero h1 {
 }
 @media (max-width: 650px) {
   /* line 23, ../../../../components/sass/modules/_about.scss */
-  .content #indexLeft {
+  #content #indexLeft {
     display: none;
   }
 }
 /* line 35, ../../../../components/sass/modules/_about.scss */
-.content a {
+#content a {
   text-decoration: none;
   color: #5dc5e2;
   font-weight: 300;
 }
 /* line 41, ../../../../components/sass/modules/_about.scss */
-.content ul li {
+#content ul li {
   margin-bottom: 15px;
 }
 /* line 43, ../../../../components/sass/modules/_about.scss */
-.content ul li.activeIndex {
+#content ul li.activeIndex {
   border-bottom: 3px solid #717b85;
 }
 

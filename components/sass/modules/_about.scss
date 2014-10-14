@@ -17,7 +17,7 @@ header{
   }//heroEvents
 }//header
 
-.content{
+#content{
   @include container(100%);
   min-height: 600px;
   #indexLeft{

@@ -1,12 +1,12 @@
- <header>
+<header>
    
-    <div class="heroevents">
-    <h1>Events and Classes</h1>
+    <div id="hero" class="aboutServices">
+    <h1>Calendar</h1>
     </div><!-- hero -->
-   </header>
+</header>
 
-<section class="content">
-<div class="months">
+<section id="content">
+<div id="indexLeft">
   <ul>
    <a href="/events"><li>Events Overview</li></a>
 
@@ -26,13 +26,13 @@
   </ul>
 </div>
 
-<div class="calendar">  
-
+<div id="contentRight" class="calendar">  
+  <article class="cmsContent">
 <div ng-repeat="over in overview | filter: {page:'events'}">
  <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>
  </div>
 
-
+</article>
 
 </div>
 </section>
@@ -41,7 +41,7 @@
 
 <div class="sb-slidebar sb-left">
     <ul ng-repeat="service in services">
-    <% appdata.services.forEach(function(item) { %>
+    
       <a href="/services/{{service.name}}"><li>{{service.name}}</li></a>
   </ul>
 </div>

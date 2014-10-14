@@ -3,9 +3,10 @@
   .fullheight {
     position: relative;
     height:600px;
-   @include backImage('../images/smiling-man.jpg', to top, 0, 0, bottom right);
+   @include backImage('../images/mom_son.jpg', to top, 0, 0, 200% right);
     @include breakpoint($narrow $small) {
-        @include backImage('../images/img_hero_brightspace-homepage.png', to top, 0, 0, 70% top);   
+        @include backImage('../images/mom_son.jpg', to top, 0, 0, 70% top right);
+      height:300px;
        }//breakpoint
   
     .mainLogo{
@@ -15,32 +16,33 @@
     
     .hgroup {
       @include container(100%);
-      @include span(6 at 2 of 12 isolate);
+      @include span(4 at 2 of 12 isolate);
       padding: 20px 0px 20px 0px;
       text-align: left;
-      margin-top: 15%;
+      position: absolute;
+      bottom:80px;
       
       @include breakpoint($narrow $small) {
          @include span(10 at 2 of 12 isolate);     
        }
       h3{
         span{
+        line-height: 97%;
         font-weight: $heavy;
         font-size:4rem;
         background-color: rgba(255, 255, 255, 0);
         color:white;
-        @include text-shadow;
+        @include single-text-shadow(0px, 0px, 2px, false, black);
         margin-left: -20px;
         }
+        
+        color:white;
         text-transform: uppercase;
         line-height: 140%;
-        //background-color: rgba(82, 203, 248, 0.77);
-        //background-color: rgba(255, 255, 255, 0.77);
         padding-left:15px;
         display: inline;
         font-weight: $normal;
-        font-size:1.5rem;
-        color:black;
+        font-size:1.3rem;
          @include breakpoint($narrow $small) {
          font-size:1.5rem;
        }
@@ -52,8 +54,7 @@
       }
       z-index: 999;
        position: absolute;
-        bottom:-50px;
-      //margin-top: 90px;
+        bottom:-150px;
       @include full;
       @include span(10 of 12 nest);
       @include push(1);
@@ -81,15 +82,16 @@
         text-decoration: none;
         }
         .bottom{
-        background-color: white;
+        background-color: $blue;
+        color:white;
         height:40px;
-        margin-top: 160px;
+        margin-top: -30px;
         @include breakpoint($narrow $small) {
           margin-top: 20px;
           @include border-radius(0px);
         }//breakpoint
         @include border-radius;
-        @include border-top-radius(0px);
+        @include border-bottom-radius(0px);
           p{
           padding-top: 5px;
           }

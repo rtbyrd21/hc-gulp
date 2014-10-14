@@ -1,12 +1,12 @@
- <header>
+<header>
    
-    <div class="heroevents">
-    <h1>Volunteering</h1>
+    <div id="hero" class="aboutVolunteer">
+    <h1>Volunteer with us</h1>
     </div><!-- hero -->
-   </header>
+</header>
 
-<section class="content">
-<div class="indexVolunteer">
+<section id="content">
+<div id="indexLeft">
   <ul>
    <a href="/volunteer/"><li>Volunteer Overview</li></a>
       <li ng-repeat="vol in volunteer"><a href="/volunteer/{{vol.shortname}}">{{vol.title}}</li></a>
@@ -14,9 +14,8 @@
 </div>
 
 
-<div id="volUnique" class="offerings">
-<!--  <h3>What we offer</h3>-->
- <article class="serviceslist">
+<div id="contentRight" class="calendar">
+ <article class="cmsContent">
  
  <div ng-repeat="over in overview | filter: {page:'volunteer'}">
  <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>
@@ -41,7 +40,6 @@
 
 <div class="sb-slidebar sb-left">
     <ul ng-repeat="service in services">
-    <% appdata.services.forEach(function(item) { %>
       <a href="/services/{{service.name}}"><li>{{service.name}}</li></a>
   </ul>
 
