@@ -43,7 +43,7 @@ var app            = express();
 if(env === 'development'){
 mongoose.connect('mongodb://localhost:27017/mean-demo');
 }else{
-mongoose.connect('mongodb://rtbyrd21:Kennedy123@novus.modulusmongo.net:27017/inyX5iwi');
+mongoose.connect('mongodb://rtbyrd21:letmein@novus.modulusmongo.net:27017/isI6give');
 }
 var db = mongoose.connection;
 
