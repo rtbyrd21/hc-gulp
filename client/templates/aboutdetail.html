@@ -1,11 +1,12 @@
  <header>
    
-    <div class="heroservices">
+    <div id="hero" class="aboutHero">
+    <h1>About Us</h1>
     </div><!-- hero -->
-   </header>
+</header>
 
 <section class="content">
-<div class="indexAbout">
+<div id="indexLeft">
   <ul>
    <a href="/about/"><li>About Overview</li></a>
       <li ng-repeat="abo in about"><a href="/about/{{abo.shortname}}">{{abo.title}}</li></a>
@@ -13,14 +14,14 @@
 </div>
 
 
-<div id="aboutUnique" class="offerings">
+<div id="contentRight" class="about">
 
 <!--  <h3>What we offer</h3>-->
- <article class="serviceslist">
+ <article class="cmsContent">
    <a href="/about"><i class="fa fa-chevron-left"></i>&nbsp;back</a>
     <div class="services" ng-repeat="abo in about | filter:json">
         <article class="service group">
-       <a href="/about/{{abo.shortname }}"><h3><pre>{{abo.title }}</pre> </h3></a> 
+       <a href="/about/{{abo.shortname }}"><h2><pre>{{abo.title }}</pre> </h2></a> 
        <div ng-bind-html="'{{abo.contents}}' | to_trusted"></div>
        </article>
        

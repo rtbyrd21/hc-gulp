@@ -1,22 +1,22 @@
  <header>
    
-    <div class="heroEvents">
+    <div id="hero" class="aboutHero">
     <h1>About Us</h1>
     </div><!-- hero -->
 </header>
 
 <section class="content">
-<div class="indexAbout">
+<div id="indexLeft">
  
   <ul>
-      <a href="/about/"><li class="activeIndex" >About Overview</li></a>
+      <a href="/about/"><li>About Overview</li></a>
       <li ng-repeat="abo in about"><a href="/about/{{abo.shortname}}">{{abo.title}}</li></a>
   </ul>
 </div>
 
 
-<div id="contentLeft" class="about">
- <article class="serviceslist">
+<div id="contentRight" class="about">
+ <article class="cmsContent">
  
 <div ng-repeat="over in overview | filter: {page:'about'}">
  <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>

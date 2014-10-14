@@ -1,12 +1,12 @@
- <header>
+<header>
    
-    <div class="heroservices">
+    <div id="hero" class="aboutServices">
     <h1>Our Services</h1>
     </div><!-- hero -->
-   </header>
+</header>
 
 <section class="content">
-<div class="index">
+<div id="indexLeft">
   <ul>
    <a href="/services/"><li>Service Overview</li></a>
       <li ng-repeat="service in services"><a href="/services/{{service.shortname}}">{{service.title}}</li></a>
@@ -14,9 +14,8 @@
 </div>
 
 
-<div class="offerings">
-<!--  <h3>What we offer</h3>-->
- <article class="serviceslist">
+<div id="contentRight" class="services">
+ <article class="cmsContent">
  
  <div ng-repeat="over in overview | filter: {page:'services'}">
  <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>

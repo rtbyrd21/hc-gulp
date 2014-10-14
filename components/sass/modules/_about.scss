@@ -1,7 +1,10 @@
 header{
-  .heroEvents{
+  #hero{
   position: relative;
   height:400px;
+   @include breakpoint(max-width $small){
+    height:200px;
+  }//breakpoint
   background: $blue;
     h1{
     position: absolute;
@@ -17,7 +20,10 @@ header{
 .content{
   @include container(100%);
   min-height: 600px;
-  .indexAbout{
+  #indexLeft{
+  @include breakpoint(max-width $small){
+    display: none;
+  }//breakpoint
   @include span(3 of 12);
   background-color: $lightgrey;
   font-size: 1.4rem;
@@ -42,9 +48,13 @@ header{
 
 }
 
-#contentLeft{
+#contentRight{
   
   @include span(9 of 12);
+  @include breakpoint(max-width $small){
+    @include span(12);
+    padding-top: 25px;
+  }//breakpoint
   padding-top: 50px;
   padding-right: 40px;
   h2{
@@ -58,11 +68,11 @@ header{
   margin-top:20px;
   font-size:1.2rem;
   }
-  .serviceslist{
+  .cmsContent{
   @include container(80%);
     p{
   font-weight: $normal;
   }//p
-  }//serviceslist
+  }//cmsContent
   
 }
