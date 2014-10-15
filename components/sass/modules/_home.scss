@@ -78,9 +78,7 @@ margin-bottom: 70px;
 .happening{
 @include container(100%);
 margin: 70px 0px;
-  @include breakpoint(max-width $small) {
-    margin-bottom:30px;
-  }//breakpoint
+margin-bottom:30px;
 background: $blue;
    h1{
   color:black;

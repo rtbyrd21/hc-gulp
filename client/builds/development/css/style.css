@@ -740,6 +740,7 @@ body:after {
   margin-left: auto;
   margin-right: auto;
   margin: 70px 0px;
+  margin-bottom: 30px;
   background: #5dc5e2;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
@@ -748,17 +749,11 @@ body:after {
   display: block;
   clear: both;
 }
-@media (max-width: 650px) {
-  /* line 78, ../../../../components/sass/modules/_home.scss */
-  #homeInfo .happening {
-    margin-bottom: 30px;
-  }
-}
-/* line 85, ../../../../components/sass/modules/_home.scss */
+/* line 83, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening h1 {
   color: black;
 }
-/* line 88, ../../../../components/sass/modules/_home.scss */
+/* line 86, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper {
   max-width: 90%;
   margin-left: auto;
@@ -771,11 +766,11 @@ body:after {
   display: block;
   clear: both;
 }
-/* line 91, ../../../../components/sass/modules/_home.scss */
+/* line 89, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .underline {
   border-bottom: 3px solid white;
 }
-/* line 94, ../../../../components/sass/modules/_home.scss */
+/* line 92, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningImage {
   color: white;
   -moz-border-radius: 5px;
@@ -798,7 +793,7 @@ body:after {
   height: 300px;
 }
 @media (max-width: 650px) {
-  /* line 94, ../../../../components/sass/modules/_home.scss */
+  /* line 92, ../../../../components/sass/modules/_home.scss */
   #homeInfo .happening .happeningWrapper .happeningImage {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -810,7 +805,7 @@ body:after {
     height: 200px;
   }
 }
-/* line 105, ../../../../components/sass/modules/_home.scss */
+/* line 103, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -821,7 +816,7 @@ body:after {
   padding-right: 0.83333%;
 }
 @media (max-width: 650px) {
-  /* line 105, ../../../../components/sass/modules/_home.scss */
+  /* line 103, ../../../../components/sass/modules/_home.scss */
   #homeInfo .happening .happeningWrapper .happeningInfo {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -833,7 +828,7 @@ body:after {
     margin-top: 20px;
   }
 }
-/* line 112, ../../../../components/sass/modules/_home.scss */
+/* line 110, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo h2 {
   padding-left: 4%;
   color: white;
@@ -841,13 +836,13 @@ body:after {
   font-weight: 300;
   text-transform: uppercase;
 }
-/* line 119, ../../../../components/sass/modules/_home.scss */
+/* line 117, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo h4, #homeInfo .happening .happeningWrapper .happeningInfo p {
   padding-left: 4%;
   color: white;
   font-weight: 300;
 }
-/* line 125, ../../../../components/sass/modules/_home.scss */
+/* line 123, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore {
   cursor: pointer;
   margin-left: 4%;
@@ -859,7 +854,7 @@ body:after {
   border-radius: 5px;
   width: 40%;
 }
-/* line 133, ../../../../components/sass/modules/_home.scss */
+/* line 131, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore a {
   text-decoration: none;
   color: #5dc5e2;
