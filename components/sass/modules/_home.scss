@@ -1,5 +1,9 @@
 #homeInfo{
-margin-top: 190px;
+margin-top: 70px;
+@include breakpoint(max-width $small) {
+  margin-top: 190px;
+  
+  }//breakpoint
 @include container();
   h1{
   font-size: 4rem;
@@ -71,7 +75,70 @@ margin-bottom: 70px;
 }
   
   
-  
+.happening{
+@include container(100%);
+margin: 70px 0px;
+  @include breakpoint(max-width $small) {
+    margin-bottom:30px;
+  }//breakpoint
+background: $blue;
+   h1{
+  color:black;
+  }
+  .happeningWrapper{
+    @include container(90%);
+     padding-bottom: 40px;
+  .underline{
+  border-bottom:3px solid white;
+  }
+  .happeningImage{
+    color:white;
+    @include border-radius();
+  @include span(first 7);
+    @include breakpoint(max-width $small) {
+    @include span(12);
+    height:200px;
+  }//breakpoint
+  @include backImage('../images/walk.png', to top, 0, 0, center center);
+  height:300px;
+  }
+  .happeningInfo{
+    
+  @include span(last 5);
+  @include breakpoint(max-width $small) {
+    @include span(12);
+    margin-top: 20px;
+  }//breakpoint
+    h2{
+      padding-left:4%;
+    color:white;
+    font-size:2.5rem;
+    font-weight: $normal;
+    text-transform: uppercase;
+    }
+    h4, p{
+      padding-left:4%;
+    color:white;
+    font-weight: $normal;
+    }
+  }//happeningInfo
+    .findOutMore{
+      cursor: pointer;
+      margin-left:4%;
+      font-size: 1.4rem;
+    background:white;
+    padding:5%;
+      @include border-radius();
+      width:40%;
+      a{
+      text-decoration: none;
+      color:$blue;
+      font-weight:$normal;
+      }
+    }
+
+} 
+}
   
   
 }//homeInfo

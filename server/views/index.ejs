@@ -65,6 +65,17 @@
 	<script src="js/controllers/UserCtrl.js"></script>
 	<script src="js/controllers/homeCtrl.js"></script>
 	
+	
+	 <script>
+  $(document).ready(function() {
+    $(".navlinks li a").click(function () {
+        $(".navlinks li a").removeClass("active");
+        $(this).addClass("active");     
+    });
+});
+
+
+	</script>
 </head>
 
 
@@ -86,8 +97,8 @@
 -->
     
     <nav id="nav">
-      <div class="navbar"><img src="/builds/development/images/hc_logo.svg">
-        <ul>
+      <div class="navbar"><a href="/"><img src="/builds/development/images/hc_logo.svg"></a>
+        <ul class="navlinks">
           <i class="fa fa-bars"></i>
           <li><a href="/give">Give</a></li>
           <li><a href="/contact">Contact</a></li>
@@ -95,7 +106,7 @@
           <li><a href="/events">Calendar</a></li>
           <li><a href="/services">Services</a></li>
           <li><a href="/about">About</a></li>
-          <li class="homeClick"><a href="/">Home</a></li>
+          <li class="homeClick"><a class="active" href="/">Home</a></li>
         </ul>
       </div> 
     </nav>
@@ -125,18 +136,18 @@
 
 <% if (page!= 'admin') { %>
 <footer>
-  <div id="socialmedia">
-   
+  <div id="footerWrapper">
+   <div class="copyright"><p>©2014 Healing Center Cincinnati</p>
+   </div><!--copyright -->
+   <div class="socMedia">
     <ul>
       <li><a><i class="fa fa-facebook"></i></a></li>
       <li><a><i class="fa fa-twitter"></i></a></li>
-      <li><a href="/contact/hcstaff" class="link">Healing Center Staff</a></li>
-      <li><a href="/contact/hcboard" class="link">Healing Center Board</a></li>
-      <li>©2014 Healing Center Cincinnati</li>
     </ul>
-  </div> social media icons 
+  </div> <!--social media icons--> 
+  </div><!-- wrapper -->
 </footer> <!--footer -->
-</div><!-- slider -->
+
 
 
 <div class="sb-slidebar sb-left">
@@ -177,7 +188,6 @@
   }) (jQuery);
 </script>
 <% } %>
-
 
 </body>
 </html>

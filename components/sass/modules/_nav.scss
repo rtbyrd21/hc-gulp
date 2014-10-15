@@ -6,7 +6,7 @@
   @include span(12 of 12);
   z-index: 1000;
   background-color: rgba(255,255,255,1);
-  position: absolute;
+  position: fixed;
   border-bottom: 1px solid black;
   max-height: 80px;
   .navbar {
@@ -47,10 +47,10 @@
           font: $mainFont;
           font-size: 1em;
           display: inline-block;
-          padding: 10px 10px 5px 25px;
+          padding: 10px 10px 5px 10px;
           text-decoration: none;
           font-weight: $normal;
-          //icon styles
+          margin-right: 10px;
           background-size: 35px;
           background-repeat: no-repeat;
           background-position: 2px;
@@ -66,8 +66,7 @@
           } //breakpoint
 
           &.active {
-            background-color: $red;
-            color: $light;
+            border-bottom: 4px solid $blue;
           }
         } //a
       } //li

@@ -2,10 +2,11 @@
     
   .fullheight {
     position: relative;
-    height:600px;
-   @include backImage('../images/mom_son.jpg', to top, 0, 0, 200% right);
+    height:470px;
+    margin-top: 80px;
+   @include backImage('../images/mom_son.jpg', to top, 0, 0, top right);
     @include breakpoint($narrow $small) {
-        @include backImage('../images/mom_son.jpg', to top, 0, 0, 70% top right);
+        @include backImage('../images/mom_son.jpg', to top, 0, 0, 70% 30%);
       height:300px;
        }//breakpoint
   
@@ -16,14 +17,15 @@
     
     .hgroup {
       @include container(100%);
-      @include span(4 at 2 of 12 isolate);
+      @include span(7 at 2 of 12 isolate);
       padding: 20px 0px 20px 0px;
       text-align: left;
       position: absolute;
-      bottom:80px;
+      top:20px;
       
       @include breakpoint($narrow $small) {
-         @include span(10 at 2 of 12 isolate);     
+         @include span(10 at 2 of 12 isolate);  
+        display: none;
        }
       h3{
         span{
@@ -49,58 +51,64 @@
       }
     } //hgroup
     section{
+      
       a{
-      color: $blue;
+      color: white;
       }
       z-index: 999;
        position: absolute;
-        bottom:-150px;
+        bottom:-50px;
       @include full;
-      @include span(10 of 12 nest);
-      @include push(1);
+      @include span(6 of 12 nest);
+      @include push(3);
        @include breakpoint($small $medium) {
          @include span(8 of 12);
       @include push(2);
-       
+       bottom:-170px;
        }
       @include breakpoint($narrow $small) {
          @include span(12 of 12);
-       
+       bottom:-170px;
        }
       .serviceBox, .volunteerBox, .partnerBox, .eventBox{
-       
-       @include backImage('../images/weare.png');
-       @include span(3 of 12);
+        &:hover{
+        background-color: white;
+          color:$blue;
+        }
+       @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+       @include span(4 of 12);
+        background-color: white;
         @include breakpoint($narrow $small) {
-        @include backImage('');
-          background-color: white;
+          background-color: $blue;
          @include span(12 of 12);
-          height:70px;
           margin-bottom: 10px;
+          height:50px;
        }//breakpoint narrow
         a{
         text-decoration: none;
         }
-        .bottom{
-        background-color: $blue;
-        color:white;
-        height:40px;
-        margin-top: -30px;
-        @include breakpoint($narrow $small) {
-          margin-top: 20px;
-          @include border-radius(0px);
-        }//breakpoint
-        @include border-radius;
-        @include border-bottom-radius(0px);
-          p{
-          padding-top: 5px;
-          }
-        }
+//        .bottom{
+//        background-color: $blue;
+//        color:white;
+//        height:40px;
+//        margin-top: 0px;
+//        @include breakpoint($narrow $small) {
+//          margin-top: 20px;
+//          @include border-radius(0px);
+//        }//breakpoint
+//        @include border-radius;
+//        @include border-bottom-radius(0px);
+//          p{
+//          padding-top: 5px;
+//          }
+//        }
       cursor: pointer;
       position: relative;
-        height:200px;
+        height:140px;
        
-        background-color: white;
+        background-color: $blue;
          @include box-shadow;
         @include border-radius;
         p{
@@ -119,31 +127,33 @@
         }
       }//serviceBox
       .serviceBox{
-        @include backImage('../images/wedo.png');
-        @include span(first 3 of 12); 
+//        @include backImage('');
+        @include span(first 4 of 12); 
+        background-color: $blue;
         @include breakpoint($narrow $small) {
           @include backImage('');
-          background-color: white;
+          background-color: $blue;
          @include span(12 of 12);
        }
       }//volunteerBox
         .partnerBox{
-          @include backImage('../images/expect.png');
+          @include backImage('');
+          background-color: $blue;
        @include breakpoint($narrow $small) {
             @include backImage('');
-         background-color: white;
+         background-color: $blue;
        }
        
       }//partnerBox
-      .eventBox{
-           @include backImage('../images/walk.png');
-           @include span(last 3 of 12);
-          @include breakpoint($narrow $small) {
-            @include backImage('');
-          background-color: white;
-         @include span(12 of 12);
-       }
-      }//partnerBox
+//      .eventBox{
+////           @include backImage('');
+//        background-color: white;
+//           @include span(last 4 of 12);
+//          @include breakpoint($narrow $small) {
+////            @include backImage('');
+//         @include span(12 of 12);
+//       }
+//      }//partnerBox
        
     }
   } //fullheight
