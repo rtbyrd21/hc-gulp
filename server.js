@@ -40,12 +40,13 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-if(env === 'development'){
-mongoose.connect('mongodb://localhost:27017/mean-demo');
-}else{
+//if(env === 'development'){
+//mongoose.connect('mongodb://localhost:27017/mean-demo');
+//}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 
-}var db = mongoose.connection;
+//}
+var db = mongoose.connection;
 
 db.on('error', function callback () {
   console.log("Connection error");
