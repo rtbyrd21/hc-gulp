@@ -322,39 +322,41 @@ CONTACT.API.query(function(results) {
  {
 
 var str=location.href.toLowerCase();
-$(".nav li a").each(function() {
-if (str.indexOf(this.href.toLowerCase()) > -1) {
- $("li.active").removeClass("active");
+$(".navlinks li a").each(function() {
+if (str.indexOf((this).href.toLowerCase()) > -1) {
+//$("li.active").removeClass("active");
+$(this).siblings().removeClass("active");
 $(this).parent().addClass("active");
+  
 }
  });
-//console.log(str);
+console.log(str);
 $('li.active:nth-of-type(1)').css({borderBottomColor: "#28b3c9"});
 $('li.active:nth-of-type(2)').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(3)').css({borderBottomColor: "#6bdb94"});
 $('li.active:nth-of-type(4)').css({borderBottomColor: "#e25135"});  
 $('li.active:nth-of-type(5)').css({borderBottomColor: "#28b3c9"});
 $('li.active:nth-of-type(6)').css({borderBottomColor: "#ffd26b"});
-$('li.active:nth-of-type(7)').css({borderBottomColor: "#6bdb94"}); 
+$('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});  
 
- 
-  function initialize() {
-        var myLatlng = new google.maps.LatLng(39.281203, -84.455547);
-        var mapOptions = {
-          center: new google.maps.LatLng(39.281203, -84.455547),
-          zoom: 15,
-          draggable: true
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-        var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
-  });
-      
-      }
- google.maps.event.addDomListener(window, 'click', initialize);  
+// 
+//  function initialize() {
+//        var myLatlng = new google.maps.LatLng(39.281203, -84.455547);
+//        var mapOptions = {
+//          center: new google.maps.LatLng(39.281203, -84.455547),
+//          zoom: 15,
+//          draggable: true
+//        };
+//        var map = new google.maps.Map(document.getElementById("map-canvas"),
+//            mapOptions);
+//        var marker = new google.maps.Marker({
+//      position: myLatlng,
+//      map: map,
+//      title: 'Hello World!'
+//  });
+//      
+//      }
+// google.maps.event.addDomListener(window, 'click', initialize);  
    
    
    

@@ -55,9 +55,9 @@
           background-repeat: no-repeat;
           background-position: 2px;
 
-          &:hover {
-            border-bottom: 4px solid $blue;
-          } //hover
+//          &:hover {
+//            border-bottom: 4px solid $blue;
+//          } //hover
 
         
 
@@ -65,9 +65,9 @@
             padding-left: 10px;
           } //breakpoint
 
-          &.active {
-            border-bottom: 4px solid $blue;
-          }
+//          &.active {
+//            border-bottom: 4px solid $blue;
+//          }
         } //a
       } //li
     } //ul

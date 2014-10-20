@@ -93,4 +93,4 @@ gulp.task('move', function() {
   .pipe(gulpif(env === 'production', gulp.dest(outputDir+'images')))
 });
 
-gulp.task('default', ['watch', 'html', 'js', 'compass', 'move', 'connect', 'server']);
+gulp.task('default', ['watch', 'html', 'compass', 'move', 'connect', 'server']);

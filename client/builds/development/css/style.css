@@ -495,19 +495,11 @@ body:after {
   background-repeat: no-repeat;
   background-position: 2px;
 }
-/* line 58, ../../../../components/sass/modules/_nav.scss */
-#nav .navbar ul li a:hover {
-  border-bottom: 4px solid #5dc5e2;
-}
 @media (min-width: 650px) and (max-width: 960px) {
   /* line 45, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul li a {
     padding-left: 10px;
   }
-}
-/* line 68, ../../../../components/sass/modules/_nav.scss */
-#nav .navbar ul li a.active {
-  border-bottom: 4px solid #5dc5e2;
 }
 
 /* line 1, ../../../../components/sass/modules/_home.scss */
@@ -623,7 +615,41 @@ body:after {
     padding-right: 0.83333%;
   }
 }
-/* line 48, ../../../../components/sass/modules/_home.scss */
+/* line 47, ../../../../components/sass/modules/_home.scss */
+#homeInfo .visitUs .building {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/building.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 300px;
+}
+@media (max-width: 650px) {
+  /* line 47, ../../../../components/sass/modules/_home.scss */
+  #homeInfo .visitUs .building {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    height: 200px;
+  }
+}
+/* line 58, ../../../../components/sass/modules/_home.scss */
 #homeInfo .visitUs .ourLocation {
   text-align: center;
   -moz-box-sizing: border-box;
@@ -634,12 +660,12 @@ body:after {
   padding-left: 0.83333%;
   padding-right: 0.83333%;
 }
-/* line 51, ../../../../components/sass/modules/_home.scss */
+/* line 61, ../../../../components/sass/modules/_home.scss */
 #homeInfo .visitUs .ourLocation p {
   font-weight: 300;
 }
 @media (max-width: 650px) {
-  /* line 48, ../../../../components/sass/modules/_home.scss */
+  /* line 58, ../../../../components/sass/modules/_home.scss */
   #homeInfo .visitUs .ourLocation {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -650,7 +676,7 @@ body:after {
     padding-right: 0.83333%;
   }
 }
-/* line 64, ../../../../components/sass/modules/_home.scss */
+/* line 74, ../../../../components/sass/modules/_home.scss */
 #homeInfo .partners {
   max-width: 80%;
   margin-left: auto;
@@ -663,7 +689,7 @@ body:after {
   display: block;
   clear: both;
 }
-/* line 67, ../../../../components/sass/modules/_home.scss */
+/* line 77, ../../../../components/sass/modules/_home.scss */
 #homeInfo .partners img {
   display: inline;
   -moz-box-sizing: border-box;
@@ -693,7 +719,7 @@ body:after {
   clear: none;
 }
 @media (min-width: 650px) {
-  /* line 67, ../../../../components/sass/modules/_home.scss */
+  /* line 77, ../../../../components/sass/modules/_home.scss */
   #homeInfo .partners img {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -734,7 +760,7 @@ body:after {
     clear: none;
   }
 }
-/* line 78, ../../../../components/sass/modules/_home.scss */
+/* line 88, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening {
   max-width: 100%;
   margin-left: auto;
@@ -749,11 +775,11 @@ body:after {
   display: block;
   clear: both;
 }
-/* line 83, ../../../../components/sass/modules/_home.scss */
+/* line 93, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening h1 {
   color: black;
 }
-/* line 86, ../../../../components/sass/modules/_home.scss */
+/* line 96, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper {
   max-width: 90%;
   margin-left: auto;
@@ -766,11 +792,11 @@ body:after {
   display: block;
   clear: both;
 }
-/* line 89, ../../../../components/sass/modules/_home.scss */
+/* line 99, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .underline {
   border-bottom: 3px solid white;
 }
-/* line 92, ../../../../components/sass/modules/_home.scss */
+/* line 102, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningImage {
   color: white;
   -moz-border-radius: 5px;
@@ -793,7 +819,7 @@ body:after {
   height: 300px;
 }
 @media (max-width: 650px) {
-  /* line 92, ../../../../components/sass/modules/_home.scss */
+  /* line 102, ../../../../components/sass/modules/_home.scss */
   #homeInfo .happening .happeningWrapper .happeningImage {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -805,7 +831,7 @@ body:after {
     height: 200px;
   }
 }
-/* line 103, ../../../../components/sass/modules/_home.scss */
+/* line 113, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -816,7 +842,7 @@ body:after {
   padding-right: 0.83333%;
 }
 @media (max-width: 650px) {
-  /* line 103, ../../../../components/sass/modules/_home.scss */
+  /* line 113, ../../../../components/sass/modules/_home.scss */
   #homeInfo .happening .happeningWrapper .happeningInfo {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -828,7 +854,7 @@ body:after {
     margin-top: 20px;
   }
 }
-/* line 110, ../../../../components/sass/modules/_home.scss */
+/* line 120, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo h2 {
   padding-left: 4%;
   color: white;
@@ -836,13 +862,13 @@ body:after {
   font-weight: 300;
   text-transform: uppercase;
 }
-/* line 117, ../../../../components/sass/modules/_home.scss */
+/* line 127, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo h4, #homeInfo .happening .happeningWrapper .happeningInfo p {
   padding-left: 4%;
   color: white;
   font-weight: 300;
 }
-/* line 123, ../../../../components/sass/modules/_home.scss */
+/* line 133, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore {
   cursor: pointer;
   margin-left: 4%;
@@ -854,7 +880,7 @@ body:after {
   border-radius: 5px;
   width: 40%;
 }
-/* line 131, ../../../../components/sass/modules/_home.scss */
+/* line 141, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore a {
   text-decoration: none;
   color: #5dc5e2;

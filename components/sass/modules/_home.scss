@@ -44,6 +44,16 @@ margin-bottom: 30px;
             @include span(12 of 12);
             }//breakpoint
         }
+      .building{
+      @include span(8 of 12);
+        @include border-radius();
+        @include backImage('../images/building.jpg', to top, 0, 0, center center);
+        height:300px;
+        @include breakpoint(max-width $small) {
+            @include span(12 of 12);
+          height:200px;
+            }//breakpoint
+      }
 
    .ourLocation{
      text-align: center;
