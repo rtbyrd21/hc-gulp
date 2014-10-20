@@ -45,7 +45,7 @@ var app            = express();
 //}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 //mongoose.connect('mongodb://rtbyrd21:letmein@novus.modulusmongo.net:27017/isI6give');
-}
+//}
 var db = mongoose.connection;
 
 db.on('error', function callback () {
