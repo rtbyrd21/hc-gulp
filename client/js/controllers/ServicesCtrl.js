@@ -323,11 +323,12 @@ CONTACT.API.query(function(results) {
 
 var str=location.href.toLowerCase();
 $(".navlinks li a").each(function() {
-    if (str.indexOf(location.href.toLowerCase()) > -1) {
-         $("li.active").removeClass("active");
-         $(this).parent().addClass("active");
-    }
-});
+if (str.indexOf((this).href.toLowerCase()) > -1) {
+//$("li.active").removeAttribute("class");
+$(this).parent().addClass("active");
+//  $("li.active").removeClass("active");
+}
+ });
 console.log(str);
 $('li.active:nth-of-type(1)').css({borderBottomColor: "#28b3c9"});
 $('li.active:nth-of-type(2)').css({borderBottomColor: "#ffd26b"});

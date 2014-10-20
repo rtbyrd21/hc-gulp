@@ -1,52 +1,273 @@
-#dining {
-  
-  h1, h2 {
-    color: $red;
-    padding: 10px 0;
-  } //headings
+//ADMIN//////////////
+.navigationAdmin{
+  box-shadow: rgb(51, 51, 51) 0px 0px 5px;
+  display:block;
+  @include background(image-url('misc/hc%20logo_full.svg'));
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: white;
+//  position:fixed;
+  z-index:9999;
+  width:100%;
+  height:100px;
+//  @include at-breakpoint($medium) {
+//  height:60px;
+//  padding-left:3em;
+//  background: white;
+//  min-height: 60px;
+//  h1{
+//  padding-top:20px;
+//  font-size: 1.7rem;
+//  }
+//  @include single-transition(all, .7s, ease-out);
+//}//medium
+    ul.nav, ul.navAdmin{
+    @include horizontal-list;
+//    font-family: $font-secondary, sans-serif;
+    float:right;
+    margin-right: 5%;
+    display:inline-block;
+    position:absolute;
+    width:100%;
+//    background-color: darken($grey,15%);
+//    background-image: -webkit-linear-gradient(top, rgba(255,255,255, 0.05) 50%, rgba(0,0,0, 0.02) 53%);   
+//    @include at-breakpoint($medium) {
+//    background-image:none;
+//    position:absolute;
+//    right:0%;
+//    top:0px;
+////    background-color: rgba(255,255,255,.0);
+//    
+//    }
+    li{
+      padding-top:0%;
 
-  img {
-    width: 100%;
-    @include border-radius(10px);
-  } //img
+   
+      a{
+        @include single-transition(all, .2s, ease-out);
+        display: block;
+        text-decoration: none;
+        padding: 5px 5px;
+        color: $darkgrey;
+        line-height: 20px;
+        font-size: .6rem;
+//        border-bottom: 3px solid black;
+        text-transform: uppercase;
+        font-weight:300;
+//        @include at-breakpoint($medium) {
+//        font-size: 1rem;
+//        line-height: 20px;
+//        padding: 25px 10px 0px;
+//        
+//        }
+        &:hover{
+          color: $blue;
+        }
+        }//a
+    }//li
+  }//ul.nav
 
-  @include breakpoint($small) {
-    #areadining {
-      margin-bottom: 30px;
-
-      h1 {
-        font-weight: $thin;
-        font-size: 2.5em;
-      } //h1
-      p {
-        font-size: 1.5em;
-        line-height: 140%;
-      } //p
-    } //areadining
-
-    section {
-      @include span(4 of 12);
-
-      h2 {
-        font-size: 1.2em;
-        line-height: 120%;
-        color: $pink;
+}//nav
+#serviceData{
+  .tabsAdmin{
+  padding-left: 0px;
+  }
+  .tabsAdmin li{
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 0px;
+  a{
+  text-decoration: none;
+  }
+  }
+  margin-left:40px;
+  padding-top:120px;
+  padding-bottom: 100px;
+  @include clearfix;
+  .serviceList{
+    ul{
+      background-color: $blue;
+      border:2px solid white;
+      width:80%;
+      position: relative;
+      
+      &:first-of-type{
+        margin-top: 10px;
+        }
+      .delete{
+      position: absolute;
+      right: 0px;
+      height:100%;
+      padding-left:9px;
+      padding-right:9px;
       }
-      p {
-        padding-top: 10px;
-        font-size: 1em;
-        line-height: 130%;
+      .edit{
+      position: absolute;
+      right: 78px;
+      height:100%;
+      padding-left:9px;
+      padding-right:9px;
+      }
+        li{
+         @include single-transition(all, .1s, ease-out);
+         font-size: .9rem; 
+        margin-bottom: 7px;
+        padding-left:0px;
+        display:inline;
+        &:first-of-type{
+        padding-left:2%;
+        }
+ 
+      a{
+          text-decoration: none;
+          color:white;
+          cursor: pointer;
+          text-transform: uppercase;
+          &.delete{
+           background-color: $red;
+           }
+          &.edit{
+           background-color: $green;
+           }
+   
+        }
+      }
+    }//admin-list
+  }//service-data
+  .serviceForm{
+  @include span(5 of 12);
+    input:focus{
+      outline:none;
+    }
+    input.ng-dirty.ng-invalid{
+      border-color:$red;
+      }
+    input.ng-pristine.ng-invalid{
+      border-color:black;
+      }
+    input.ng-dirty.ng-valid{
+      border-color:$green;
+      }
+      textarea {
+      margin-top:10px;
+      height:300px;
+      width:80%;
+      }
+    button{
+    background:$blue;
+    border:none;
+    color:white;
+    }
+  }//service-form
+.dynamic{
+  h4{
+  font-size:2.5rem;
+  font-color:$green !important;
+  font-weight:400 !important;
+  }
+  }
+  .editable{
+  @include span(5 of 12);
+    a{
+      width:100%;
+    }
+    input.ng-dirty.ng-invalid{
+      border-color:$red;
+      }
+    input.ng-pristine.ng-invalid{
+      border-color:black;
+      }
+    input.ng-dirty.ng-valid{
+      border-color:$green;
+      }
+      textarea {
+      margin-top:10px;
+      height:300px;
+      width:80%;
+      }
+  }
+}//service-data
+.editable-input.editable-has-buttons {
+width: 460px !important;
+  &:nth-of-type(3){
+  height:300px;
+  }
+}
+
+//LOGIN//////////////
+.login{
+ box-shadow: 3px 3px 5px 6px #ccc;
+  margin-top:15%;
+  border-radius: 10px;
+  margin-left:25%;
+  margin-right:25%;
+  border: 0px solid black;
+  padding:5%;
+  input{
+    width:100%;
+    border: 2px solid $grey;
+  }
+   input:focus{
+      outline:none;
+    }
+  input.ng-dirty.ng-invalid{
+      border-color:$red;
+      }
+    input.ng-pristine.ng-invalid{
+      border-color:black;
+      }
+    input.ng-dirty.ng-valid{
+      border-color:$green;
+      }
+    a{
+    display:block; 
+    text-decoration: none;
+    text-transform: uppercase;
+//    font-family: $font-secondary;
+    font-size:1rem;
+    padding:1%;
+    margin-top:20px;
+    width:90px;
+    text-align: center;
+    color: $blue;
+    border: 2px solid $blue;
+    background-color: white;
+    cursor: pointer;
+    @include single-transition(all, .3s, ease-out);
+    &:hover{
+    color: white;
+    border: 2px solid $blue;
+    background-color: $blue;
+    }
+    }
+}
+
+//MISC//////////////
+
+.sb-slidebar {
+  background-color: white;
+}
+
+.editOverview{
+    display:block; 
+    text-decoration: none;
+    text-transform: uppercase;
+//    font-family: $font-secondary;
+    font-size:1rem;
+    padding:1%;
+    margin-top:20px;
+    width:90px;
+    text-align: center;
+    color: $blue;
+    border: 2px solid $blue;
+    background-color: white;
+    cursor: pointer;
+    @include single-transition(all, .2s, ease-out);
+      &:hover{
+      color: white;
+      border: 2px solid $blue;
+      background-color: $blue !important;
+      text-decoration: none;
       }
     }
-  } //breakpoint
-  
-  #roomservice {
-    margin-top: 20px;
-    @include background-image(linear-gradient(top, $light, lighten($yellow, 35)));
-    @include pad(1,1);
-    text-align: center;
-    border-top: 1px solid $red;
-    border-bottom: 1px solid $red;
-  }
-
-} //dining
