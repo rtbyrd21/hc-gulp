@@ -195,7 +195,7 @@ body:after {
 }
 /* line 30, ../../../../components/sass/modules/_intro.scss */
 .fullheight .hgroup h3 {
-  color: white;
+  color: black;
   text-transform: uppercase;
   line-height: 140%;
   padding-left: 15px;
@@ -939,7 +939,7 @@ body:after {
 
 /* line 3, ../../../../components/sass/modules/_dining.scss */
 #dining h1, #dining h2 {
-  color: #DF4848;
+  color: #e25135;
   padding: 10px 0;
 }
 /* line 8, ../../../../components/sass/modules/_dining.scss */
@@ -999,18 +999,18 @@ body:after {
   padding-left: 9.16667%;
   padding-right: 9.16667%;
   text-align: center;
-  border-top: 1px solid #DF4848;
-  border-bottom: 1px solid #DF4848;
+  border-top: 1px solid #e25135;
+  border-bottom: 1px solid #e25135;
 }
 
 /* line 1, ../../../../components/sass/modules/_hotelinfo.scss */
 #hotelinfo {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhM2Y5MCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzQ1YjI5ZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhM2Y5MCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk0YjQ2ZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3a3f90), color-stop(100%, #45b29d));
-  background-image: -moz-linear-gradient(top, #3a3f90, #45b29d);
-  background-image: -webkit-linear-gradient(top, #3a3f90, #45b29d);
-  background-image: linear-gradient(to bottom, #3a3f90, #45b29d);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3a3f90), color-stop(100%, #94b46e));
+  background-image: -moz-linear-gradient(top, #3a3f90, #94b46e);
+  background-image: -webkit-linear-gradient(top, #3a3f90, #94b46e);
+  background-image: linear-gradient(to bottom, #3a3f90, #94b46e);
   color: #FFFFFF;
 }
 /* line 5, ../../../../components/sass/modules/_hotelinfo.scss */
@@ -1095,7 +1095,7 @@ body:after {
 }
 /* line 70, ../../../../components/sass/modules/_hotelinfo.scss */
 #hotelinfo #greenprogram {
-  background-color: rgba(26, 68, 60, 0.5);
+  background-color: rgba(70, 90, 47, 0.5);
   margin-top: 20px;
   border: 1px solid #FFFFFF;
   padding: 20px;
@@ -1181,7 +1181,7 @@ body:after {
 }
 /* line 29, ../../../../components/sass/modules/_rooms.scss */
 #rooms .room .content h1 {
-  color: #DF4848;
+  color: #e25135;
 }
 /* line 34, ../../../../components/sass/modules/_rooms.scss */
 #rooms #piccadilly {
@@ -1248,7 +1248,7 @@ body:after {
 header #hero {
   position: relative;
   height: 400px;
-  background: #5dc5e2;
+  background: #e25135;
 }
 @media (max-width: 650px) {
   /* line 2, ../../../../components/sass/modules/_about.scss */
@@ -1265,8 +1265,20 @@ header #hero h1 {
   font-size: 4rem;
   text-shadow: 0px 0px 1px #aaa;
 }
+/* line 19, ../../../../components/sass/modules/_about.scss */
+header #hero.aboutServices, header #hero.aboutContact {
+  background: #94b46e;
+}
+/* line 22, ../../../../components/sass/modules/_about.scss */
+header #hero.aboutCalendar {
+  background: #E27A3F;
+}
+/* line 25, ../../../../components/sass/modules/_about.scss */
+header #hero.aboutGive {
+  background: #5dc5e2;
+}
 
-/* line 20, ../../../../components/sass/modules/_about.scss */
+/* line 34, ../../../../components/sass/modules/_about.scss */
 #content {
   max-width: 100%;
   margin-left: auto;
@@ -1279,7 +1291,7 @@ header #hero h1 {
   display: block;
   clear: both;
 }
-/* line 23, ../../../../components/sass/modules/_about.scss */
+/* line 37, ../../../../components/sass/modules/_about.scss */
 #content #indexLeft {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1296,27 +1308,57 @@ header #hero h1 {
   height: 100%;
 }
 @media (max-width: 650px) {
-  /* line 23, ../../../../components/sass/modules/_about.scss */
+  /* line 37, ../../../../components/sass/modules/_about.scss */
   #content #indexLeft {
     display: none;
   }
 }
-/* line 35, ../../../../components/sass/modules/_about.scss */
+/* line 49, ../../../../components/sass/modules/_about.scss */
 #content a {
   text-decoration: none;
   color: #5dc5e2;
   font-weight: 300;
 }
-/* line 41, ../../../../components/sass/modules/_about.scss */
+/* line 55, ../../../../components/sass/modules/_about.scss */
 #content ul li {
   margin-bottom: 15px;
 }
-/* line 43, ../../../../components/sass/modules/_about.scss */
+/* line 57, ../../../../components/sass/modules/_about.scss */
 #content ul li.activeIndex {
   border-bottom: 3px solid #717b85;
 }
 
-/* line 51, ../../../../components/sass/modules/_about.scss */
+/* line 66, ../../../../components/sass/modules/_about.scss */
+#content {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 600px;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+#content:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 70, ../../../../components/sass/modules/_about.scss */
+#content #indexLeft.aboutPage a, #content #indexLeft.volunteerPage a {
+  color: #e25135;
+}
+/* line 75, ../../../../components/sass/modules/_about.scss */
+#content #indexLeft.servicesPage a, #content #indexLeft.contactPage a {
+  color: #94b46e;
+}
+/* line 80, ../../../../components/sass/modules/_about.scss */
+#content #indexLeft.calendarPage a {
+  color: #E27A3F;
+}
+/* line 85, ../../../../components/sass/modules/_about.scss */
+#content #indexLeft.givePage a {
+  color: #5dc5e2;
+}
+
+/* line 91, ../../../../components/sass/modules/_about.scss */
 #contentRight {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1329,7 +1371,7 @@ header #hero h1 {
   padding-right: 40px;
 }
 @media (max-width: 650px) {
-  /* line 51, ../../../../components/sass/modules/_about.scss */
+  /* line 91, ../../../../components/sass/modules/_about.scss */
   #contentRight {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1341,12 +1383,12 @@ header #hero h1 {
     padding-top: 25px;
   }
 }
-/* line 60, ../../../../components/sass/modules/_about.scss */
+/* line 100, ../../../../components/sass/modules/_about.scss */
 #contentRight h2 {
   font-size: 5rem;
   font-weight: 200;
 }
-/* line 64, ../../../../components/sass/modules/_about.scss */
+/* line 104, ../../../../components/sass/modules/_about.scss */
 #contentRight h4 {
   text-transform: uppercase;
   font-weight: 500;
@@ -1354,7 +1396,7 @@ header #hero h1 {
   margin-top: 20px;
   font-size: 1.2rem;
 }
-/* line 71, ../../../../components/sass/modules/_about.scss */
+/* line 111, ../../../../components/sass/modules/_about.scss */
 #contentRight .cmsContent {
   max-width: 80%;
   margin-left: auto;
@@ -1366,9 +1408,45 @@ header #hero h1 {
   display: block;
   clear: both;
 }
-/* line 73, ../../../../components/sass/modules/_about.scss */
+/* line 113, ../../../../components/sass/modules/_about.scss */
 #contentRight .cmsContent p {
   font-weight: 300;
+}
+
+/* line 121, ../../../../components/sass/modules/_about.scss */
+#contentRight.about h1, #contentRight.about h2, #contentRight.about h3, #contentRight.about h4, #contentRight.about h5, #contentRight.about h6, #contentRight.volunteer h1, #contentRight.volunteer h2, #contentRight.volunteer h3, #contentRight.volunteer h4, #contentRight.volunteer h5, #contentRight.volunteer h6 {
+  color: #e25135;
+}
+/* line 124, ../../../../components/sass/modules/_about.scss */
+#contentRight.about pre, #contentRight.about a, #contentRight.volunteer pre, #contentRight.volunteer a {
+  color: #e25135 !important;
+}
+
+/* line 130, ../../../../components/sass/modules/_about.scss */
+#contentRight.services h1, #contentRight.services h2, #contentRight.services h3, #contentRight.services h4, #contentRight.services h5, #contentRight.services h6, #contentRight.contact h1, #contentRight.contact h2, #contentRight.contact h3, #contentRight.contact h4, #contentRight.contact h5, #contentRight.contact h6 {
+  color: #94b46e;
+}
+/* line 133, ../../../../components/sass/modules/_about.scss */
+#contentRight.services pre, #contentRight.services a, #contentRight.contact pre, #contentRight.contact a {
+  color: #94b46e !important;
+}
+
+/* line 139, ../../../../components/sass/modules/_about.scss */
+#contentRight.calendar h1, #contentRight.calendar h2, #contentRight.calendar h3, #contentRight.calendar h4, #contentRight.calendar h5, #contentRight.calendar h6 {
+  color: #E27A3F;
+}
+/* line 142, ../../../../components/sass/modules/_about.scss */
+#contentRight.calendar pre, #contentRight.calendar a {
+  color: #E27A3F !important;
+}
+
+/* line 148, ../../../../components/sass/modules/_about.scss */
+#contentRight.give h1, #contentRight.give h2, #contentRight.give h3, #contentRight.give h4, #contentRight.give h5, #contentRight.give h6 {
+  color: #5dc5e2;
+}
+/* line 151, ../../../../components/sass/modules/_about.scss */
+#contentRight.give pre, #contentRight.give a {
+  color: #5dc5e2 !important;
 }
 
 /* line 1, ../../../../components/sass/modules/_footer.scss */

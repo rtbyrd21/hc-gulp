@@ -6,7 +6,7 @@
 </header>
 
 <section id="content">
-<div id="indexLeft">
+<div id="indexLeft" class="aboutPage">
   <ul>
    <a href="/about/"><li>About Overview</li></a>
       <li ng-repeat="abo in about"><a href="/about/{{abo.shortname}}">{{abo.title}}</li></a>
@@ -32,12 +32,10 @@
 </div>
 </section>
 
- <% include partials/template/footer.ejs %>
 </div><!--Body container for slider logic-->
 
 <div class="sb-slidebar sb-left">
     <ul ng-repeat="vol in volunteer">
-    <% appdata.services.forEach(function(item) { %>
       <a href="/volunteer/{{vol.name}}"><li>{{vol.name}}</li></a>
   </ul>
 

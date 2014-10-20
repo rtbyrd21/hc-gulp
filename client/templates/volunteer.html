@@ -6,7 +6,7 @@
 </header>
 
 <section id="content">
-<div id="indexLeft">
+<div id="indexLeft" class="volunteerPage">
   <ul>
    <a href="/volunteer/"><li>Volunteer Overview</li></a>
       <li ng-repeat="vol in volunteer"><a href="/volunteer/{{vol.shortname}}">{{vol.title}}</li></a>
@@ -14,7 +14,7 @@
 </div>
 
 
-<div id="contentRight" class="calendar">
+<div id="contentRight" class="volunteer">
  <article class="cmsContent">
  
  <div ng-repeat="over in overview | filter: {page:'volunteer'}">

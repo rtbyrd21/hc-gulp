@@ -5,7 +5,7 @@ header{
    @include breakpoint(max-width $small){
     height:200px;
   }//breakpoint
-  background: $blue;
+  background: $red;
     h1{
     position: absolute;
     color:$light;
@@ -15,7 +15,21 @@ header{
     @include text-shadow;
     }
   }//heroEvents
+  
+  #hero.aboutServices, #hero.aboutContact{
+  background: $green;
+  }
+  #hero.aboutCalendar{
+  background: $orange;
+  }
+  #hero.aboutGive{
+  background: $blue;
+  }
+  
+  
 }//header
+
+
 
 #content{
   @include container(100%);
@@ -48,6 +62,32 @@ header{
 
 }
 
+
+#content{
+  @include container(100%);
+  min-height: 600px;
+  #indexLeft.aboutPage, #indexLeft.volunteerPage{    
+  a{
+  color: $red;
+  }
+  }
+  #indexLeft.servicesPage, #indexLeft.contactPage{    
+  a{
+  color: $green;
+  }
+  }
+  #indexLeft.calendarPage{    
+  a{
+  color: $orange;
+  }
+  }
+  #indexLeft.givePage{    
+  a{
+  color: $blue;
+  }
+  }
+}
+
 #contentRight{
   
   @include span(9 of 12);
@@ -75,4 +115,40 @@ header{
   }//p
   }//cmsContent
   
+}
+
+#contentRight.about, #contentRight.volunteer{
+  #{headings()} {
+ color: $red;
+} 
+ pre, a {
+ color: $red !important;
+} 
+}
+
+#contentRight.services, #contentRight.contact{
+  #{headings()} {
+ color: $green;
+} 
+ pre, a {
+ color: $green !important;
+} 
+}
+
+#contentRight.calendar{
+  #{headings()} {
+ color: $orange;
+} 
+ pre, a {
+ color: $orange !important;
+} 
+}
+
+#contentRight.give{
+  #{headings()} {
+ color: $blue;
+} 
+ pre, a {
+ color: $blue !important;
+} 
 }
