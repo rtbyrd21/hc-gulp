@@ -138,10 +138,12 @@ background: $blue;
     padding:5%;
       @include border-radius();
       width:40%;
+      text-align: center;
       a{
       text-decoration: none;
       color:$blue;
       font-weight:$normal;
+      
       }
     }
 

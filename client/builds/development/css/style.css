@@ -127,7 +127,7 @@ body:after {
 /* line 3, ../../../../components/sass/modules/_intro.scss */
 .fullheight {
   position: relative;
-  height: 450px;
+  height: 480px;
   margin-top: 80px;
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/mom_son.jpg");
   background-repeat: no-repeat;
@@ -200,14 +200,14 @@ body:after {
   line-height: 140%;
   padding-left: 15px;
   display: inline;
-  font-weight: 300;
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 1.8rem;
 }
 /* line 31, ../../../../components/sass/modules/_intro.scss */
 .fullheight .hgroup h3 span {
   line-height: 97%;
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 3.7rem;
   background-color: rgba(255, 255, 255, 0);
   color: white;
   text-shadow: 0px 0px 2px black;
@@ -282,7 +282,7 @@ body:after {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 74, ../../../../components/sass/modules/_intro.scss */
+/* line 75, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox:hover, .fullheight section .volunteerBox:hover, .fullheight section .partnerBox:hover, .fullheight section .eventBox:hover {
   background-color: white;
   color: #5dc5e2;
@@ -299,11 +299,11 @@ body:after {
     height: 50px;
   }
 }
-/* line 89, ../../../../components/sass/modules/_intro.scss */
+/* line 90, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox a, .fullheight section .volunteerBox a, .fullheight section .partnerBox a, .fullheight section .eventBox a {
   text-decoration: none;
 }
-/* line 114, ../../../../components/sass/modules/_intro.scss */
+/* line 115, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox p, .fullheight section .volunteerBox p, .fullheight section .partnerBox p, .fullheight section .eventBox p {
   max-width: 100%;
   margin-left: auto;
@@ -322,12 +322,12 @@ body:after {
   clear: both;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 114, ../../../../components/sass/modules/_intro.scss */
+  /* line 115, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .serviceBox p, .fullheight section .volunteerBox p, .fullheight section .partnerBox p, .fullheight section .eventBox p {
     padding-top: 25px;
   }
 }
-/* line 129, ../../../../components/sass/modules/_intro.scss */
+/* line 130, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .serviceBox {
   width: 31.66667%;
   float: left;
@@ -336,7 +336,7 @@ body:after {
   background-color: #5dc5e2;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 129, ../../../../components/sass/modules/_intro.scss */
+  /* line 130, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .serviceBox {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
     background-repeat: no-repeat;
@@ -352,7 +352,7 @@ body:after {
     margin-right: 0.83333%;
   }
 }
-/* line 139, ../../../../components/sass/modules/_intro.scss */
+/* line 140, ../../../../components/sass/modules/_intro.scss */
 .fullheight section .partnerBox {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
   background-repeat: no-repeat;
@@ -364,7 +364,7 @@ body:after {
   background-color: #5dc5e2;
 }
 @media (min-width: 400px) and (max-width: 650px) {
-  /* line 139, ../../../../components/sass/modules/_intro.scss */
+  /* line 140, ../../../../components/sass/modules/_intro.scss */
   .fullheight section .partnerBox {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("");
     background-repeat: no-repeat;
@@ -393,7 +393,7 @@ body:after {
   background-color: white;
   position: fixed;
   border-bottom: 1px solid black;
-  max-height: 80px;
+  max-height: 100px;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 #nav:after {
@@ -428,25 +428,46 @@ body:after {
     clear: both;
   }
 }
-/* line 18, ../../../../components/sass/modules/_nav.scss */
+/* line 19, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar img {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
   height: 80px;
+  margin: 10px 0px;
 }
-/* line 21, ../../../../components/sass/modules/_nav.scss */
+@media (max-width: 960px) {
+  /* line 19, ../../../../components/sass/modules/_nav.scss */
+  #nav .navbar img {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+/* line 27, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 75%;
-  float: right;
+  width: 70.83333%;
+  float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   height: 100%;
-  padding-top: 25px;
-  padding-bottom: 1rem;
+  padding-top: 52px;
+  padding-left: 30px;
+  padding-bottom: 10px;
 }
 @media (max-width: 960px) {
-  /* line 21, ../../../../components/sass/modules/_nav.scss */
+  /* line 27, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -458,36 +479,37 @@ body:after {
     padding-top: 15px;
   }
 }
-/* line 30, ../../../../components/sass/modules/_nav.scss */
+/* line 37, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul i {
-  font-size: 4rem;
+  font-size: 3.5rem;
   float: right;
+  margin-top: 10px;
+  margin-right: 5%;
 }
 @media (min-width: 960px) {
-  /* line 30, ../../../../components/sass/modules/_nav.scss */
+  /* line 37, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul i {
     display: none;
   }
 }
-/* line 37, ../../../../components/sass/modules/_nav.scss */
+/* line 46, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul li {
-  float: right;
   display: inline-block;
   font-size: 1.1rem;
 }
 @media (max-width: 960px) {
-  /* line 37, ../../../../components/sass/modules/_nav.scss */
+  /* line 46, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul li {
     display: none;
   }
 }
-/* line 45, ../../../../components/sass/modules/_nav.scss */
+/* line 54, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul li a {
   color: black;
   font: 200 1em/1.5em "brandon-grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   display: inline-block;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 3px 0px 10px;
   text-decoration: none;
   font-weight: 300;
   margin-right: 10px;
@@ -496,10 +518,53 @@ body:after {
   background-position: 2px;
 }
 @media (min-width: 650px) and (max-width: 960px) {
-  /* line 45, ../../../../components/sass/modules/_nav.scss */
+  /* line 54, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul li a {
     padding-left: 10px;
   }
+}
+/* line 84, ../../../../components/sass/modules/_nav.scss */
+#nav .signUp {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 20.83333%;
+  float: right;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  background-color: #EFC94C;
+  height: 98px;
+  margin-right: -10%;
+  color: white;
+  padding: 5px;
+  padding-top: 25px;
+  padding-right: 15px;
+  text-align: center;
+  cursor: pointer;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  font-size: 1.25rem;
+}
+@media (max-width: 960px) {
+  /* line 84, ../../../../components/sass/modules/_nav.scss */
+  #nav .signUp {
+    display: none;
+  }
+}
+/* line 100, ../../../../components/sass/modules/_nav.scss */
+#nav .signUp p {
+  font-weight: 300;
+}
+/* line 103, ../../../../components/sass/modules/_nav.scss */
+#nav .signUp .signUpTitle {
+  text-transform: uppercase;
+}
+/* line 106, ../../../../components/sass/modules/_nav.scss */
+#nav .signUp:hover {
+  -moz-box-shadow: 0px 0px 5px #333333;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
 }
 
 /* line 1, ../../../../components/sass/modules/_home.scss */
@@ -879,8 +944,9 @@ body:after {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 40%;
+  text-align: center;
 }
-/* line 141, ../../../../components/sass/modules/_home.scss */
+/* line 142, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore a {
   text-decoration: none;
   color: #5dc5e2;
