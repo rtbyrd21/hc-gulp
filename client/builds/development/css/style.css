@@ -127,7 +127,7 @@ body:after {
 /* line 3, ../../../../components/sass/modules/_intro.scss */
 .fullheight {
   position: relative;
-  height: 470px;
+  height: 450px;
   margin-top: 80px;
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/mom_son.jpg");
   background-repeat: no-repeat;

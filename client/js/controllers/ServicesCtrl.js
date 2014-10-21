@@ -321,22 +321,27 @@ CONTACT.API.query(function(results) {
   $scope.$on('$viewContentLoaded', function () 
  {
 
-var str=location.href.toLowerCase();
-$(".navlinks li a").each(function() {
-if (str.indexOf((this).href.toLowerCase()) > -1) {
-//$("li.active").removeAttribute("class");
-$(this).parent().addClass("active");
-//  $("li.active").removeClass("active");
-}
- });
+//var str=location.href.toLowerCase();
+//$(".navlinks li a").each(function() {
+//if (str.indexOf((this).href.toLowerCase()) > -1) {
+//$("li.active").removeClass("class");
+//$(this).parent().addClass("active");
+//}
+// });
+   
+
+var index = window.location.pathname.split('/')[1];
+$('.navlinks li').removeClass('active');
+$('li.' + index).addClass('active');
+   
 console.log(str);
 $('li.active:nth-of-type(1)').css({borderBottomColor: "#28b3c9"});
-$('li.active:nth-of-type(2)').css({borderBottomColor: "#ffd26b"});
+$('.services.active').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(3)').css({borderBottomColor: "#6bdb94"});
 $('li.active:nth-of-type(4)').css({borderBottomColor: "#e25135"});  
 $('li.active:nth-of-type(5)').css({borderBottomColor: "#28b3c9"});
 $('li.active:nth-of-type(6)').css({borderBottomColor: "#ffd26b"});
-$('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});  
+$('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});   
 
 // 
 //  function initialize() {
