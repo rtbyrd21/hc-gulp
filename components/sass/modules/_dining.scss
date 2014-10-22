@@ -1,5 +1,6 @@
 //ADMIN//////////////
 .navigationAdmin{
+  
   box-shadow: rgb(51, 51, 51) 0px 0px 5px;
   display:block;
   @include background(image-url('misc/hc%20logo_full.svg'));
@@ -22,6 +23,9 @@
 //  }
 //  @include single-transition(all, .7s, ease-out);
 //}//medium
+  .navAdmin{
+  @include container(90%);
+  }
     ul.nav, ul.navAdmin{
     @include horizontal-list;
 //    font-family: $font-secondary, sans-serif;
@@ -51,7 +55,7 @@
         padding: 5px 5px;
         color: $darkgrey;
         line-height: 20px;
-        font-size: .6rem;
+        font-size: 1rem;
 //        border-bottom: 3px solid black;
         text-transform: uppercase;
         font-weight:300;

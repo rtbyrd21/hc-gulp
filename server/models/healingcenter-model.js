@@ -5,7 +5,8 @@ var BearSchema   = new Schema({
 	title: String,
     shortname: String,
     summary: String,
-    description: String
+    description: String,
+    category: String
 });
 
 

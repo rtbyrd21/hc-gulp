@@ -86,7 +86,19 @@ header{
   color: $blue;
   }
   }
-}
+ #indexLeft.servicesPage{
+  h5{
+      color:$green;
+      font-size:1.2rem;
+      font-weight: $normal;
+      margin-top: 30px;
+      text-transform: uppercase;
+      }
+   li{
+   padding-left: 20px;
+   }
+ }
+}//content
 
 #contentRight{
   

@@ -7,9 +7,28 @@
 
 <section id="content">
 <div id="indexLeft" class="servicesPage">
+ <a href="/services/"><h5>Service Overview</h5></a>
   <ul>
-   <a href="/services/"><li>Service Overview</li></a>
-      <li ng-repeat="service in services"><a href="/services/{{service.shortname}}">{{service.title}}</li></a>
+     <h5>Transportation Services</h5>
+      <li ng-repeat="service in services | filter:{category: 'Transportation'} "><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Growth & Healing</h5>
+      <li ng-repeat="service in services | filter:{category: 'Growth'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Spiritual Care</h5>
+      <li ng-repeat="service in services | filter:{category: 'Spiritual'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Financial Programs</h5>
+      <li ng-repeat="service in services | filter:{category: 'Financial'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Job Coaching</h5>
+      <li ng-repeat="service in services | filter:{category: 'Job'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Education Programs</h5>
+      <li ng-repeat="service in services | filter:{category: 'Education'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Kids Clubhouse</h5>
+      <li ng-repeat="service in services | filter:{category: 'Kids'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Food Pantry - the Market Place</h5>
+      <li ng-repeat="service in services | filter:{category: 'Food'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Clothing Store - the Wear House</h5>
+      <li ng-repeat="service in services | filter:{category: 'Clothing'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
+      <h5>Health Care</h5>
+      <li ng-repeat="service in services | filter:{category: 'Health'}"><a href="/services/{{service.shortname}}">{{service.title}}</li></a> 
   </ul>
 </div>
 

@@ -1042,7 +1042,19 @@ body:after {
   width: 100%;
   height: 100px;
 }
-/* line 25, ../../../../components/sass/modules/_dining.scss */
+/* line 26, ../../../../components/sass/modules/_dining.scss */
+.navigationAdmin .navAdmin {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+.navigationAdmin .navAdmin:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 29, ../../../../components/sass/modules/_dining.scss */
 .navigationAdmin ul.nav, .navigationAdmin ul.navAdmin {
   margin: 0;
   padding: 0;
@@ -1084,11 +1096,11 @@ body:after {
 .navigationAdmin ul.nav li.last, .navigationAdmin ul.navAdmin li.last {
   padding-right: 0;
 }
-/* line 43, ../../../../components/sass/modules/_dining.scss */
+/* line 47, ../../../../components/sass/modules/_dining.scss */
 .navigationAdmin ul.nav li, .navigationAdmin ul.navAdmin li {
   padding-top: 0%;
 }
-/* line 47, ../../../../components/sass/modules/_dining.scss */
+/* line 51, ../../../../components/sass/modules/_dining.scss */
 .navigationAdmin ul.nav li a, .navigationAdmin ul.navAdmin li a {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -1099,32 +1111,32 @@ body:after {
   padding: 5px 5px;
   color: #717b85;
   line-height: 20px;
-  font-size: .6rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 300;
 }
-/* line 64, ../../../../components/sass/modules/_dining.scss */
+/* line 68, ../../../../components/sass/modules/_dining.scss */
 .navigationAdmin ul.nav li a:hover, .navigationAdmin ul.navAdmin li a:hover {
   color: #5dc5e2;
 }
 
-/* line 72, ../../../../components/sass/modules/_dining.scss */
+/* line 76, ../../../../components/sass/modules/_dining.scss */
 #serviceData {
   margin-left: 40px;
   padding-top: 120px;
   padding-bottom: 100px;
 }
-/* line 73, ../../../../components/sass/modules/_dining.scss */
+/* line 77, ../../../../components/sass/modules/_dining.scss */
 #serviceData .tabsAdmin {
   padding-left: 0px;
 }
-/* line 76, ../../../../components/sass/modules/_dining.scss */
+/* line 80, ../../../../components/sass/modules/_dining.scss */
 #serviceData .tabsAdmin li {
   display: inline-block;
   cursor: pointer;
   padding-left: 0px;
 }
-/* line 80, ../../../../components/sass/modules/_dining.scss */
+/* line 84, ../../../../components/sass/modules/_dining.scss */
 #serviceData .tabsAdmin li a {
   text-decoration: none;
 }
@@ -1137,18 +1149,18 @@ body:after {
 #serviceData:after {
   clear: both;
 }
-/* line 89, ../../../../components/sass/modules/_dining.scss */
+/* line 93, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul {
   background-color: #5dc5e2;
   border: 2px solid white;
   width: 80%;
   position: relative;
 }
-/* line 95, ../../../../components/sass/modules/_dining.scss */
+/* line 99, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul:first-of-type {
   margin-top: 10px;
 }
-/* line 98, ../../../../components/sass/modules/_dining.scss */
+/* line 102, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul .delete {
   position: absolute;
   right: 0px;
@@ -1156,7 +1168,7 @@ body:after {
   padding-left: 9px;
   padding-right: 9px;
 }
-/* line 105, ../../../../components/sass/modules/_dining.scss */
+/* line 109, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul .edit {
   position: absolute;
   right: 78px;
@@ -1164,7 +1176,7 @@ body:after {
   padding-left: 9px;
   padding-right: 9px;
 }
-/* line 112, ../../../../components/sass/modules/_dining.scss */
+/* line 116, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul li {
   -moz-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
@@ -1175,26 +1187,26 @@ body:after {
   padding-left: 0px;
   display: inline;
 }
-/* line 118, ../../../../components/sass/modules/_dining.scss */
+/* line 122, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul li:first-of-type {
   padding-left: 2%;
 }
-/* line 122, ../../../../components/sass/modules/_dining.scss */
+/* line 126, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul li a {
   text-decoration: none;
   color: white;
   cursor: pointer;
   text-transform: uppercase;
 }
-/* line 127, ../../../../components/sass/modules/_dining.scss */
+/* line 131, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul li a.delete {
   background-color: #e25135;
 }
-/* line 130, ../../../../components/sass/modules/_dining.scss */
+/* line 134, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceList ul li a.edit {
   background-color: #94b46e;
 }
-/* line 138, ../../../../components/sass/modules/_dining.scss */
+/* line 142, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1204,41 +1216,41 @@ body:after {
   padding-left: 0.83333%;
   padding-right: 0.83333%;
 }
-/* line 140, ../../../../components/sass/modules/_dining.scss */
+/* line 144, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm input:focus {
   outline: none;
 }
-/* line 143, ../../../../components/sass/modules/_dining.scss */
+/* line 147, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm input.ng-dirty.ng-invalid {
   border-color: #e25135;
 }
-/* line 146, ../../../../components/sass/modules/_dining.scss */
+/* line 150, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm input.ng-pristine.ng-invalid {
   border-color: black;
 }
-/* line 149, ../../../../components/sass/modules/_dining.scss */
+/* line 153, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm input.ng-dirty.ng-valid {
   border-color: #94b46e;
 }
-/* line 152, ../../../../components/sass/modules/_dining.scss */
+/* line 156, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm textarea {
   margin-top: 10px;
   height: 300px;
   width: 80%;
 }
-/* line 157, ../../../../components/sass/modules/_dining.scss */
+/* line 161, ../../../../components/sass/modules/_dining.scss */
 #serviceData .serviceForm button {
   background: #5dc5e2;
   border: none;
   color: white;
 }
-/* line 164, ../../../../components/sass/modules/_dining.scss */
+/* line 168, ../../../../components/sass/modules/_dining.scss */
 #serviceData .dynamic h4 {
   font-size: 2.5rem;
   font-color: #94b46e !important;
   font-weight: 400 !important;
 }
-/* line 170, ../../../../components/sass/modules/_dining.scss */
+/* line 174, ../../../../components/sass/modules/_dining.scss */
 #serviceData .editable {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1248,39 +1260,39 @@ body:after {
   padding-left: 0.83333%;
   padding-right: 0.83333%;
 }
-/* line 172, ../../../../components/sass/modules/_dining.scss */
+/* line 176, ../../../../components/sass/modules/_dining.scss */
 #serviceData .editable a {
   width: 100%;
 }
-/* line 175, ../../../../components/sass/modules/_dining.scss */
+/* line 179, ../../../../components/sass/modules/_dining.scss */
 #serviceData .editable input.ng-dirty.ng-invalid {
   border-color: #e25135;
 }
-/* line 178, ../../../../components/sass/modules/_dining.scss */
+/* line 182, ../../../../components/sass/modules/_dining.scss */
 #serviceData .editable input.ng-pristine.ng-invalid {
   border-color: black;
 }
-/* line 181, ../../../../components/sass/modules/_dining.scss */
+/* line 185, ../../../../components/sass/modules/_dining.scss */
 #serviceData .editable input.ng-dirty.ng-valid {
   border-color: #94b46e;
 }
-/* line 184, ../../../../components/sass/modules/_dining.scss */
+/* line 188, ../../../../components/sass/modules/_dining.scss */
 #serviceData .editable textarea {
   margin-top: 10px;
   height: 300px;
   width: 80%;
 }
 
-/* line 191, ../../../../components/sass/modules/_dining.scss */
+/* line 195, ../../../../components/sass/modules/_dining.scss */
 .editable-input.editable-has-buttons {
   width: 460px !important;
 }
-/* line 193, ../../../../components/sass/modules/_dining.scss */
+/* line 197, ../../../../components/sass/modules/_dining.scss */
 .editable-input.editable-has-buttons:nth-of-type(3) {
   height: 300px;
 }
 
-/* line 199, ../../../../components/sass/modules/_dining.scss */
+/* line 203, ../../../../components/sass/modules/_dining.scss */
 .login {
   box-shadow: 3px 3px 5px 6px #ccc;
   margin-top: 15%;
@@ -1290,28 +1302,28 @@ body:after {
   border: 0px solid black;
   padding: 5%;
 }
-/* line 207, ../../../../components/sass/modules/_dining.scss */
+/* line 211, ../../../../components/sass/modules/_dining.scss */
 .login input {
   width: 100%;
   border: 2px solid #d4d9dd;
 }
-/* line 211, ../../../../components/sass/modules/_dining.scss */
+/* line 215, ../../../../components/sass/modules/_dining.scss */
 .login input:focus {
   outline: none;
 }
-/* line 214, ../../../../components/sass/modules/_dining.scss */
+/* line 218, ../../../../components/sass/modules/_dining.scss */
 .login input.ng-dirty.ng-invalid {
   border-color: #e25135;
 }
-/* line 217, ../../../../components/sass/modules/_dining.scss */
+/* line 221, ../../../../components/sass/modules/_dining.scss */
 .login input.ng-pristine.ng-invalid {
   border-color: black;
 }
-/* line 220, ../../../../components/sass/modules/_dining.scss */
+/* line 224, ../../../../components/sass/modules/_dining.scss */
 .login input.ng-dirty.ng-valid {
   border-color: #94b46e;
 }
-/* line 223, ../../../../components/sass/modules/_dining.scss */
+/* line 227, ../../../../components/sass/modules/_dining.scss */
 .login a {
   display: block;
   text-decoration: none;
@@ -1330,19 +1342,19 @@ body:after {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* line 238, ../../../../components/sass/modules/_dining.scss */
+/* line 242, ../../../../components/sass/modules/_dining.scss */
 .login a:hover {
   color: white;
   border: 2px solid #5dc5e2;
   background-color: #5dc5e2;
 }
 
-/* line 248, ../../../../components/sass/modules/_dining.scss */
+/* line 252, ../../../../components/sass/modules/_dining.scss */
 .sb-slidebar {
   background-color: white;
 }
 
-/* line 252, ../../../../components/sass/modules/_dining.scss */
+/* line 256, ../../../../components/sass/modules/_dining.scss */
 .editOverview {
   display: block;
   text-decoration: none;
@@ -1361,7 +1373,7 @@ body:after {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 267, ../../../../components/sass/modules/_dining.scss */
+/* line 271, ../../../../components/sass/modules/_dining.scss */
 .editOverview:hover {
   color: white;
   border: 2px solid #5dc5e2;
@@ -1723,8 +1735,20 @@ header #hero.aboutGive {
 #content #indexLeft.givePage a {
   color: #5dc5e2;
 }
+/* line 90, ../../../../components/sass/modules/_about.scss */
+#content #indexLeft.servicesPage h5 {
+  color: #94b46e;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+/* line 97, ../../../../components/sass/modules/_about.scss */
+#content #indexLeft.servicesPage li {
+  padding-left: 20px;
+}
 
-/* line 91, ../../../../components/sass/modules/_about.scss */
+/* line 103, ../../../../components/sass/modules/_about.scss */
 #contentRight {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1737,7 +1761,7 @@ header #hero.aboutGive {
   padding-right: 40px;
 }
 @media (max-width: 650px) {
-  /* line 91, ../../../../components/sass/modules/_about.scss */
+  /* line 103, ../../../../components/sass/modules/_about.scss */
   #contentRight {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1749,12 +1773,12 @@ header #hero.aboutGive {
     padding-top: 25px;
   }
 }
-/* line 100, ../../../../components/sass/modules/_about.scss */
+/* line 112, ../../../../components/sass/modules/_about.scss */
 #contentRight h2 {
   font-size: 5rem;
   font-weight: 200;
 }
-/* line 104, ../../../../components/sass/modules/_about.scss */
+/* line 116, ../../../../components/sass/modules/_about.scss */
 #contentRight h4 {
   text-transform: uppercase;
   font-weight: 500;
@@ -1762,7 +1786,7 @@ header #hero.aboutGive {
   margin-top: 20px;
   font-size: 1.2rem;
 }
-/* line 111, ../../../../components/sass/modules/_about.scss */
+/* line 123, ../../../../components/sass/modules/_about.scss */
 #contentRight .cmsContent {
   max-width: 80%;
   margin-left: auto;
@@ -1774,43 +1798,43 @@ header #hero.aboutGive {
   display: block;
   clear: both;
 }
-/* line 113, ../../../../components/sass/modules/_about.scss */
+/* line 125, ../../../../components/sass/modules/_about.scss */
 #contentRight .cmsContent p {
   font-weight: 300;
 }
 
-/* line 121, ../../../../components/sass/modules/_about.scss */
+/* line 133, ../../../../components/sass/modules/_about.scss */
 #contentRight.about h1, #contentRight.about h2, #contentRight.about h3, #contentRight.about h4, #contentRight.about h5, #contentRight.about h6, #contentRight.volunteer h1, #contentRight.volunteer h2, #contentRight.volunteer h3, #contentRight.volunteer h4, #contentRight.volunteer h5, #contentRight.volunteer h6 {
   color: #e25135;
 }
-/* line 124, ../../../../components/sass/modules/_about.scss */
+/* line 136, ../../../../components/sass/modules/_about.scss */
 #contentRight.about pre, #contentRight.about a, #contentRight.volunteer pre, #contentRight.volunteer a {
   color: #e25135 !important;
 }
 
-/* line 130, ../../../../components/sass/modules/_about.scss */
+/* line 142, ../../../../components/sass/modules/_about.scss */
 #contentRight.services h1, #contentRight.services h2, #contentRight.services h3, #contentRight.services h4, #contentRight.services h5, #contentRight.services h6, #contentRight.contact h1, #contentRight.contact h2, #contentRight.contact h3, #contentRight.contact h4, #contentRight.contact h5, #contentRight.contact h6 {
   color: #94b46e;
 }
-/* line 133, ../../../../components/sass/modules/_about.scss */
+/* line 145, ../../../../components/sass/modules/_about.scss */
 #contentRight.services pre, #contentRight.services a, #contentRight.contact pre, #contentRight.contact a {
   color: #94b46e !important;
 }
 
-/* line 139, ../../../../components/sass/modules/_about.scss */
+/* line 151, ../../../../components/sass/modules/_about.scss */
 #contentRight.calendar h1, #contentRight.calendar h2, #contentRight.calendar h3, #contentRight.calendar h4, #contentRight.calendar h5, #contentRight.calendar h6 {
   color: #E27A3F;
 }
-/* line 142, ../../../../components/sass/modules/_about.scss */
+/* line 154, ../../../../components/sass/modules/_about.scss */
 #contentRight.calendar pre, #contentRight.calendar a {
   color: #E27A3F !important;
 }
 
-/* line 148, ../../../../components/sass/modules/_about.scss */
+/* line 160, ../../../../components/sass/modules/_about.scss */
 #contentRight.give h1, #contentRight.give h2, #contentRight.give h3, #contentRight.give h4, #contentRight.give h5, #contentRight.give h6 {
   color: #5dc5e2;
 }
-/* line 151, ../../../../components/sass/modules/_about.scss */
+/* line 163, ../../../../components/sass/modules/_about.scss */
 #contentRight.give pre, #contentRight.give a {
   color: #5dc5e2 !important;
 }

@@ -40,13 +40,12 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-//if(env === 'development'){
-//mongoose.connect('mongodb://localhost:27017/mean-demo');
-//}else{
+if(env === 'development'){
+mongoose.connect('mongodb://localhost:27017/mean-demo');
+}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 
-//}
-var db = mongoose.connection;
+}var db = mongoose.connection;
 
 db.on('error', function callback () {
   console.log("Connection error");
@@ -419,6 +418,7 @@ router.route('/hc/:_id')
             service.summary = req.body.summary;
             service.shortname = req.body.shortname;
             service.description = req.body.description;
+            service.category = req.body.category;
 			// save the items
 			service.save(function(err) {
 				if (err)
@@ -535,7 +535,7 @@ app.get('/admincontact/:id', authenticate ,function(req, res) {
 	});
 app.use('/api', router);
 
-var port = process.env.PORT || 8080; // set our port
+var port = process.env.PORT || 8000; // set our port
 app.set('view engine', 'ejs');
 app.set('views', 'server/views');
 app.use(methodOverride('X-HTTP-Method-Override')); // simulate delete/put

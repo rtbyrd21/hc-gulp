@@ -16,18 +16,20 @@ $scope.month=$routeParams.id;
   
  
   
-  $scope.createService = function() {
+ $scope.createService = function() {
       var service = new HC.API();
       service.title = $scope.serviceTitle;
       service.shortname = $scope.serviceShortname;
       service.summary = $scope.serviceSummary;
       service.description = $scope.serviceDescription;
+      service.category = $scope.serviceCategory;
       service.$save(function(result){
         $scope.services.push(result);
         $scope.serviceTitle = '';
         $scope.serviceShortname = '';
         $scope.serviceSummary = '';
         $scope.serviceDescription = '';
+        $scope.serviceCategory = '';
       });
     }
  
