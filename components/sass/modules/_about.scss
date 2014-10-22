@@ -87,19 +87,49 @@ header{
   }
   }
  #indexLeft.servicesPage{
-  h5{
-      color:$green;
-      font-size:1.2rem;
-      font-weight: $normal;
-      margin-top: 30px;
-      text-transform: uppercase;
-      }
    li{
    padding-left: 20px;
    }
  }
 }//content
 
+h5{
+      color:$darkgrey;
+      font-size:1.2rem;
+      font-weight: 500;
+      margin-top: 30px;
+      text-transform: uppercase;
+      }
+
+.aboutPage, .volunteerPage{
+  h5{
+ color: $red;
+  }
+}
+
+.servicesPage{
+  h5{
+    &.serviceHead{
+ color: $green;
+    }
+  }
+}
+
+.calendarPage{
+  h5{
+ color: $orange;
+  }
+}
+.contactPage{
+  h5{
+ color: $green;
+  }
+}
+.givePage{
+  h5{
+ color: $blue;
+  }
+}
 #contentRight{
   
   @include span(9 of 12);
@@ -163,4 +193,20 @@ header{
  pre, a {
  color: $blue !important;
 } 
+}
+
+.about.active, .volunteer.active{
+border-bottom: 3px solid $red;
+}
+
+.services.active, .contact.active{
+border-bottom: 3px solid $green;
+}
+
+.events.active{
+border-bottom: 3px solid $orange;
+}
+
+.give.active{
+border-bottom: 3px solid $blue;
 }

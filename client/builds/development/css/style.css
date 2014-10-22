@@ -1737,19 +1737,45 @@ header #hero.aboutGive {
   color: #5dc5e2;
 }
 /* line 90, ../../../../components/sass/modules/_about.scss */
-#content #indexLeft.servicesPage h5 {
-  color: #94b46e;
-  font-size: 1.2rem;
-  font-weight: 300;
-  margin-top: 30px;
-  text-transform: uppercase;
-}
-/* line 97, ../../../../components/sass/modules/_about.scss */
 #content #indexLeft.servicesPage li {
   padding-left: 20px;
 }
 
-/* line 103, ../../../../components/sass/modules/_about.scss */
+/* line 96, ../../../../components/sass/modules/_about.scss */
+h5 {
+  color: #717b85;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+/* line 105, ../../../../components/sass/modules/_about.scss */
+.aboutPage h5, .volunteerPage h5 {
+  color: #e25135;
+}
+
+/* line 112, ../../../../components/sass/modules/_about.scss */
+.servicesPage h5.serviceHead {
+  color: #94b46e;
+}
+
+/* line 119, ../../../../components/sass/modules/_about.scss */
+.calendarPage h5 {
+  color: #E27A3F;
+}
+
+/* line 124, ../../../../components/sass/modules/_about.scss */
+.contactPage h5 {
+  color: #94b46e;
+}
+
+/* line 129, ../../../../components/sass/modules/_about.scss */
+.givePage h5 {
+  color: #5dc5e2;
+}
+
+/* line 133, ../../../../components/sass/modules/_about.scss */
 #contentRight {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1762,7 +1788,7 @@ header #hero.aboutGive {
   padding-right: 40px;
 }
 @media (max-width: 650px) {
-  /* line 103, ../../../../components/sass/modules/_about.scss */
+  /* line 133, ../../../../components/sass/modules/_about.scss */
   #contentRight {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1774,12 +1800,12 @@ header #hero.aboutGive {
     padding-top: 25px;
   }
 }
-/* line 112, ../../../../components/sass/modules/_about.scss */
+/* line 142, ../../../../components/sass/modules/_about.scss */
 #contentRight h2 {
   font-size: 5rem;
   font-weight: 200;
 }
-/* line 116, ../../../../components/sass/modules/_about.scss */
+/* line 146, ../../../../components/sass/modules/_about.scss */
 #contentRight h4 {
   text-transform: uppercase;
   font-weight: 500;
@@ -1787,7 +1813,7 @@ header #hero.aboutGive {
   margin-top: 20px;
   font-size: 1.2rem;
 }
-/* line 123, ../../../../components/sass/modules/_about.scss */
+/* line 153, ../../../../components/sass/modules/_about.scss */
 #contentRight .cmsContent {
   max-width: 80%;
   margin-left: auto;
@@ -1799,45 +1825,65 @@ header #hero.aboutGive {
   display: block;
   clear: both;
 }
-/* line 125, ../../../../components/sass/modules/_about.scss */
+/* line 155, ../../../../components/sass/modules/_about.scss */
 #contentRight .cmsContent p {
   font-weight: 300;
 }
 
-/* line 133, ../../../../components/sass/modules/_about.scss */
+/* line 163, ../../../../components/sass/modules/_about.scss */
 #contentRight.about h1, #contentRight.about h2, #contentRight.about h3, #contentRight.about h4, #contentRight.about h5, #contentRight.about h6, #contentRight.volunteer h1, #contentRight.volunteer h2, #contentRight.volunteer h3, #contentRight.volunteer h4, #contentRight.volunteer h5, #contentRight.volunteer h6 {
   color: #e25135;
 }
-/* line 136, ../../../../components/sass/modules/_about.scss */
+/* line 166, ../../../../components/sass/modules/_about.scss */
 #contentRight.about pre, #contentRight.about a, #contentRight.volunteer pre, #contentRight.volunteer a {
   color: #e25135 !important;
 }
 
-/* line 142, ../../../../components/sass/modules/_about.scss */
+/* line 172, ../../../../components/sass/modules/_about.scss */
 #contentRight.services h1, #contentRight.services h2, #contentRight.services h3, #contentRight.services h4, #contentRight.services h5, #contentRight.services h6, #contentRight.contact h1, #contentRight.contact h2, #contentRight.contact h3, #contentRight.contact h4, #contentRight.contact h5, #contentRight.contact h6 {
   color: #94b46e;
 }
-/* line 145, ../../../../components/sass/modules/_about.scss */
+/* line 175, ../../../../components/sass/modules/_about.scss */
 #contentRight.services pre, #contentRight.services a, #contentRight.contact pre, #contentRight.contact a {
   color: #94b46e !important;
 }
 
-/* line 151, ../../../../components/sass/modules/_about.scss */
+/* line 181, ../../../../components/sass/modules/_about.scss */
 #contentRight.calendar h1, #contentRight.calendar h2, #contentRight.calendar h3, #contentRight.calendar h4, #contentRight.calendar h5, #contentRight.calendar h6 {
   color: #E27A3F;
 }
-/* line 154, ../../../../components/sass/modules/_about.scss */
+/* line 184, ../../../../components/sass/modules/_about.scss */
 #contentRight.calendar pre, #contentRight.calendar a {
   color: #E27A3F !important;
 }
 
-/* line 160, ../../../../components/sass/modules/_about.scss */
+/* line 190, ../../../../components/sass/modules/_about.scss */
 #contentRight.give h1, #contentRight.give h2, #contentRight.give h3, #contentRight.give h4, #contentRight.give h5, #contentRight.give h6 {
   color: #5dc5e2;
 }
-/* line 163, ../../../../components/sass/modules/_about.scss */
+/* line 193, ../../../../components/sass/modules/_about.scss */
 #contentRight.give pre, #contentRight.give a {
   color: #5dc5e2 !important;
+}
+
+/* line 198, ../../../../components/sass/modules/_about.scss */
+.about.active, .volunteer.active {
+  border-bottom: 3px solid #e25135;
+}
+
+/* line 202, ../../../../components/sass/modules/_about.scss */
+.services.active, .contact.active {
+  border-bottom: 3px solid #94b46e;
+}
+
+/* line 206, ../../../../components/sass/modules/_about.scss */
+.events.active {
+  border-bottom: 3px solid #E27A3F;
+}
+
+/* line 210, ../../../../components/sass/modules/_about.scss */
+.give.active {
+  border-bottom: 3px solid #5dc5e2;
 }
 
 /* line 1, ../../../../components/sass/modules/_footer.scss */
