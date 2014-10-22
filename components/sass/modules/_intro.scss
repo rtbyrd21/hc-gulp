@@ -2,8 +2,8 @@
     
   .fullheight {
     position: relative;
-    height:480px;
-    margin-top: 80px;
+    height:520px;
+    margin-top: 110px;
    @include backImage('../images/mom_son.jpg', to top, 0, 0, top right);
     @include breakpoint($narrow $small) {
         @include backImage('../images/mom_son.jpg', to top, 0, 0, 70% 30%);
@@ -21,7 +21,7 @@
       padding: 20px 0px 20px 0px;
       text-align: left;
       position: absolute;
-      top:20px;
+      top:90px;
       
       @include breakpoint($narrow $small) {
          @include span(10 at 2 of 12 isolate);  
@@ -31,7 +31,7 @@
         span{
         line-height: 97%;
         font-weight: $heavy;
-        font-size:3.7rem;
+        font-size:2.5rem;
         background-color: rgba(255, 255, 255, 0);
         color:white;
         @include single-text-shadow(0px, 0px, 2px, false, black);
@@ -44,7 +44,7 @@
         padding-left:15px;
         display: inline;
         font-weight: 400;
-        font-size:1.8rem;
+        font-size:1.2rem;
          @include breakpoint($narrow $small) {
          font-size:1.5rem;
        }
@@ -107,7 +107,7 @@
 //        }
       cursor: pointer;
       position: relative;
-        height:140px;
+        height:90px;
        
         background-color: $blue;
          @include box-shadow;
