@@ -18,6 +18,15 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'templates/servicedetail.html',
 			controller: 'servicesDetail'
 		})
+        .when('/blog', {
+			templateUrl: 'templates/blog.html',
+			controller: 'servicesController'
+		})
+    
+        .when('/blog/:id', {
+			templateUrl: 'templates/blogdetail.html',
+			controller: 'servicesController'
+		})
         
         .when('/login', {
 			templateUrl: 'templates/login.html',
@@ -80,6 +89,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
         .when('/admincontact/:id', {
 			templateUrl: 'templates/admincontactdetail.html',
+			controller: 'servicesController'
+		})
+        .when('/adminblog', {
+			templateUrl: 'templates/adminblog.html',
+			controller: 'servicesController'
+		})
+        .when('/adminblog/:id', {
+			templateUrl: 'templates/adminblogdetail.html',
 			controller: 'servicesController'
 		})
          .when('/events', {

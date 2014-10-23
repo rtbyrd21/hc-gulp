@@ -10,27 +10,16 @@
   border-bottom: 1px solid black;
   max-height: 150px;
   .navbar {
-    @include container(85%);
     margin-bottom: 0px;
     
      @include breakpoint(max-width $medium) {
             @include container(95%);
           } //breakpoint
-//   img{
-//    @include span(first 2);
-//      height: 80px;
-//     margin:10px 0px;
-//      @include breakpoint(max-width $medium) {
-//            @include span(first 4);
-//          } //breakpoint
-//    }
+
     ul {
-      @include span(8.5);
+      @include span(8 at 3.5 of 12 isolate);
       height: 50px;
       float: none;
-//      padding-top:52px;
-      padding-left: 7%;
-//      padding-bottom: 10px;
       @include breakpoint(max-width $medium) {
             @include span(last 2);
             padding-top:15px;
@@ -48,6 +37,9 @@
 //        float: left;
         display: inline-block;
         font-size: 1.1rem;
+        display: inline;
+        &:first-of-type{
+        }
         @include breakpoint(max-width $medium) {
             display:none;
           } //breakpoint
@@ -65,19 +57,11 @@
           background-repeat: no-repeat;
           background-position: 2px;
 
-//          &:hover {
-//            border-bottom: 4px solid $blue;
-//          } //hover
-
-        
-
           @include breakpoint($small $medium) {
             padding-left: 10px;
           } //breakpoint
 
-//          &.active {
-//            border-bottom: 4px solid $blue;
-//          }
+
         } //a
       } //li
     } //ul
@@ -112,9 +96,10 @@
 .headLogo{
 margin-top: 10px;
 @include container(15%);
+height: 93px;
+  img{
+  max-height: 93px;
+  }
 }
-.navlinks{
-@include container(75%);
-float: none;
-}
+
 

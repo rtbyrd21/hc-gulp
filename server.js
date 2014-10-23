@@ -12,6 +12,7 @@ var express         = require('express'),
     volController   = require('./server/controllers/volunteer-controller.js'),
     giveController  = require('./server/controllers/give-controller.js'),
     aboutController = require('./server/controllers/about-controller.js'),
+    blogController  = require('./server/controllers/blog-controller.js'),
     contactController  = require('./server/controllers/contact-controller.js'),
     Service         = require('./server/models/healingcenter-model.js'),
     User            = require('./server/models/user-model.js'),
@@ -21,6 +22,7 @@ var express         = require('express'),
     Give            = require('./server/models/give-model.js'),
     About           = require('./server/models/about-model.js'),
     Contact         = require('./server/models/contact-model.js'),
+    Blog            = require('./server/models/blog-model.js'),
     router          = express.Router(),
     passport        = require('passport');
 var authenticate    = function(req, res, next) {
@@ -93,6 +95,20 @@ app.get('/services/:id', function(req, res) {
 		res.render('index.ejs',{
           bootstrappedUser: req.user,
           page: 'services'
+        });
+});
+
+app.get('/blog', function(req, res) {
+		res.render('index.ejs',{
+          bootstrappedUser: req.user,
+          page: 'blog'
+        });
+});
+
+app.get('/blog/:id', function(req, res) {
+		res.render('index.ejs',{
+          bootstrappedUser: req.user,
+          page: 'blog'
         });
 });
 
@@ -190,7 +206,8 @@ router.get('/about', aboutController.list);
 router.post('/about', aboutController.create);
 router.get('/contact', contactController.list);
 router.post('/contact', contactController.create);
-
+router.get('/blog', blogController.list);
+router.post('/blog', blogController.create);
 
 router.route('/cal/:_id')
 .get(function(req, res) {
@@ -357,6 +374,46 @@ router.route('/about/:_id')
 	})
 .delete(function(req, res) {
 		About.remove({
+			_id: req.params._id
+		}, function(err, service) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Successfully deleted' });
+		});
+	});
+
+router.route('/blog/:_id')
+
+	// get the service with that id (accessed at GET http://localhost:8080/api/hc/:_id)
+	.get(function(req, res) {
+		Blog.findById(req.params._id, function(err, result) {
+			if (err)
+				res.send(err);
+			res.json(result);
+		});
+	})
+.put(function(req, res) {
+		Blog.findById(req.params._id, function(err, blo) {
+			if (err)
+				res.send(err);
+            blo.author = req.body.author;
+            blo.date = req.body.date;
+			blo.title = req.body.title; 	// update the items info
+            blo.shortname = req.body.shortname;
+            blo.contents = req.body.contents;
+            blo.category = req.body.category;
+            blo.disqus = req.body.disqus;
+			// save the items
+			blo.save(function(err) {
+				if (err)
+					res.send(err);
+				res.json({ message: 'Blog content updated!' });
+			});
+		});
+	})
+.delete(function(req, res) {
+		Blog.remove({
 			_id: req.params._id
 		}, function(err, service) {
 			if (err)

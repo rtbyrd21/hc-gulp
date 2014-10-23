@@ -1,0 +1,55 @@
+<div ng-include src="'templates/adminnav.html'"></div>
+
+<div class="layout">
+<div id="serviceData" ng-init="tab=1">
+
+<ul class="tabsAdmin">
+  <li><div class="cb" ng-click="tab = 1"><a>New</a></div></li>
+  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+</ul>
+
+<div class="serviceForm">
+ <div ng-show="tab == 1">
+
+<form name="adminForm" ng-submit="adminForm.$valid && createBlog()" novalidate>
+  <input type="text" placeholder="Blog Author" ng-model="blogAuthor" required>
+  <input type="text" placeholder="Blog Date" ng-model="blogDate" required>
+  <input type="text" placeholder="Blog title" ng-model="blogTitle" required>
+  <input type="text" placeholder="Blog /url" ng-model="blogShortname" required>
+  <textarea type="text" placeholder="Blog contents" ng-model="blogContents" required></textarea>
+  <input type="text" placeholder="Blog category" ng-model="blogCategory" required>
+
+  <br>
+  <button class="addAdmin" type="submit">Add</button>
+</form>
+</div>
+
+<div ng-show="tab == 2">
+<div class="serviceList">
+  <ul class="admin-list" ng-repeat="blo in blog">
+     <li> <a href="/admin/{{blo.shortname}}">{{blo.title}}<a></li>
+     
+     <li> <a class="edit" href="/adminblog/{{blo.shortname}}" >Edit</a></li>
+      <li><a class="delete" ng-click="removeBlog(blo._id)" >Remove</a></li>
+      
+  </ul>
+</div>
+</div><!--ServiceForm(Left Col)-->
+</div>
+
+<div class="dynamic">
+<p>healingcenter.com/blog/{{blogShortname}}</p>
+<h4>{{blogAuthor}}</h4>
+<h4>{{blogDate}}</h4>
+<h4>{{blogTitle}}</h4>
+<h2>{{blogSummary}}</h2>
+<h2>{{blogContents}}</h2>
+<h2>{{blogCategory}}</h2>
+</div><!--Dynamic-->
+</div><!--ServiceData-->
+</div><!--Layout-->
+
+
+<!--
+<a class="edit" ng-click="editItem(service._id)" >Edit</a>
+<a class="delete" ng-click="removeItem(service._id)" >Remove</a>-->

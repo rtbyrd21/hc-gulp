@@ -403,16 +403,7 @@ body:after {
 }
 /* line 12, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar {
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 0px;
-}
-/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
-#nav .navbar:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 @media (max-width: 960px) {
   /* line 12, ../../../../components/sass/modules/_nav.scss */
@@ -428,21 +419,22 @@ body:after {
     clear: both;
   }
 }
-/* line 27, ../../../../components/sass/modules/_nav.scss */
+/* line 19, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 70.83333%;
+  width: 66.66667%;
   float: left;
+  margin-left: 20.83333%;
+  margin-right: -100%;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   height: 50px;
   float: none;
-  padding-left: 7%;
 }
 @media (max-width: 960px) {
-  /* line 27, ../../../../components/sass/modules/_nav.scss */
+  /* line 19, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -454,7 +446,7 @@ body:after {
     padding-top: 15px;
   }
 }
-/* line 38, ../../../../components/sass/modules/_nav.scss */
+/* line 27, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul i {
   font-size: 3.5rem;
   float: right;
@@ -462,23 +454,24 @@ body:after {
   margin-right: 5%;
 }
 @media (min-width: 960px) {
-  /* line 38, ../../../../components/sass/modules/_nav.scss */
+  /* line 27, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul i {
     display: none;
   }
 }
-/* line 47, ../../../../components/sass/modules/_nav.scss */
+/* line 36, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul li {
   display: inline-block;
   font-size: 1.1rem;
+  display: inline;
 }
 @media (max-width: 960px) {
-  /* line 47, ../../../../components/sass/modules/_nav.scss */
+  /* line 36, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul li {
     display: none;
   }
 }
-/* line 55, ../../../../components/sass/modules/_nav.scss */
+/* line 47, ../../../../components/sass/modules/_nav.scss */
 #nav .navbar ul li a {
   color: black;
   font: 200 1em/1.5em "brandon-grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -493,12 +486,12 @@ body:after {
   background-position: 2px;
 }
 @media (min-width: 650px) and (max-width: 960px) {
-  /* line 55, ../../../../components/sass/modules/_nav.scss */
+  /* line 47, ../../../../components/sass/modules/_nav.scss */
   #nav .navbar ul li a {
     padding-left: 10px;
   }
 }
-/* line 85, ../../../../components/sass/modules/_nav.scss */
+/* line 69, ../../../../components/sass/modules/_nav.scss */
 #nav .signUp {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -519,33 +512,34 @@ body:after {
   font-size: .9rem;
 }
 @media (max-width: 960px) {
-  /* line 85, ../../../../components/sass/modules/_nav.scss */
+  /* line 69, ../../../../components/sass/modules/_nav.scss */
   #nav .signUp {
     display: none;
   }
 }
-/* line 100, ../../../../components/sass/modules/_nav.scss */
+/* line 84, ../../../../components/sass/modules/_nav.scss */
 #nav .signUp p {
   font-weight: 300;
 }
-/* line 103, ../../../../components/sass/modules/_nav.scss */
+/* line 87, ../../../../components/sass/modules/_nav.scss */
 #nav .signUp .signUpTitle {
   text-transform: uppercase;
   font-weight: 500;
 }
-/* line 107, ../../../../components/sass/modules/_nav.scss */
+/* line 91, ../../../../components/sass/modules/_nav.scss */
 #nav .signUp:hover {
   -moz-box-shadow: 0px 0px 5px #333333;
   -webkit-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 112, ../../../../components/sass/modules/_nav.scss */
+/* line 96, ../../../../components/sass/modules/_nav.scss */
 .headLogo {
   margin-top: 10px;
   max-width: 15%;
   margin-left: auto;
   margin-right: auto;
+  height: 93px;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .headLogo:after {
@@ -553,19 +547,9 @@ body:after {
   display: block;
   clear: both;
 }
-
-/* line 116, ../../../../components/sass/modules/_nav.scss */
-.navlinks {
-  max-width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  float: none;
-}
-/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
-.navlinks:after {
-  content: " ";
-  display: block;
-  clear: both;
+/* line 100, ../../../../components/sass/modules/_nav.scss */
+.headLogo img {
+  max-height: 93px;
 }
 
 /* line 1, ../../../../components/sass/modules/_home.scss */

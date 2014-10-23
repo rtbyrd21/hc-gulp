@@ -1,6 +1,6 @@
 
 
-app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location) { 
+app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, BLOG, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location) { 
 
 $scope.list = 0;
   
@@ -70,7 +70,26 @@ CAL.API.query(function(results) {
     });  
 
  
-  
+app.directive('renderHtml', ['$compile', function ($compile) {
+    return {
+      restrict: 'E',
+      scope: {
+        html: '='
+      },
+      link: function postLink(scope, element, attrs) {
+
+          function appendHtml() {
+              if(scope.html) {
+                  var newElement = angular.element(scope.html);
+                  $compile(newElement)(scope);
+                  element.append(newElement);
+              }
+          }
+
+          scope.$watch(function() { return scope.html }, appendHtml);
+      }
+    };
+  }]);  
   
   
 
@@ -180,6 +199,70 @@ $scope.removeEvent = function(id) {
 	}; 
   
 
+  
+BLOG.API.query(function(results) {
+        $scope.blog = results;
+    });
+
+    $scope.createBlog = function() {
+      var blog = new BLOG.API();
+      blog.author = $scope.blogAuthor;
+      blog.date = $scope.blogDate;
+      blog.title = $scope.blogTitle;
+      blog.shortname = $scope.blogShortname;
+      blog.contents = $scope.blogContents;
+      blog.category = $scope.blogCategory;
+      blog.disqus = $scope.blogDisqus;
+      blog.$save(function(result){
+        myNotifier.notify('New blog entry created!');
+        $scope.blog.push(result);
+        $scope.blogAuthor = '';
+        $scope.blogDate = '';
+        $scope.blogTitle = '';
+        $scope.blogShortname = '';
+        $scope.blogContents = '';
+        $scope.blogCategory = '';
+        $scope.blogDisqus = '';
+      });
+    }
+  
+  $scope.editBlog = function(id, first, second, third, fourth, fifth, sixth, seventh) {
+		$http.put('/api/blog/' + id, 
+                  {
+                    author: fifth,
+                    date: sixth,
+                    title: second,
+                   contents: third,
+                   shortname: first,
+                   category: fourth,
+                    disqus: seventh
+                  }
+                  )
+           .success(function(data) {
+			myNotifier.notify('Blog Entry Updated!');
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	}; 
+  
+  $scope.removeBlog = function(id) {
+		$http.delete('/api/blog/' + id)
+			.success(function(data) {
+				BLOG.API.query(function(results) {
+        $scope.blog = results;
+        myNotifier.notify('Blog entry deleted!');
+    });
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	}; 
+  
+  
+  
+  
+  
 
 GIVE.API.query(function(results) {
         $scope.give = results;

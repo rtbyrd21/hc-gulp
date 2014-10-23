@@ -7,6 +7,8 @@ var passport = require('passport');
 //  });
 //}
 
+
+
 module.exports.list = function (req,res) {
   Hc.find({}, function (err, results){
     res.json(results);
