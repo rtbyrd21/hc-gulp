@@ -19,10 +19,13 @@
  <article class="cmsContent">
  
 <div ng-repeat="blo in blog">
+<p>{{blo.author}}</p>
+<p>{{blo.date}}</p>
+<h2><a href="/blog/{{blo.shortname}}">{{blo.title}}</a></h2>
  <div ng-bind-html="'{{blo.contents}}' | to_trusted "></div>
  </div>
  
-
+<div></div><div></div>
 </article>
   
 

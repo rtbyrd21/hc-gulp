@@ -22,11 +22,13 @@
    <a href="/blog"><i class="fa fa-chevron-left"></i>&nbsp;back</a>
     <div class="services" ng-repeat="blo in blog | filter:json">
         <article class="service group">
-       <a href="/blog/{{blo.shortname }}"><h3><pre>{{blo.title }}</pre> </h3></a> 
+        <p>{{blo.author}}</p>
+<p>{{blo.date}}</p>
+       <a href="/blog/{{blo.shortname }}"><h2><pre>{{blo.title }}</pre> </h2></a> 
        <div ng-bind-html="'{{blo.contents}}' | to_trusted"></div>
 
        </article>
-       
+       <div></div>
     </div>
      <div id="disqus_thread"></div>
     <script type="text/javascript">
