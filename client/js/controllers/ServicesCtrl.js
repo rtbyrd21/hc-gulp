@@ -1,6 +1,6 @@
 
 
-app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, BLOG, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location) { 
+app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, BLOG, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location, $sce) { 
 
 $scope.list = 0;
   
@@ -16,7 +16,10 @@ $scope.json.shortname=$routeParams.id;
 $scope.month={};
 $scope.month=$routeParams.id; 
   
-  
+ $scope.isEmpty = function (obj) {
+    for (var i in obj) if (obj.hasOwnProperty(i)) return false;
+    return true;
+}; 
   $scope.createService = function() {
       var service = new HC.API();
       service.title = $scope.serviceTitle;
@@ -212,7 +215,7 @@ BLOG.API.query(function(results) {
       blog.shortname = $scope.blogShortname;
       blog.contents = $scope.blogContents;
       blog.category = $scope.blogCategory;
-      blog.disqus = $scope.blogDisqus;
+      blog.image = $scope.blogImage;
       blog.$save(function(result){
         myNotifier.notify('New blog entry created!');
         $scope.blog.push(result);
@@ -222,7 +225,7 @@ BLOG.API.query(function(results) {
         $scope.blogShortname = '';
         $scope.blogContents = '';
         $scope.blogCategory = '';
-        $scope.blogDisqus = '';
+        $scope.blogImage = '';
       });
     }
   
@@ -235,7 +238,7 @@ BLOG.API.query(function(results) {
                    contents: third,
                    shortname: first,
                    category: fourth,
-                    disqus: seventh
+                    image: seventh
                   }
                   )
            .success(function(data) {

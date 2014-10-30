@@ -15,14 +15,26 @@
 </div>
 
 
-<div id="contentRight" class="about">
+<div id="contentRight" class="blog">
  <article class="cmsContent">
  
-<div ng-repeat="blo in blog">
-<p>{{blo.author}}</p>
-<p>{{blo.date}}</p>
-<h2><a href="/blog/{{blo.shortname}}">{{blo.title}}</a></h2>
- <div ng-bind-html="'{{blo.contents}}' | to_trusted "></div>
+<div class="blogBlock" ng-repeat="blo in blog">
+<div class="blogHead">
+   <div class="blogInfo">
+    <h2><a href="/blog/{{blo.shortname}}">{{blo.title}}</a></h2>
+    <p> Posted {{blo.date}} by <span>{{blo.author}}</span></p> 
+    </div>
+    <div class="divider" ng-if="!blo.image" class="blogImage"></div>
+    <div ng-if="blo.image" class="blogImage">
+    
+    <img src="{{blo.image}}">
+    
+    </div>
+    
+
+ <div class="blogCont" ng-bind-html="blo.contents | strip | to_trusted | truncate:265 "></div>
+ </div><!--blogHead-->
+<a href="/blog/{{blo.shortname}}">Read more&nbsp;<i class="fa fa-chevron-right"></i></a>
  </div>
  
 <div></div><div></div>

@@ -15,17 +15,17 @@
 </div>
 
 
-<div id="contentRight" class="about">
+<div id="contentRight" class="blog">
 
   <article class="cmsContent">
 
    <a href="/blog"><i class="fa fa-chevron-left"></i>&nbsp;back</a>
     <div class="services" ng-repeat="blo in blog | filter:json">
         <article class="service group">
-        <p>{{blo.author}}</p>
-<p>{{blo.date}}</p>
-       <a href="/blog/{{blo.shortname }}"><h2><pre>{{blo.title }}</pre> </h2></a> 
-       <div ng-bind-html="'{{blo.contents}}' | to_trusted"></div>
+       <h2><a href="/blog/{{blo.shortname }}">{{blo.title }}</a> </h2>
+       <p> Posted {{blo.date}} by <span>{{blo.author}}</span></p> 
+       <img src="https://vineyardimages.s3.amazonaws.com/event/breathing_room_312x200.jpg">
+       <div ng-bind-html="blo.contents | strip | to_trusted"></div>
 
        </article>
        <div></div>

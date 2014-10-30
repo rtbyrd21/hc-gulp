@@ -37,7 +37,7 @@
  <article class="cmsContent">
  
  <div ng-repeat="over in overview | filter: {page:'services'}">
- <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>
+ <div ng-bind-html="over.contents | strip | to_trusted"></div>
  </div>
  
 

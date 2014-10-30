@@ -39,7 +39,7 @@
     <div class="services" ng-repeat="service in services | filter:json">
         <article class="service group">
        <a href="/services/{{service.name }}"><h3><pre>{{service.title }}</pre> </h3></a> 
-       <div ng-bind-html="'{{service.description}}' | to_trusted"></div>
+       <div ng-bind-html="service.description | strip | to_trusted"></div>
        </article>
        
     </div>

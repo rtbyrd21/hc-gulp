@@ -21,7 +21,7 @@
     <div class="services" ng-repeat="vol in volunteer | filter:json">
         <article class="service group">
        <a href="/volunteer/{{vol.shortname }}"><h3><pre>{{vol.title }}</pre> </h3></a> 
-       <div ng-bind-html="'{{vol.contents}}' | to_trusted"></div>
+       <div ng-bind-html="vol.contents | strip | to_trusted"></div>
        </article>
        
     </div>

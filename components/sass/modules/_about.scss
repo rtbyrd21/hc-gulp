@@ -195,6 +195,35 @@ h5{
 } 
 }
 
+#contentRight.blog{
+  #{headings()} {
+ color: $red;
+} 
+  a{
+  font-weight: 500;
+  }
+  h2{
+  font-size:3.2rem;
+  }
+  p{
+  color:$darkgrey;
+  }
+  span{
+  font-weight: 500;
+  }
+  .blogCont{
+  font-size:1.2rem;
+  font-weight: 400;
+  color:$darkgrey;
+  }
+ pre, a {
+ color: $red !important;
+} 
+  .blogBlock{
+  margin-top: 40px;
+  }
+}
+
 .about.active, .volunteer.active{
 border-bottom: 3px solid $red;
 }
@@ -209,4 +238,30 @@ border-bottom: 3px solid $orange;
 
 .give.active{
 border-bottom: 3px solid $blue;
+}
+
+
+
+.blogHead{
+@include container();
+  .blogInfo{
+  @include span(8 of 12);
+  }
+  .blogImage{
+   @include span(last 4);
+    img{
+    @include border-radius(50%);
+    max-width:150px;
+    }
+  }
+
+}
+
+.divider{
+display: block;
+@include clearfix;
+}
+
+#disqus_thread{
+margin-top: 50px;
 }

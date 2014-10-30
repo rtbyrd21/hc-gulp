@@ -28,8 +28,8 @@
 
 <div id="contentRight" class="calendar">  
   <article class="cmsContent">
-<div ng-repeat="over in overview | filter: {page:'events'}">
- <div ng-bind-html="'{{over.contents}}' | to_trusted "></div>
+<div ng-repeat="over in overview | filter: {page:'events'} ">
+ <div ng-bind-html="over.contents | strip | to_trusted"></div>
  </div>
 
 </article>

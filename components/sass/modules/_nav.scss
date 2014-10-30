@@ -102,4 +102,113 @@ height: 93px;
   }
 }
 
+.adminNav{
+padding:20px 0px 5px 0px;
+border-bottom: 1px solid black;
+@include container(100%);
+//@include display-flex();
+//@include align-items(center);
+//@include justify-content(center);
+  .adminNavHead{
+  @include full();
+@include display-flex();
+@include align-items(center);
+@include justify-content(center);
+  }
+  .adminNavCont{
+  padding-top: 10px;
+@include full();
+@include display-flex();
+@include align-items(center);
+@include justify-content(center);
+  a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 400;
+  margin-right: 20px;
+  font-size: .9rem;
+  }
+  li{
+  display: inline;
+  }
+  }//navCont
+}
+
+#adminCont{
+@include container(90%);
+padding-top: 30px;
+
+#adminCMS{
+@include span(8 of 12);
+padding-top: 30px;
+  h2{
+  font-size:5rem;
+  font-weight: $thin;
+  }
+}
+  
+#dynamicModel{
+background: $lightgrey;
+font-size:.8rem;
+@include span(last 3.5);
+min-height:450px;
+@include border-radius();
+padding: 20px;
+}  
+  
+.adminControl{
+  @include container();
+  @include clearfix();
+  .cb, {
+  @include span(.7 of 12);
+    a{
+    text-transform: uppercase;
+    padding:5px;
+    background: $blue;
+    color:white;
+    border: 2px solid $blue;
+    cursor: pointer;
+    text-decoration: none;
+    @include border-radius();
+      &:hover{
+      background: white;
+      color:$blue;
+      }
+    }
+  }
+
+}  
+
+.addAdmin{
+
+    text-transform: uppercase;
+    padding:5px;
+    background: $green;
+    color:white;
+    border: 2px solid $green;
+    cursor: pointer;
+    text-decoration: none;
+    font-size:1.6rem;
+    @include border-radius();
+      &:hover{
+      background: white;
+      color:$green;
+      }
+    
+
+}  
+  
+input{
+@include span(8 of 12);
+margin-bottom:10px;
+@include border-radius();
+}  
+  
+  .btn-toolbar{
+  margin-bottom: 10px;
+  }
+
+}
+
 

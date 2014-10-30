@@ -42,12 +42,12 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-//if(env === 'development'){
-//mongoose.connect('mongodb://localhost:27017/mean-demo');
-//}else{
+if(env === 'development'){
+mongoose.connect('mongodb://localhost:27017/mean-demo');
+}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 
-//}
+}
 var db = mongoose.connection;
 
 db.on('error', function callback () {
@@ -403,7 +403,7 @@ router.route('/blog/:_id')
             blo.shortname = req.body.shortname;
             blo.contents = req.body.contents;
             blo.category = req.body.category;
-            blo.disqus = req.body.disqus;
+            blo.image = req.body.image;
 			// save the items
 			blo.save(function(err) {
 				if (err)

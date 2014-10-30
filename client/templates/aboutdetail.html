@@ -21,7 +21,7 @@
     <div class="services" ng-repeat="abo in about | filter:json">
         <article class="service group">
        <a href="/about/{{abo.shortname }}"><h2><pre>{{abo.title }}</pre> </h2></a> 
-       <div ng-bind-html="'{{abo.contents}}' | to_trusted"></div>
+       <div ng-bind-html= "abo.contents | strip | to_trusted"></div>
        </article>
        
     </div>

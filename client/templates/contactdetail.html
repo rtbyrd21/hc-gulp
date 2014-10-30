@@ -21,7 +21,7 @@
     <div class="services" ng-repeat="cont in contact | filter:json">
         <article class="service group">
        <a href="/contact/{{cont.shortname }}"><h3><pre>{{cont.title }}</pre> </h3></a> 
-       <div ng-bind-html="'{{cont.contents}}' | to_trusted"></div>
+       <div ng-bind-html="cont.contents | strip | to_trusted"></div>
        </article>
        
     </div>

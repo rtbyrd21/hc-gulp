@@ -8,7 +8,7 @@ var BlogSchema   = new Schema({
     shortname: String,
     contents: String,
     category: String,
-    disqus: String
+    image: String
 });
 
 

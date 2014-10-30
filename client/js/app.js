@@ -1,4 +1,4 @@
-var app = angular.module('hcApp', ['ngResource', 'ngRoute', 'appRoutes', 'ui', 'ui.filters', 'xeditable', 'customFilters', 'theFilters', 'textAngular']);
+var app = angular.module('hcApp', ['ngResource', 'filters', 'ngRoute', 'appRoutes', 'ui', 'ui.filters', 'xeditable', 'customFilters', 'theFilters', 'textAngular', 'ngSanitize']);
 
 angular.module('hcApp')
     .filter('to_trusted', ['$sce', function($sce){
@@ -20,6 +20,34 @@ angular.module('hcApp')
     return input;
   };
 });
+
+angular.module('hcApp')
+ .filter('strip', function(){
+      return function(text) {
+           return text.replace(/'/g, '&#39;');
+      };
+});
+
+
+
+angular.module('filters', []).
+    filter('truncate', function () {
+        return function (text, length, end) {
+            if (isNaN(length))
+                length = 10;
+
+            if (end === undefined)
+                end = "...";
+
+            if (text.length <= length || text.length - end.length <= length) {
+                return text;
+            }
+            else {
+                return String(text).substring(0, length-end.length) + end;
+            }
+
+        };
+    });
 
 //angular.module('hcApp')
 //.filter('combine', function() {
@@ -103,3 +131,50 @@ angular.module('theFilters', []).filter('orderByDayNumber', function() {
     return filtered;
   };
 });
+
+angular.module('textAngularTest', ['textAngular'])
+    .config(['$provide', function($provide){
+        // this demonstrates how to register a new tool and add it to the default toolbar
+        $provide.decorator('taOptions', ['$delegate', function(taOptions){
+            // $delegate is the taOptions we are decorating
+            // here we override the default toolbars and classes specified in taOptions.
+            taOptions.toolbar = [
+                ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
+                ['bold', 'italics', 'underline', 'ul', 'ol', 'redo', 'undo', 'clear'],
+                ['justifyLeft','justifyCenter','justifyRight'],
+                ['html', 'insertImage', 'insertLink', 'unlink']
+            ];
+            taOptions.classes = {
+                focussed: 'focussed',
+                toolbar: 'btn-toolbar',
+                toolbarGroup: 'btn-group',
+                toolbarButton: 'btn btn-default',
+                toolbarButtonActive: 'active',
+                disabled: 'disabled',
+                textEditor: 'form-control',
+                htmlEditor: 'form-control'
+            };
+            return taOptions; // whatever you return will be the taOptions
+        }]);
+        // this demonstrates changing the classes of the icons for the tools for font-awesome v3.x
+        $provide.decorator('taTools', ['$delegate', function(taTools){
+            taTools.bold.iconclass = 'icon-bold';
+            taTools.italics.iconclass = 'icon-italic';
+            taTools.underline.iconclass = 'icon-underline';
+            taTools.ul.iconclass = 'icon-list-ul';
+            taTools.ol.iconclass = 'icon-list-ol';
+            taTools.undo.iconclass = 'icon-undo';
+            taTools.redo.iconclass = 'icon-repeat';
+            taTools.justifyLeft.iconclass = 'icon-align-left';
+            taTools.justifyRight.iconclass = 'icon-align-right';
+            taTools.justifyCenter.iconclass = 'icon-align-center';
+            taTools.clear.iconclass = 'icon-ban-circle';
+            taTools.insertLink.iconclass = 'icon-link';
+            taTools.unlink.iconclass = 'icon-link red';
+            taTools.insertImage.iconclass = 'icon-picture';
+            // there is no quote icon in old font-awesome so we change to text as follows
+            delete taTools.quote.iconclass;
+            taTools.quote.buttontext = 'quote';
+            return taTools;
+        }]);
+    }]);
