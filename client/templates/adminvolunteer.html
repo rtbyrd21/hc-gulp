@@ -1,20 +1,24 @@
 <div ng-include src="'templates/adminnav.html'"></div>
 
-<div class="layout">
-<div id="serviceData" ng-init="tab=1">
+<div id="adminCont">
+  <div ng-init="tab=1">
 
+<div class="adminControl">
 <ul class="tabsAdmin">
   <li><div class="cb" ng-click="tab = 1"><a>New</a></div></li>
-  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+  <li><div class="cb" ng-click="tab = 2"><a href="adminvolunteer/edit">Edit</a></div></li>  
 </ul>
+</div>
 
-<div class="serviceForm">
+<div id="adminCMS" class="serviceCMS">
  <div ng-show="tab == 1">
 
 <form name="adminForm" ng-submit="adminForm.$valid && createVolunteer()" novalidate>
   <input type="text" placeholder="Volunteer title" ng-model="volunteerTitle" required>
   <input type="text" placeholder="Volunteer /url" ng-model="volunteerShortname" required>
-  <textarea type="text" placeholder="Volunteer contents" ng-model="volunteerContents" required></textarea>
+  
+  <div class="wysiwg" text-angular ng-model="volunteerContents" required></div>
+
   <br>
   <button class="addAdmin" type="submit">Add</button>
 </form>
@@ -40,7 +44,7 @@
 <h2>{{volunteerContents}}</h2>
 </div><!--Dynamic-->
 </div><!--ServiceData-->
-</div><!--Layout-->
+
 
 
 <!--

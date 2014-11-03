@@ -2,6 +2,15 @@
 
 app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, BLOG, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location, $sce) { 
 
+ $scope.signout = function() {
+    mvAuth.logoutUser().then(function(){
+      $scope.username = "";
+      $scope.password = "";
+      myNotifier.notify('You are now signed out');
+      $location.path('/login');
+    })  
+  }    
+  
 $scope.list = 0;
   
    $scope.services = [];
@@ -27,6 +36,7 @@ $scope.month=$routeParams.id;
       service.summary = $scope.serviceSummary;
       service.description = $scope.serviceDescription;
       service.category = $scope.serviceCategory;
+      myNotifier.notify('New service page created!');
       service.$save(function(result){
         $scope.services.push(result);
         $scope.serviceTitle = '';
@@ -421,6 +431,10 @@ CONTACT.API.query(function(results) {
 var index = window.location.pathname.split('/')[1];
 $('.navlinks li').removeClass('active');
 $('li.' + index).addClass('active');
+   
+var index = window.location.pathname.split('/')[1];
+$('.navlinks li').removeClass('active');
+$('li.' + index).addClass('active');   
    
 console.log(str);
 $('li.active:nth-of-type(1)').css({borderBottomColor: "#28b3c9"});

@@ -6,7 +6,7 @@
 <div class="adminControl">
 <ul class="tabsAdmin">
   <li><div class="cb" ng-click="tab = 1"><a>New</a></div></li>
-  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+  <li><div class="cb" ng-click="tab = 2"><a href="adminabout/edit">Edit</a></div></li>  
 </ul>
 </div>
 <div id="adminCMS" class="serviceCMS">
@@ -24,14 +24,14 @@
 </div>
 
 <div ng-show="tab == 2">
-<div class="serviceList">
-  <ul class="admin-list" ng-repeat="abo in about">
-     <li> <a href="/admin/{{abo.shortname}}">{{abo.title}}<a></li>
+<div class="editList">
+    <div class="editWrapper" ng-repeat="abo in about">
+     <div class="editTitle"><a href="/admin/{{abo.shortname}}">{{abo.title}}</a></div>
      
-     <li> <a class="edit" href="/adminabout/{{abo.shortname}}" >Edit</a></li>
-      <li><a class="delete" ng-click="removeAbout(abo._id)" >Remove</a></li>
-      
-  </ul>
+     <a href="/adminabout/{{abo.shortname}}" ><div class="editEdit">Edit</div></a>
+     <a ng-click="removeAbout(abo._id)" ><div class="editDelete"> Remove</div></a>
+      </div>
+
 </div>
 </div><!--ServiceForm(Left Col)-->
 </div>

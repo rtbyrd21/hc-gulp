@@ -24,6 +24,7 @@ $scope.month=$routeParams.id;
       service.description = $scope.serviceDescription;
       service.category = $scope.serviceCategory;
       service.$save(function(result){
+        myNotifier.notify('New service page created!');
         $scope.services.push(result);
         $scope.serviceTitle = '';
         $scope.serviceShortname = '';
@@ -34,15 +35,17 @@ $scope.month=$routeParams.id;
     }
  
 
-$scope.editService = function(id, ok, shortname, summary, descrip) {
+$scope.editService = function(id, ok, shortname, summary, descrip, category) {
 		$http.put('/api/hc/' + id, 
                   {title: ok,
                    shortname: shortname,
-                  summary: summary,
-                  description: descrip}
+                  summary: summary, 
+                  description: descrip,
+                   category: category
+                  }
                   )
            .success(function(data) {
-			
+			myNotifier.notify('Service Updated!');
 			})
 			.error(function(data) {
 				console.log('Error: ' + data);

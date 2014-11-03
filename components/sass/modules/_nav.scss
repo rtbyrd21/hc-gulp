@@ -146,6 +146,9 @@ padding-top: 30px;
   font-size:5rem;
   font-weight: $thin;
   }
+  &.serviceCMSDetail{
+  @include span(5 of 12);
+  }
 }
   
 #dynamicModel{
@@ -211,4 +214,151 @@ margin-bottom:10px;
 
 }
 
+.editList{
+@include container();
+  
+  .editWrapper{
+    text-transform: uppercase;
+  margin-bottom: 10px;
+    background: $lightgrey;
+  @include border-radius();
+    @include span(12 of 12);
+    padding:7px;
+    a{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: .9rem;
+    }
+    &:hover{
+    @include box-shadow();
+    background: darken($lightgrey,5);
+    }
+  }
 
+ 
+  .editTitle{
+  @include span(8 of 12);
+ 
+  }
+  .editEdit{
+  @include span(2 of 12);
+  background: $green;
+  text-align: center;
+  cursor: pointer;
+    color:white;
+    &:hover{
+    background: darken($green,10);
+    }
+  }
+  .editDelete{
+  @include span(2 of 12);
+  background: $red;
+  text-align: center;
+  color:white;
+    &:hover{
+    background: darken($red,10);
+    }
+  }
+}
+
+.editable{
+@include container();
+   
+  h4, p{
+  font-weight: 300;
+  font-size:1.5rem;
+  border: 2px solid $lightgrey;
+  @include border-radius();
+  padding:7px;
+  }
+  
+  
+  .editingTitle, .editingText, .editApply{
+  @include span(last 7);
+  margin-bottom: 15px;
+ 
+  }
+  
+
+  }
+
+
+    
+    
+    .clickApply{
+    @include span(5 of 12);
+    text-transform: uppercase;
+    padding:5px;
+    background: $green;
+    color:white;
+    border: 2px solid $green;
+    cursor: pointer;
+    text-decoration: none;
+    font-size:1.6rem;
+    @include border-radius();
+    text-align: center;
+    &:hover{
+      background: white;
+      color: $green;
+      }
+    
+    a{  
+    text-decoration: none;
+    color:white;
+      &:hover{
+      color: $green;
+      }
+    }
+    }
+    
+
+
+  
+
+.editingText{
+h4{
+  font-weight: 300;
+  font-size:1.5rem;
+  border: 0px;
+  }
+  p{
+  font-weight: 300;
+  font-size:.9rem;
+  border: 0px;
+  }
+}
+
+
+.form-control{
+font-size:1.5rem;
+color:$blue;
+font-weight: 300;
+height:inherit;
+border:2px solid $lightgrey;
+@include border-radius();
+  padding: 7px;
+  border-color: inherit;
+  
+}
+.btn-primary{
+  color:white;
+  border-color:$green;
+  background-color: $green;
+  &:hover{
+  border-color:darken($green,10);
+  background-color: darken($green,10);
+  }
+  }
+
+select{
+font-size:1.5rem;
+color:$blue;
+font-weight: 300;
+height:inherit;
+border:2px solid $midgrey;
+margin:15px 0px;
+font-family: $fontfamily;
+-webkit-font-family: $fontfamily;
+}

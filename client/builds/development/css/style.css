@@ -644,7 +644,17 @@ body:after {
   font-size: 5rem;
   font-weight: 200;
 }
-/* line 151, ../../../../components/sass/modules/_nav.scss */
+/* line 149, ../../../../components/sass/modules/_nav.scss */
+#adminCont #adminCMS.serviceCMSDetail {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 41.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+/* line 154, ../../../../components/sass/modules/_nav.scss */
 #adminCont #dynamicModel {
   background: #edeff0;
   font-size: .8rem;
@@ -661,7 +671,7 @@ body:after {
   border-radius: 5px;
   padding: 20px;
 }
-/* line 160, ../../../../components/sass/modules/_nav.scss */
+/* line 163, ../../../../components/sass/modules/_nav.scss */
 #adminCont .adminControl {
   max-width: 100%;
   margin-left: auto;
@@ -682,7 +692,7 @@ body:after {
 #adminCont .adminControl:after {
   clear: both;
 }
-/* line 163, ../../../../components/sass/modules/_nav.scss */
+/* line 166, ../../../../components/sass/modules/_nav.scss */
 #adminCont .adminControl .cb {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -692,7 +702,7 @@ body:after {
   padding-left: 0.83333%;
   padding-right: 0.83333%;
 }
-/* line 165, ../../../../components/sass/modules/_nav.scss */
+/* line 168, ../../../../components/sass/modules/_nav.scss */
 #adminCont .adminControl .cb a {
   text-transform: uppercase;
   padding: 5px;
@@ -705,12 +715,12 @@ body:after {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 174, ../../../../components/sass/modules/_nav.scss */
+/* line 177, ../../../../components/sass/modules/_nav.scss */
 #adminCont .adminControl .cb a:hover {
   background: white;
   color: #5dc5e2;
 }
-/* line 183, ../../../../components/sass/modules/_nav.scss */
+/* line 186, ../../../../components/sass/modules/_nav.scss */
 #adminCont .addAdmin {
   text-transform: uppercase;
   padding: 5px;
@@ -724,12 +734,12 @@ body:after {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 194, ../../../../components/sass/modules/_nav.scss */
+/* line 197, ../../../../components/sass/modules/_nav.scss */
 #adminCont .addAdmin:hover {
   background: white;
   color: #94b46e;
 }
-/* line 202, ../../../../components/sass/modules/_nav.scss */
+/* line 205, ../../../../components/sass/modules/_nav.scss */
 #adminCont input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -743,9 +753,221 @@ body:after {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 208, ../../../../components/sass/modules/_nav.scss */
+/* line 211, ../../../../components/sass/modules/_nav.scss */
 #adminCont .btn-toolbar {
   margin-bottom: 10px;
+}
+
+/* line 217, ../../../../components/sass/modules/_nav.scss */
+.editList {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+.editList:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 220, ../../../../components/sass/modules/_nav.scss */
+.editList .editWrapper {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background: #edeff0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  padding: 7px;
+}
+/* line 227, ../../../../components/sass/modules/_nav.scss */
+.editList .editWrapper a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: .9rem;
+}
+/* line 234, ../../../../components/sass/modules/_nav.scss */
+.editList .editWrapper:hover {
+  -moz-box-shadow: 0px 0px 5px #333333;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  background: #dfe3e4;
+}
+/* line 241, ../../../../components/sass/modules/_nav.scss */
+.editList .editTitle {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+/* line 245, ../../../../components/sass/modules/_nav.scss */
+.editList .editEdit {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  background: #94b46e;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+/* line 251, ../../../../components/sass/modules/_nav.scss */
+.editList .editEdit:hover {
+  background: #7b9e51;
+}
+/* line 255, ../../../../components/sass/modules/_nav.scss */
+.editList .editDelete {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  background: #e25135;
+  text-align: center;
+  color: white;
+}
+/* line 260, ../../../../components/sass/modules/_nav.scss */
+.editList .editDelete:hover {
+  background: #c7381d;
+}
+
+/* line 266, ../../../../components/sass/modules/_nav.scss */
+.editable {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+.editable:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 269, ../../../../components/sass/modules/_nav.scss */
+.editable h4, .editable p {
+  font-weight: 300;
+  font-size: 1.5rem;
+  border: 2px solid #edeff0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 7px;
+}
+/* line 278, ../../../../components/sass/modules/_nav.scss */
+.editable .editingTitle, .editable .editingText, .editable .editApply {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 58.33333%;
+  float: right;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  margin-bottom: 15px;
+}
+
+/* line 290, ../../../../components/sass/modules/_nav.scss */
+.clickApply {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 41.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  text-transform: uppercase;
+  padding: 5px;
+  background: #94b46e;
+  color: white;
+  border: 2px solid #94b46e;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.6rem;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+/* line 302, ../../../../components/sass/modules/_nav.scss */
+.clickApply:hover {
+  background: white;
+  color: #94b46e;
+}
+/* line 307, ../../../../components/sass/modules/_nav.scss */
+.clickApply a {
+  text-decoration: none;
+  color: white;
+}
+/* line 310, ../../../../components/sass/modules/_nav.scss */
+.clickApply a:hover {
+  color: #94b46e;
+}
+
+/* line 321, ../../../../components/sass/modules/_nav.scss */
+.editingText h4 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  border: 0px;
+}
+/* line 326, ../../../../components/sass/modules/_nav.scss */
+.editingText p {
+  font-weight: 300;
+  font-size: .9rem;
+  border: 0px;
+}
+
+/* line 334, ../../../../components/sass/modules/_nav.scss */
+.form-control {
+  font-size: 1.5rem;
+  color: #5dc5e2;
+  font-weight: 300;
+  height: inherit;
+  border: 2px solid #edeff0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 7px;
+  border-color: inherit;
+}
+
+/* line 345, ../../../../components/sass/modules/_nav.scss */
+.btn-primary {
+  color: white;
+  border-color: #94b46e;
+  background-color: #94b46e;
+}
+/* line 349, ../../../../components/sass/modules/_nav.scss */
+.btn-primary:hover {
+  border-color: #7b9e51;
+  background-color: #7b9e51;
+}
+
+/* line 355, ../../../../components/sass/modules/_nav.scss */
+select {
+  font-size: 1.5rem;
+  color: #5dc5e2;
+  font-weight: 300;
+  height: inherit;
+  border: 2px solid #d4d9dd;
+  margin: 15px 0px;
+  font-family: "brandon-grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-family: "brandon-grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* line 1, ../../../../components/sass/modules/_home.scss */

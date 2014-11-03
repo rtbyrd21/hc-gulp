@@ -1,45 +1,70 @@
 <div ng-include src="'templates/adminnav.html'"></div>
 
-<div class="layout">
-<div id="serviceData" ng-init="tab=2">
+
+<div id="adminCont">
+  <div ng-init="tab=2">
  
+<div class="adminControl">
 <ul class="tabsAdmin">
-  <li><div class="cb" ng-click="tab = 1"><a href="/admin">New</a></div></li>
+  <li><div class="cb" ng-click="tab = 1"><a href="/adminvolunteer">New</a></div></li>
   <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
-</ul>  
+</ul>
+</div> 
  
 
-<div class="serviceForm">
-<div ng-show="tab == 1">
+<div id="adminCMS" class="serviceCMSDetail">
+ <div ng-show="tab == 1">
+
 <form name="adminForm" ng-submit="adminForm.$valid && createVolunteer()" novalidate>
   <input type="text" placeholder="Volunteer title" ng-model="volunteerTitle" required>
   <input type="text" placeholder="Volunteer /url" ng-model="volunteerShortname" required>
-  <textarea type="text" placeholder="Volunteer contents" ng-model="volunteerContents" required></textarea>
+  
+  <div class="wysiwg" text-angular ng-model="volunteerContents" required></div>
+
   <br>
   <button class="addAdmin" type="submit">Add</button>
 </form>
 </div>
 
 <div ng-show="tab == 2">
-<div class="serviceList">
-  <ul class="admin-list" ng-repeat="vol in volunteer">
-     <li> <a href="/admin/{{vol.shortname}}">{{vol.title}}<a></li>
+<div class="editList">
+    <div class="editWrapper" ng-repeat="vol in volunteer">
+     <div class="editTitle"><a href="">{{vol.title}}</a></div>
      
-     <li> <a class="edit" href="/adminvolunteer/{{vol.shortname}}">Edit</a></li>
-      <li><a class="delete" ng-click="removeVolunteer(vol._id)" >Remove</a></li>
-      
-  </ul>
+     <a href="/adminvolunteer/{{vol.shortname}}" ><div class="editEdit">Edit</div></a>
+     <a ng-click="removeAbout(vol._id)" ><div class="editDelete"> Remove</div></a>
+      </div>
+
 </div>
 </div><!--ServiceForm(Left Col)-->
 </div>
 
-<h2>Edit service</h1>
+<h2>&nbsp;</h2>
 
   <div class="editable" ng-repeat="vol in volunteer | filter:json">
-  <div> <a href="#" editable-text="vol.title" ng-model="vol.title"><h4>{{ vol.title || 'empty' }}</h4></a></div>
-  <div> <a href="#" editable-textarea="vol.contents" ng-model="vol.contents"><p>{{ vol.contents || 'empty' }}</p></a></div>
+  <div class="editingTitle"> <a href="#" editable-text="vol.title" ng-model="abo.title"><h4>{{ vol.title || 'empty' }}</h4></a></div>
+  
+
+  <div class="editingText" text-angular ng-model="vol.contents"></div>
   <div><input type="hidden" ng-model="vol.shortname"></div>
-  <li><a class="edit" ng-click="editVolunteer(vol._id, vol.shortname, vol.title, vol.contents)" >Edit</a></li>
+  <div class="editApply">
+  <div class="clickApply"><a ng-click="editAbout(vol._id, vol.shortname, vol.title, vol.contents)" >Apply Revisions</a></div>
+  </div>
 </div><!--Editable-->
+</div>
 </div><!--ServiceData-->
-</div><!--Layout-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

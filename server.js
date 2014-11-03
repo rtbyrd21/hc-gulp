@@ -476,7 +476,7 @@ router.route('/hc/:_id')
             service.summary = req.body.summary;
             service.shortname = req.body.shortname;
             service.description = req.body.description;
-            service.category = req.body.description;
+            service.category = req.body.category;
 			// save the items
 			service.save(function(err) {
 				if (err)
