@@ -7,6 +7,7 @@
 
 <section id="content">
 <div id="indexLeft" class="calendarPage">
+<!--
   <ul>
    <a href="/events"><h5>Events Overview</h5></a>
 
@@ -24,13 +25,30 @@
       <li><a href="/events/December">December</a></li> 
 
   </ul>
+-->
+<form id="#calendar_list">
+<input class="checkbox" type="checkbox" name="vehicle" value="Bike" checked>Event Group 1<br> 
+<input class="checkbox1" type="checkbox" name="vehicle" value="Bike" checked>Event Group 2<br> 
+<input class="checkbox2" type="checkbox" name="vehicle" value="Bike" checked>Event Group 3<br> 
+</form>
+
 </div>
 
 <div id="contentRight" class="calendar">  
   <article class="cmsContent">
+<!--
 <div ng-repeat="over in overview | filter: {page:'events'} ">
  <div ng-bind-html="over.contents | strip | to_trusted"></div>
  </div>
+-->
+ 
+
+ <div id="calendar"></div>
+
+ 
+
+ 
+ 
 
 </article>
 

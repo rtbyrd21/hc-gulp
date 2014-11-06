@@ -10,6 +10,7 @@
     "angular-resource": "latest",
     "jquery": "latest",
     "toastr": "latest",
-    "Slidebars": "~0.10.2"
+    "Slidebars": "~0.10.2",
+    "jquery-ui": "~1.11.2"
   }
 }

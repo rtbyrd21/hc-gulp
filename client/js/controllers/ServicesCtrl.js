@@ -419,14 +419,6 @@ CONTACT.API.query(function(results) {
   $scope.$on('$viewContentLoaded', function () 
  {
 
-//var str=location.href.toLowerCase();
-//$(".navlinks li a").each(function() {
-//if (str.indexOf((this).href.toLowerCase()) > -1) {
-//$("li.active").removeClass("class");
-//$(this).parent().addClass("active");
-//}
-// });
-   
 
 var index = window.location.pathname.split('/')[1];
 $('.navlinks li').removeClass('active');
@@ -435,8 +427,8 @@ $('li.' + index).addClass('active');
 var index = window.location.pathname.split('/')[1];
 $('.navlinks li').removeClass('active');
 $('li.' + index).addClass('active');   
-   
-console.log(str);
+ 
+
 $('li.active:nth-of-type(1)').css({borderBottomColor: "#28b3c9"});
 $('.services.active').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(3)').css({borderBottomColor: "#6bdb94"});
@@ -444,29 +436,110 @@ $('li.active:nth-of-type(4)').css({borderBottomColor: "#e25135"});
 $('li.active:nth-of-type(5)').css({borderBottomColor: "#28b3c9"});
 $('li.active:nth-of-type(6)').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});   
+ console.log('callll'); 
 
-// 
-//  function initialize() {
-//        var myLatlng = new google.maps.LatLng(39.281203, -84.455547);
-//        var mapOptions = {
-//          center: new google.maps.LatLng(39.281203, -84.455547),
-//          zoom: 15,
-//          draggable: true
-//        };
-//        var map = new google.maps.Map(document.getElementById("map-canvas"),
-//            mapOptions);
-//        var marker = new google.maps.Marker({
-//      position: myLatlng,
-//      map: map,
-//      title: 'Hello World!'
-//  });
-//      
-//      }
-// google.maps.event.addDomListener(window, 'click', initialize);  
+
+		$('#calendar').fullCalendar({
+		    height: 700,
+          header: {
+		left: 'title',
+		center: 'prev,next',
+		right: 'month,agendaWeek,agendaDay,today'
+	},
+           eventLimit: {
+        'agenda': 4, // adjust to 6 only for agendaWeek/agendaDay
+        'default': true // give the default value to other views
+            },
+			// US Holidays
+//			events: 'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic',
+          eventSources: [
+				{
+                    
+					url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic"
+				},
+			
+				{
+                    title: 'Event1',
+					url: 'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic'
+				},
+            {
+            url: "https://www.google.com/calendar/feeds/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic"
+				}
+			],
+			
+			eventClick: function(event) {
+				// opens events in a popup window
+				window.open(event.url, 'gcalevent', 'width=700,height=600');
+				return false;
+			},
+			
+			loading: function(bool) {
+				if (bool) {
+					$('#loading').show();
+				}else{
+					$('#loading').hide();
+				}
+			}
+			
+		});
+		
+
+$( "#target" ).click(function() {
+  alert( "Handler for .click() called." );
+  $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+});
+
+   $( "#target2" ).click(function() {
+  alert( "Handler for .click() called." );
+  $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+});
+   
+$(".checkbox").change(function() {
+    if(this.checked) {
+      $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+    }
+    else{
+    $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+    }
+});
+   
+$(".checkbox1").change(function() {
+    if(this.checked) {
+      $('#calendar').fullCalendar( 'addEventSource',  "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic" );
+    }
+    else{
+    $('#calendar').fullCalendar( 'removeEventSource',  "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic" );
+    }
+});
+   
+$(".checkbox2").change(function() {
+    if(this.checked) {
+      $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic' );
+    }
+    else{
+    $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic' );
+    }
+});   
+   
+ 
    
    
-   
-   
+//   $('#calendar').fullCalendar({
+//		
+//			// US Holidays
+//			events: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic',
+//			
+//			eventClick: function(event) {
+//				// opens events in a popup window
+//				window.open(event.url, 'gcalevent', 'width=700,height=600');
+//				return false;
+//			},
+//			
+//			loading: function(bool) {
+//				$('#loading').toggle(bool);
+//			}
+//			
+//		});
 
  });//jqueryfix
     

@@ -178,3 +178,6 @@ angular.module('textAngularTest', ['textAngular'])
             return taTools;
         }]);
     }]);
+
+
+
