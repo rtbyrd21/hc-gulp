@@ -99,6 +99,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'templates/adminblogdetail.html',
 			controller: 'servicesController'
 		})
+        .when('/adminpartner', {
+			templateUrl: 'templates/adminpartner.html',
+			controller: 'servicesController'
+		})
+        .when('/adminpartner/:id', {
+			templateUrl: 'templates/adminpartnerdetail.html',
+			controller: 'servicesController'
+		})
          .when('/events', {
 			templateUrl: 'templates/events.html',
 			controller: 'servicesController'

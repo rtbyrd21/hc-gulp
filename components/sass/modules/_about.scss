@@ -35,6 +35,8 @@ header{
   @include container(100%);
   min-height: 600px;
   #indexLeft{
+  margin-left:0px !important;
+  margin-right:0px !important;
   @include breakpoint(max-width $small){
     display: none;
   }//breakpoint
@@ -270,37 +272,37 @@ display: block;
 margin-top: 50px;
 }
 
-.fc-header-left, .fc-header-center, .fc-header-right{
-border: 0px !important;
-}
+//.fc-header-left, .fc-header-center, .fc-header-right{
+//border: 0px !important;
+//}
+//
+//.fc-button {
+//position: relative;
+//display: inline-block;
+//padding: 0 .6em;
+//overflow: hidden;
+//height: 1.9em;
+//line-height: 1.9em;
+//white-space: nowrap;
+//cursor: pointer;
+//}
+//
+//.fc .fc-header-space {
+//padding-left: 10px;
+//}
+//
+//.fc-state-default.fc-corner-left {
+//border-top-left-radius: 4px;
+//border-bottom-left-radius: 4px;
+//}
 
-.fc-button {
-position: relative;
-display: inline-block;
-padding: 0 .6em;
-overflow: hidden;
-height: 1.9em;
-line-height: 1.9em;
-white-space: nowrap;
-cursor: pointer;
-}
-
-.fc .fc-header-space {
-padding-left: 10px;
-}
-
-.fc-state-default.fc-corner-left {
-border-top-left-radius: 4px;
-border-bottom-left-radius: 4px;
-}
-
-.fc-text-arrow {
-margin: 0 .1em;
-font-size: 2em;
-font-family: $fontfamily;
-vertical-align: baseline;
-}
-
+//.fc-text-arrow {
+//margin: 0 .1em;
+//font-size: 2em;
+//font-family: $fontfamily;
+//vertical-align: baseline;
+//}
+//
 .fc-grid .fc-other-month .fc-day-number {
 color: black;
 background: rgba(255,255,255,.0);
@@ -309,11 +311,7 @@ background: rgba(255,255,255,.0);
 float: right;
 padding: 0 9px;
 }
-.fc-day-number{
-width: 100%;
-background: $orange;
-color:white;
-}
+
 .fc-grid .fc-day-content {
 clear: both;
 padding: 2px 2px 1px;
@@ -358,4 +356,42 @@ border:0px;
 
 .fc-event-inner{
 font-size:.9rem;
+}
+
+
+
+
+.fc-day-number{
+background: $blue !important;
+color: white;
+}
+
+.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td{
+border-color: white;
+}
+
+.fc td.fc-today {
+border-style: none;
+border-top:3px solid white;
+}
+
+
+
+#calendar{
+@include breakpoint(max-width $small){
+display: none;
+}
+}
+
+
+#\23 calendar_list > div > label{
+font-size: .9rem;
+}
+
+
+.givImage{
+  img{
+width:175px;
+float:right;
+  }
 }

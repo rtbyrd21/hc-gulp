@@ -1,6 +1,6 @@
 
 
-app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, BLOG, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location, $sce) { 
+app.controller('servicesController', function ($scope, HC, CAL, OVER, VOL, GIVE, ABOUT, CONTACT, BLOG, PARTNER, $resource, $http, $sce, $routeParams, mvIdentity, myNotifier, mvAuth, $location, $sce) { 
 
  $scope.signout = function() {
     mvAuth.logoutUser().then(function(){
@@ -274,6 +274,54 @@ BLOG.API.query(function(results) {
   
   
   
+
+PARTNER.API.query(function(results) {
+        $scope.partner = results;
+    });
+
+    $scope.createPartner = function() {
+      var part = new PARTNER.API();
+      part.name = $scope.partnerName;
+      part.contents = $scope.partnerContents;
+      part.image = $scope.partnerImage;
+      part.$save(function(result){
+        myNotifier.notify('New partner created!');
+        $scope.part.push(result);
+        $scope.partnerName = '';
+        $scope.partnerContents = '';
+        $scope.partnerImage = '';
+      });
+    }
+  
+  $scope.editPartner = function(id, first, second, third) {
+		$http.put('/api/blog/' + id, 
+                  {
+                    name: first,
+                    contents: second,
+                    image: third
+                  }
+                  )
+           .success(function(data) {
+			myNotifier.notify('Partner Entry Updated!');
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	}; 
+  
+  $scope.removePartner = function(id) {
+		$http.delete('/api/partner/' + id)
+			.success(function(data) {
+				PARTNER.API.query(function(results) {
+        $scope.partner = results;
+        myNotifier.notify('Partner entry deleted!');
+    });
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};   
+  
   
   
 
@@ -286,20 +334,26 @@ GIVE.API.query(function(results) {
       give.title = $scope.giveTitle;
       give.shortname = $scope.giveShortname;
       give.contents = $scope.giveContents;
+      give.image = $scope.giveImage;
+      give.category = $scope.giveCategory;
       give.$save(function(result){
         myNotifier.notify('New give page created!');
         $scope.give.push(result);
         $scope.giveTitle = '';
         $scope.giveShortname = '';
         $scope.giveContents = '';
+        $scope.giveImage = '';
+        $scope.giveCategory = '';
       });
     }
   
-  $scope.editGive = function(id, first, second, third) {
+  $scope.editGive = function(id, first, second, third, fourth, fifth) {
 		$http.put('/api/give/' + id, 
                   {title: second,
                    contents: third,
-                   shortname: first
+                   shortname: first,
+                   image: first,
+                   category: first
                   }
                   )
            .success(function(data) {
@@ -494,7 +548,7 @@ $( "#target" ).click(function() {
   $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
 });
    
-$(".checkbox").change(function() {
+$(".checkbox0").change(function() {
     if(this.checked) {
       $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
     }

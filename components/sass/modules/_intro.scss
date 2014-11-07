@@ -3,7 +3,7 @@
   .fullheight {
     position: relative;
     height:520px;
-    margin-top: 110px;
+//    margin-top: 110px;
    @include backImage('../images/mom_son.jpg', to top, 0, 0, top right);
     @include breakpoint($narrow $small) {
         @include backImage('../images/mom_son.jpg', to top, 0, 0, 70% 30%);

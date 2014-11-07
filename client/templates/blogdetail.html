@@ -24,7 +24,7 @@
         <article class="service group">
        <h2><a href="/blog/{{blo.shortname }}">{{blo.title }}</a> </h2>
        <p> Posted {{blo.date}} by <span>{{blo.author}}</span></p> 
-       <img src="https://vineyardimages.s3.amazonaws.com/event/breathing_room_312x200.jpg">
+     
        <div ng-bind-html="blo.contents | strip | to_trusted"></div>
 
        </article>

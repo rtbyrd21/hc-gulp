@@ -13,6 +13,7 @@ var express         = require('express'),
     giveController  = require('./server/controllers/give-controller.js'),
     aboutController = require('./server/controllers/about-controller.js'),
     blogController  = require('./server/controllers/blog-controller.js'),
+    partnerController  = require('./server/controllers/partner-controller.js'),
     contactController  = require('./server/controllers/contact-controller.js'),
     Service         = require('./server/models/healingcenter-model.js'),
     User            = require('./server/models/user-model.js'),
@@ -23,6 +24,7 @@ var express         = require('express'),
     About           = require('./server/models/about-model.js'),
     Contact         = require('./server/models/contact-model.js'),
     Blog            = require('./server/models/blog-model.js'),
+    Partners        = require('./server/models/partner-model.js'),
     router          = express.Router(),
     passport        = require('passport');
 var authenticate    = function(req, res, next) {
@@ -42,12 +44,12 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-//if(env === 'development'){
-//mongoose.connect('mongodb://localhost:27017/mean-demo');
-//}else{
+if(env === 'development'){
+mongoose.connect('mongodb://localhost:27017/mean-demo');
+}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 
-//}
+}
 var db = mongoose.connection;
 
 db.on('error', function callback () {
@@ -208,6 +210,8 @@ router.get('/contact', contactController.list);
 router.post('/contact', contactController.create);
 router.get('/blog', blogController.list);
 router.post('/blog', blogController.create);
+router.get('/partner', partnerController.list);
+router.post('/partner', partnerController.create);
 
 router.route('/cal/:_id')
 .get(function(req, res) {
@@ -294,6 +298,8 @@ router.route('/give/:_id')
 			giv.title = req.body.title; 	// update the items info
             giv.shortname = req.body.shortname;
             giv.contents = req.body.contents;
+            giv.image = req.body.image;
+            giv.category = req.body.category;
 			// save the items
 			giv.save(function(err) {
 				if (err)
@@ -422,6 +428,44 @@ router.route('/blog/:_id')
 			res.json({ message: 'Successfully deleted' });
 		});
 	});
+
+
+router.route('/partner/:_id')
+
+	// get the service with that id (accessed at GET http://localhost:8080/api/hc/:_id)
+	.get(function(req, res) {
+		Partner.findById(req.params._id, function(err, result) {
+			if (err)
+				res.send(err);
+			res.json(result);
+		});
+	})
+.put(function(req, res) {
+		Partner.findById(req.params._id, function(err, par) {
+			if (err)
+				res.send(err);
+            par.name = req.body.name;
+            par.contents = req.body.contents;
+            par.image = req.body.image;
+			// save the items
+			par.save(function(err) {
+				if (err)
+					res.send(err);
+				res.json({ message: 'Partner content updated!' });
+			});
+		});
+	})
+.delete(function(req, res) {
+		Partner.remove({
+			_id: req.params._id
+		}, function(err, service) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Successfully deleted' });
+		});
+	});
+
 
 router.route('/over/:_id')
 
@@ -591,9 +635,23 @@ app.get('/admincontact/:id', authenticate ,function(req, res) {
         
         })
 	});
+ app.get('/adminpartner', authenticate ,function(req, res) {
+		res.render('index.ejs',{
+          bootstrappedUser: req.user,
+          page: 'admin'
+        
+        })
+	}); 
+app.get('/adminpartner/:id', authenticate ,function(req, res) {
+		res.render('index.ejs',{
+          bootstrappedUser: req.user,
+          page: 'admin'
+        
+        })
+	});
 app.use('/api', router);
 
-var port = process.env.PORT || 8000; // set our port
+var port = process.env.PORT || 3000; // set our port
 app.set('view engine', 'ejs');
 app.set('views', 'server/views');
 app.use(methodOverride('X-HTTP-Method-Override')); // simulate delete/put
