@@ -6,7 +6,7 @@
  
 <div class="adminControl">
 <ul class="tabsAdmin">
-  <li><div class="cb" ng-click="tab = 1"><a href="/admingive">New</a></div></li>
+  <li><div class="cb" ng-click="tab = 1"><a href="/adminpartner">New</a></div></li>
   <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
 </ul>
 </div> 
@@ -28,10 +28,10 @@
 
 <div ng-show="tab == 2">
 <div class="editList">
-    <div class="editWrapper" ng-repeat="giv in give | filter:{category: '!Partner'}">
+    <div class="editWrapper" ng-repeat="giv in give | filter:{category: 'Partner'}">
      <div class="editTitle"><a href="">{{giv.title}}</a></div>
      
-     <a href="/admingive/{{giv.shortname}}" ><div class="editEdit">Edit</div></a>
+     <a href="/adminpartner/{{giv.shortname}}" ><div class="editEdit">Edit</div></a>
      <a ng-click="removeGive(giv._id)" ><div class="editDelete"> Remove</div></a>
       </div>
 
@@ -47,7 +47,7 @@
 
   <div class="editingText" text-angular ng-model="giv.contents"></div>
   <div><input type="hidden" ng-model="giv.shortname"></div>
-  <div><input type="hidden" ng-model="giv.image"></div>
+  <div><input ng-model="giv.image"></div>
   <div><input type="hidden" ng-model="giv.category"></div>  
   <div class="editApply">
   <div class="clickApply"><a ng-click="editGive(giv._id, giv.title, giv.contents, giv.shortname, giv.image, giv.category)" >Apply Revisions</a></div>
@@ -55,18 +55,3 @@
 </div><!--Editable-->
 </div>
 </div><!--ServiceData-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

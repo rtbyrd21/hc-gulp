@@ -242,12 +242,12 @@ BLOG.API.query(function(results) {
   $scope.editBlog = function(id, first, second, third, fourth, fifth, sixth, seventh) {
 		$http.put('/api/blog/' + id, 
                   {
-                    author: fifth,
-                    date: sixth,
-                    title: second,
-                   contents: third,
-                   shortname: first,
-                   category: fourth,
+                    author: first,
+                    date: second,
+                    title: third,
+                    contents: fourth,
+                    shortname: fifth,
+                    category: sixth,
                     image: seventh
                   }
                   )
@@ -349,11 +349,11 @@ GIVE.API.query(function(results) {
   
   $scope.editGive = function(id, first, second, third, fourth, fifth) {
 		$http.put('/api/give/' + id, 
-                  {title: second,
-                   contents: third,
-                   shortname: first,
-                   image: first,
-                   category: first
+                  {title: first,
+                   contents: second,
+                   shortname: third,
+                   image: fourth,
+                   category: fifth
                   }
                   )
            .success(function(data) {

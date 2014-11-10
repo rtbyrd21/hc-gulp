@@ -8,8 +8,12 @@
 <section id="content">
 <div id="indexLeft" class="aboutPage">
  
+ <ul>
+      <a href="/blog/"><h5>Recent Posts</h5></a>
+      <li ng-repeat="blo in blog | orderBy: '_id' | limitTo: 2"><a href="/blog/{{blo.shortname}}">{{blo.title}}</li></a>
+  </ul>
   <ul>
-      <a href="/blog/"><h5>Blog Overview</h5></a>
+      <a href="/blog/"><h5>Categories</h5></a>
       <li ng-repeat="blo in blog"><a href="/blog/{{blo.shortname}}">{{blo.title}}</li></a>
   </ul>
 </div>
@@ -20,11 +24,17 @@
   <article class="cmsContent">
 
    <a href="/blog"><i class="fa fa-chevron-left"></i>&nbsp;back</a>
-    <div class="services" ng-repeat="blo in blog | filter:json">
-        <article class="service group">
+    <div class="blogContent" ng-repeat="blo in blog | filter:json">
+        <article class="blog group">
        <h2><a href="/blog/{{blo.shortname }}">{{blo.title }}</a> </h2>
        <p> Posted {{blo.date}} by <span>{{blo.author}}</span></p> 
-     
+       
+       <div class="blogdetailImage" ng-show="{{blo.image}}.length > 0">
+    
+    <img src="{{blo.image}}">
+    
+    </div>
+      
        <div ng-bind-html="blo.contents | strip | to_trusted"></div>
 
        </article>

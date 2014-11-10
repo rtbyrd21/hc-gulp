@@ -203,27 +203,37 @@ h5{
 
 #contentRight.blog{
   #{headings()} {
- color: $red;
+ color: black;
 } 
   a{
   font-weight: 500;
   }
   h2{
-  font-size:3.2rem;
+  font-size:2rem;
+  font-weight: 400;
+  color: black;
+    .blogHeadline{
+    color: black;
+    }
   }
   p{
   color:$darkgrey;
+    &.blogPosted{
+    margin-bottom: 10px;
+    }
   }
   span{
   font-weight: 500;
   }
   .blogCont{
+  @include-span(12 of 12);
   font-size:1.2rem;
   font-weight: 400;
   color:$darkgrey;
+    
   }
  pre, a {
- color: $red !important;
+ color: $red;
 } 
   .blogBlock{
   margin-top: 40px;
@@ -251,18 +261,31 @@ border-bottom: 3px solid $blue;
 .blogHead{
 @include container();
   .blogInfo{
+  margin-left: 0px !important;
   @include span(8 of 12);
+  float:none;
   }
   .blogImage{
    @include span(last 4);
     img{
-    @include border-radius(50%);
+//    @include border-radius(50%);
     max-width:150px;
+    float: right;
     }
   }
 
 }
-
+.blogdetailImage{
+ 
+  img{
+  @include span(12 of 12);
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 700px;
+  margin-bottom:30px;
+  }
+  
+}
 .divider{
 display: block;
 @include clearfix;

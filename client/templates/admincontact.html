@@ -1,20 +1,24 @@
 <div ng-include src="'templates/adminnav.html'"></div>
 
-<div class="layout">
-<div id="serviceData" ng-init="tab=1">
+<div id="adminCont">
+  <div ng-init="tab=1">
 
+<div class="adminControl">
 <ul class="tabsAdmin">
   <li><div class="cb" ng-click="tab = 1"><a>New</a></div></li>
-  <li><div class="cb" ng-click="tab = 2"><a>Edit</a></div></li>  
+  <li><div class="cb" ng-click="tab = 2"><a href="admingive/edit">Edit</a></div></li>  
 </ul>
+</div>
 
-<div class="serviceForm">
+<div id="adminCMS" class="serviceCMS">
  <div ng-show="tab == 1">
 
 <form name="adminForm" ng-submit="adminForm.$valid && createContact()" novalidate>
   <input type="text" placeholder="Contact title" ng-model="contactTitle" required>
   <input type="text" placeholder="Contact /url" ng-model="contactShortname" required>
-  <textarea type="text" placeholder="Contact contents" ng-model="contactContents" required></textarea>
+  
+  <div class="wysiwg" text-angular ng-model="contactContents" required></div>
+
   <br>
   <button class="addAdmin" type="submit">Add</button>
 </form>
@@ -22,22 +26,29 @@
 
 <div ng-show="tab == 2">
 <div class="serviceList">
-  <ul class="admin-list" ng-repeat="cont in contact">
-     <li> <a href="/admin/{{cont.shortname}}">{{cont.title}}<a></li>
+  <ul class="admin-list" ng-repeat="giv in give">
+     <li> <a href="/admin/{{giv.shortname}}">{{giv.title}}<a></li>
      
-     <li> <a class="edit" href="/admincontact/{{cont.shortname}}" >Edit</a></li>
-      <li><a class="delete" ng-click="removeContact(cont._id)" >Remove</a></li>
+     <li> <a class="edit" href="/admingive/{{giv.shortname}}" >Edit</a></li>
+      <li><a class="delete" ng-click="removeGive(giv._id)" >Remove</a></li>
       
   </ul>
 </div>
 </div><!--ServiceForm(Left Col)-->
 </div>
 
-<div class="dynamic">
+
+<div id="dynamicModel" class="serviceCMS">
+<h1>PREVIEW</h1>
 <p>healingcenter.com/contact/{{contactShortname}}</p>
-<h4>{{contactTitle}}</h4>
-<h2>{{contactContents}}</h2>
+<h2>{{contactTitle}}</h2>
+<p>{{contactContents}}</p>
+</div><!--Dynamic-->
 </div><!--Dynamic-->
 </div><!--ServiceData-->
-</div><!--Layout-->
 
+
+
+<!--
+<a class="edit" ng-click="editItem(service._id)" >Edit</a>
+<a class="delete" ng-click="removeItem(service._id)" >Remove</a>-->

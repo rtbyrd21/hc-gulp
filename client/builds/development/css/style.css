@@ -2133,7 +2133,7 @@ h5 {
 
 /* line 205, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog h1, #contentRight.blog h2, #contentRight.blog h3, #contentRight.blog h4, #contentRight.blog h5, #contentRight.blog h6 {
-  color: #e25135;
+  color: black;
 }
 /* line 208, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog a {
@@ -2141,52 +2141,63 @@ h5 {
 }
 /* line 211, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog h2 {
-  font-size: 3.2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
 }
-/* line 214, ../../../../components/sass/modules/_about.scss */
+/* line 215, ../../../../components/sass/modules/_about.scss */
+#contentRight.blog h2 .blogHeadline {
+  color: black;
+}
+/* line 219, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog p {
   color: #717b85;
 }
-/* line 217, ../../../../components/sass/modules/_about.scss */
+/* line 221, ../../../../components/sass/modules/_about.scss */
+#contentRight.blog p.blogPosted {
+  margin-bottom: 10px;
+}
+/* line 225, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog span {
   font-weight: 500;
 }
-/* line 220, ../../../../components/sass/modules/_about.scss */
+/* line 228, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog .blogCont {
+  @include-span (12 of 12);
   font-size: 1.2rem;
   font-weight: 400;
   color: #717b85;
 }
-/* line 225, ../../../../components/sass/modules/_about.scss */
+/* line 235, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog pre, #contentRight.blog a {
-  color: #e25135 !important;
+  color: #e25135;
 }
-/* line 228, ../../../../components/sass/modules/_about.scss */
+/* line 238, ../../../../components/sass/modules/_about.scss */
 #contentRight.blog .blogBlock {
   margin-top: 40px;
 }
 
-/* line 233, ../../../../components/sass/modules/_about.scss */
+/* line 243, ../../../../components/sass/modules/_about.scss */
 .about.active, .volunteer.active {
   border-bottom: 3px solid #e25135;
 }
 
-/* line 237, ../../../../components/sass/modules/_about.scss */
+/* line 247, ../../../../components/sass/modules/_about.scss */
 .services.active, .contact.active {
   border-bottom: 3px solid #94b46e;
 }
 
-/* line 241, ../../../../components/sass/modules/_about.scss */
+/* line 251, ../../../../components/sass/modules/_about.scss */
 .events.active {
   border-bottom: 3px solid #E27A3F;
 }
 
-/* line 245, ../../../../components/sass/modules/_about.scss */
+/* line 255, ../../../../components/sass/modules/_about.scss */
 .give.active {
   border-bottom: 3px solid #5dc5e2;
 }
 
-/* line 251, ../../../../components/sass/modules/_about.scss */
+/* line 261, ../../../../components/sass/modules/_about.scss */
 .blogHead {
   max-width: 100%;
   margin-left: auto;
@@ -2198,29 +2209,41 @@ h5 {
   display: block;
   clear: both;
 }
-/* line 253, ../../../../components/sass/modules/_about.scss */
+/* line 263, ../../../../components/sass/modules/_about.scss */
 .blogHead .blogInfo {
+  margin-left: 0px !important;
   width: 65%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%;
+  float: none;
 }
-/* line 256, ../../../../components/sass/modules/_about.scss */
+/* line 268, ../../../../components/sass/modules/_about.scss */
 .blogHead .blogImage {
   width: 31.66667%;
   float: right;
   margin-left: 0.83333%;
   margin-right: 0.83333%;
 }
-/* line 258, ../../../../components/sass/modules/_about.scss */
+/* line 270, ../../../../components/sass/modules/_about.scss */
 .blogHead .blogImage img {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
   max-width: 150px;
+  float: right;
 }
 
-/* line 266, ../../../../components/sass/modules/_about.scss */
+/* line 280, ../../../../components/sass/modules/_about.scss */
+.blogdetailImage img {
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+/* line 289, ../../../../components/sass/modules/_about.scss */
 .divider {
   display: block;
 }
@@ -2234,72 +2257,72 @@ h5 {
   clear: both;
 }
 
-/* line 271, ../../../../components/sass/modules/_about.scss */
+/* line 294, ../../../../components/sass/modules/_about.scss */
 #disqus_thread {
   margin-top: 50px;
 }
 
-/* line 306, ../../../../components/sass/modules/_about.scss */
+/* line 329, ../../../../components/sass/modules/_about.scss */
 .fc-grid .fc-other-month .fc-day-number {
   color: black;
   background: rgba(255, 255, 255, 0);
 }
 
-/* line 310, ../../../../components/sass/modules/_about.scss */
+/* line 333, ../../../../components/sass/modules/_about.scss */
 .fc-grid .fc-day-number {
   float: right;
   padding: 0 9px;
 }
 
-/* line 315, ../../../../components/sass/modules/_about.scss */
+/* line 338, ../../../../components/sass/modules/_about.scss */
 .fc-grid .fc-day-content {
   clear: both;
   padding: 2px 2px 1px;
 }
 
-/* line 319, ../../../../components/sass/modules/_about.scss */
+/* line 342, ../../../../components/sass/modules/_about.scss */
 .fc td, .fc th {
   border: 3px solid white;
 }
 
-/* line 323, ../../../../components/sass/modules/_about.scss */
+/* line 346, ../../../../components/sass/modules/_about.scss */
 #calendar > div > div > table > tbody > tr.fc-week.fc-first > td.fc-day.fc-widget-content.fc-other-month {
   background: #d1d4d8;
 }
 
-/* line 327, ../../../../components/sass/modules/_about.scss */
+/* line 350, ../../../../components/sass/modules/_about.scss */
 #calendar > div > div > table > tbody > tr.fc-week.fc-last > td.fc-day.fc-widget-content.fc-other-month {
   background: #d1d4d8;
 }
 
-/* line 331, ../../../../components/sass/modules/_about.scss */
+/* line 354, ../../../../components/sass/modules/_about.scss */
 .fc-today.fc-state-highlight {
   background: white;
 }
 
-/* line 335, ../../../../components/sass/modules/_about.scss */
+/* line 358, ../../../../components/sass/modules/_about.scss */
 th.fc-day-header.fc-widget-header {
   background: #717b85;
   color: white;
 }
 
-/* line 339, ../../../../components/sass/modules/_about.scss */
+/* line 362, ../../../../components/sass/modules/_about.scss */
 .fc-day {
   background: #edeff0;
 }
 
-/* line 343, ../../../../components/sass/modules/_about.scss */
+/* line 366, ../../../../components/sass/modules/_about.scss */
 #contentRight.calendar pre, #contentRight.calendar a {
   color: black !important;
 }
 
-/* line 347, ../../../../components/sass/modules/_about.scss */
+/* line 370, ../../../../components/sass/modules/_about.scss */
 .fc-event {
   background-color: rgba(255, 255, 255, 0);
   font-size: .9rem;
   border: 0px;
 }
-/* line 351, ../../../../components/sass/modules/_about.scss */
+/* line 374, ../../../../components/sass/modules/_about.scss */
 .fc-event:hover {
   background-color: white;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -2307,41 +2330,41 @@ th.fc-day-header.fc-widget-header {
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 357, ../../../../components/sass/modules/_about.scss */
+/* line 380, ../../../../components/sass/modules/_about.scss */
 .fc-event-inner {
   font-size: .9rem;
 }
 
-/* line 364, ../../../../components/sass/modules/_about.scss */
+/* line 387, ../../../../components/sass/modules/_about.scss */
 .fc-day-number {
   background: #5dc5e2 !important;
   color: white;
 }
 
-/* line 369, ../../../../components/sass/modules/_about.scss */
+/* line 392, ../../../../components/sass/modules/_about.scss */
 .fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td {
   border-color: white;
 }
 
-/* line 373, ../../../../components/sass/modules/_about.scss */
+/* line 396, ../../../../components/sass/modules/_about.scss */
 .fc td.fc-today {
   border-style: none;
   border-top: 3px solid white;
 }
 
 @media (max-width: 650px) {
-  /* line 380, ../../../../components/sass/modules/_about.scss */
+  /* line 403, ../../../../components/sass/modules/_about.scss */
   #calendar {
     display: none;
   }
 }
 
-/* line 387, ../../../../components/sass/modules/_about.scss */
+/* line 410, ../../../../components/sass/modules/_about.scss */
 #\23 calendar_list > div > label {
   font-size: .9rem;
 }
 
-/* line 393, ../../../../components/sass/modules/_about.scss */
+/* line 416, ../../../../components/sass/modules/_about.scss */
 .givImage img {
   width: 175px;
   float: right;

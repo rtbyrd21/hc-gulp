@@ -9,7 +9,11 @@
 <div id="indexLeft" class="aboutPage">
  
   <ul>
-      <a href="/blog/"><h5>Blog Overview</h5></a>
+      <a href="/blog/"><h5>Recent Posts</h5></a>
+      <li ng-repeat="blo in blog | orderBy: '_id' | limitTo: 2"><a href="/blog/{{blo.shortname}}">{{blo.title}}</li></a>
+  </ul>
+  <ul>
+      <a href="/blog/"><h5>Categories</h5></a>
       <li ng-repeat="blo in blog"><a href="/blog/{{blo.shortname}}">{{blo.title}}</li></a>
   </ul>
 </div>
@@ -20,21 +24,25 @@
  
 <div class="blogBlock" ng-repeat="blo in blog">
 <div class="blogHead">
+ 
+ 
+ 
+  <div ng-if="blo.image" class="blogImage"><a href="/blog/{{blo.shortname}}"><img src="{{blo.image}}"></a></div>
+  
+  
+  
    <div class="blogInfo">
-    <h2><a href="/blog/{{blo.shortname}}">{{blo.title}}</a></h2>
-    <p> Posted {{blo.date}} by <span>{{blo.author}}</span></p> 
+    <h2><a class="blogHeadline" href="/blog/{{blo.shortname}}">{{blo.title}}</a></h2>
+    <p class="blogPosted"> Posted {{blo.date}} by <span>{{blo.author}}</span></p> 
     </div>
-    <div class="divider" ng-if="!blo.image" class="blogImage"></div>
-    <div ng-if="blo.image" class="blogImage">
     
-    <img src="{{blo.image}}">
     
-    </div>
+    
     
 
  <div class="blogCont" ng-bind-html="blo.contents | strip | to_trusted | truncate:265 "></div>
  </div><!--blogHead-->
-<a href="/blog/{{blo.shortname}}">Read more&nbsp;<i class="fa fa-chevron-right"></i></a>
+<!--<a href="/blog/{{blo.shortname}}">Read more&nbsp;<i class="fa fa-chevron-right"></i></a>-->
  </div>
  
 <div></div><div></div>
