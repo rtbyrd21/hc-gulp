@@ -74,12 +74,24 @@ margin-bottom: 30px;
 .partners{
 @include container(80%);
 margin-bottom: 70px;
-  img{
+  a{
   display: inline;
     @include gallery(1 of 3);
     @include breakpoint($small) {
     @include gallery(1 of 5);
     }
+  
+  }
+
+a{
+//  width:40%;
+//  height:auto;
+//  display: inline-block;
+//    @include gallery(3 of 3);
+//    @include breakpoint($small) {
+//    @include gallery(5 of 5);
+//    }
+  
   }
 
 }

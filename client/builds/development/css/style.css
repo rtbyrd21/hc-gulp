@@ -1060,67 +1060,67 @@ select {
   clear: both;
 }
 /* line 77, ../../../../components/sass/modules/_home.scss */
-#homeInfo .partners img {
+#homeInfo .partners a {
   display: inline;
   width: 26.66667%;
   float: left;
 }
 /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-#homeInfo .partners img:nth-child(3n + 1) {
+#homeInfo .partners a:nth-child(3n + 1) {
   margin-left: 3.33333%;
   margin-right: -100%;
   clear: both;
 }
 /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-#homeInfo .partners img:nth-child(3n + 2) {
+#homeInfo .partners a:nth-child(3n + 2) {
   margin-left: 36.66667%;
   margin-right: -100%;
   clear: none;
 }
 /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-#homeInfo .partners img:nth-child(3n + 3) {
+#homeInfo .partners a:nth-child(3n + 3) {
   margin-left: 70.0%;
   margin-right: -100%;
   clear: none;
 }
 @media (min-width: 650px) {
   /* line 77, ../../../../components/sass/modules/_home.scss */
-  #homeInfo .partners img {
+  #homeInfo .partners a {
     width: 16%;
     float: left;
   }
   /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-  #homeInfo .partners img:nth-child(5n + 1) {
+  #homeInfo .partners a:nth-child(5n + 1) {
     margin-left: 2%;
     margin-right: -100%;
     clear: both;
   }
   /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-  #homeInfo .partners img:nth-child(5n + 2) {
+  #homeInfo .partners a:nth-child(5n + 2) {
     margin-left: 22%;
     margin-right: -100%;
     clear: none;
   }
   /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-  #homeInfo .partners img:nth-child(5n + 3) {
+  #homeInfo .partners a:nth-child(5n + 3) {
     margin-left: 42%;
     margin-right: -100%;
     clear: none;
   }
   /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-  #homeInfo .partners img:nth-child(5n + 4) {
+  #homeInfo .partners a:nth-child(5n + 4) {
     margin-left: 62%;
     margin-right: -100%;
     clear: none;
   }
   /* line 66, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
-  #homeInfo .partners img:nth-child(5n + 5) {
+  #homeInfo .partners a:nth-child(5n + 5) {
     margin-left: 82%;
     margin-right: -100%;
     clear: none;
   }
 }
-/* line 88, ../../../../components/sass/modules/_home.scss */
+/* line 100, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening {
   max-width: 100%;
   margin-left: auto;
@@ -1135,11 +1135,11 @@ select {
   display: block;
   clear: both;
 }
-/* line 93, ../../../../components/sass/modules/_home.scss */
+/* line 105, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening h1 {
   color: black;
 }
-/* line 96, ../../../../components/sass/modules/_home.scss */
+/* line 108, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper {
   max-width: 90%;
   margin-left: auto;
@@ -1152,11 +1152,11 @@ select {
   display: block;
   clear: both;
 }
-/* line 99, ../../../../components/sass/modules/_home.scss */
+/* line 111, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .underline {
   border-bottom: 3px solid white;
 }
-/* line 102, ../../../../components/sass/modules/_home.scss */
+/* line 114, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningImage {
   color: white;
   -moz-border-radius: 5px;
@@ -1176,7 +1176,7 @@ select {
   height: 300px;
 }
 @media (max-width: 650px) {
-  /* line 102, ../../../../components/sass/modules/_home.scss */
+  /* line 114, ../../../../components/sass/modules/_home.scss */
   #homeInfo .happening .happeningWrapper .happeningImage {
     width: 98.33333%;
     float: left;
@@ -1185,7 +1185,7 @@ select {
     height: 200px;
   }
 }
-/* line 113, ../../../../components/sass/modules/_home.scss */
+/* line 125, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo {
   width: 40%;
   float: right;
@@ -1193,7 +1193,7 @@ select {
   margin-right: 0.83333%;
 }
 @media (max-width: 650px) {
-  /* line 113, ../../../../components/sass/modules/_home.scss */
+  /* line 125, ../../../../components/sass/modules/_home.scss */
   #homeInfo .happening .happeningWrapper .happeningInfo {
     width: 98.33333%;
     float: left;
@@ -1202,7 +1202,7 @@ select {
     margin-top: 20px;
   }
 }
-/* line 120, ../../../../components/sass/modules/_home.scss */
+/* line 132, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo h2 {
   padding-left: 4%;
   color: white;
@@ -1210,13 +1210,13 @@ select {
   font-weight: 300;
   text-transform: uppercase;
 }
-/* line 127, ../../../../components/sass/modules/_home.scss */
+/* line 139, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .happeningInfo h4, #homeInfo .happening .happeningWrapper .happeningInfo p {
   padding-left: 4%;
   color: white;
   font-weight: 300;
 }
-/* line 133, ../../../../components/sass/modules/_home.scss */
+/* line 145, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore {
   cursor: pointer;
   margin-left: 4%;
@@ -1229,7 +1229,7 @@ select {
   width: 40%;
   text-align: center;
 }
-/* line 142, ../../../../components/sass/modules/_home.scss */
+/* line 154, ../../../../components/sass/modules/_home.scss */
 #homeInfo .happening .happeningWrapper .findOutMore a {
   text-decoration: none;
   color: #5dc5e2;
