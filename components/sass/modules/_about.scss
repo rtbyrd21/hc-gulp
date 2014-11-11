@@ -144,6 +144,9 @@ h5{
   h2{
   font-size:5rem;
   font-weight: $thin;
+    &.partnerHeading{
+    font-size:2rem;
+    }
   }//h2
   h4{
   text-transform: uppercase;

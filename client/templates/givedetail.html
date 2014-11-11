@@ -11,7 +11,7 @@
    <a href="/give/"><h5>Give Overview</h5></a>
       <li ng-repeat="giv in give | filter:{category: '!Partner'}"><a href="/give/{{giv.shortname}}">{{giv.title}}</li></a>
       <h5>Our Partners</h5>
-      <li ng-repeat="giv in give | filter:{category: 'Partner'} "><a href="/give/{{giv.shortname}}">{{giv.title}}</li></a>
+      <li ng-repeat="giv in give | filter:{category: 'Partner'} | orderBy:'title'"><a href="/give/{{giv.shortname}}">{{giv.title}}</li></a>
   </ul>
 </div>
 
@@ -30,8 +30,12 @@
     
     </div>
       
+      <div ng-if="giv.category == 'Partner'">
+       <h2 class="partnerHeading"><pre>{{giv.title }}</pre> </h2>
+      </div> 
+       <div ng-if="giv.category != 'Partner'">
        <h2><pre>{{giv.title }}</pre> </h2>
-       
+      </div> 
        
        
       
