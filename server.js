@@ -44,12 +44,12 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-if(env === 'development'){
-mongoose.connect('mongodb://localhost:27017/mean-demo');
-}else{
+//if(env === 'development'){
+//mongoose.connect('mongodb://localhost:27017/mean-demo');
+//}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
+//}
 
-}
 var db = mongoose.connection;
 
 db.on('error', function callback () {
@@ -59,18 +59,6 @@ db.on('error', function callback () {
 db.once('open', function callback () {
   console.log("Mongo working!");
 });
-
-exports.givedata = function givedata(title,callback){
- var Givedata = mongoose.model( 'GiveData' );
- Givedata.find({'Title':title}, function (err, list) {
-  if(err){
-   console.log(err);
-  }else{
-   console.log(list);
-   callback("",list);
-  }
- })// end Team.find
-}// end exports.teamlist
 
 
 var AboutData    = mongoose.model( 'AboutData' );
