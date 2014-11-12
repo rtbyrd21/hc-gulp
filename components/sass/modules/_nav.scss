@@ -2,9 +2,12 @@
 padding:20px 0px 5px 0px;
 border-bottom: 1px solid black;
 @include container(100%);
-//@include display-flex();
-//@include align-items(center);
-//@include justify-content(center);
+@include breakpoint(max-width $small) {
+padding:10px 0px 5px 0px;
+
+}
+  
+  
   .headLogo{
   @include full();
 @include display-flex();
@@ -12,7 +15,7 @@ border-bottom: 1px solid black;
 @include justify-content(center);
     @include breakpoint(max-width $small) {
 //            @include span(2.5 at 6 of 12 isolate);
-             @include span(2.5 at 6 of 12 isolate);
+             @include span(2.75 at 5.5 of 12 isolate);
             clear:none;
             margin-right: 5%;
         } //breakpoint
@@ -30,7 +33,10 @@ border-bottom: 1px solid black;
     @include breakpoint(max-width $small) {
             @include span(first 2);
             clear:none;
-            margin-left: 5%;
+            margin-left: 0%;
+            position: absolute;
+            top:0px;
+      
         } //breakpoint
   a{
   text-decoration: none;

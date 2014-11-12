@@ -44,11 +44,11 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-//if(env === 'development'){
-//mongoose.connect('mongodb://localhost:27017/mean-demo');
-//}else{
+if(env === 'development'){
+mongoose.connect('mongodb://localhost:27017/mean-demo');
+}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
-//}
+}
 
 var db = mongoose.connection;
 
@@ -71,15 +71,31 @@ var User      = mongoose.model('User');
 
 
 
-
-
-
 app.use(function(req, res, next) {
-	// do logging
-	console.log('Something is happening.');
-    req.db = db;
-	next(); // make sure we go to the next routes and don't stop here
+  console.log('Something is happening.');
+  res.locals.bootstrappedUser = req.user;
+  res.locals.homelist = [
+    'home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'
+  ];
+
+  BlogData.find(function(err, blogitems) {
+    if (err)
+      return next(err);
+    res.locals.bloglist = blogitems;
+    next();
+  });
+  
+  
+  
 });
+
+
+//app.use(function(req, res, next) {
+//	// do logging
+//	console.log('Something is happening.');
+//    req.db = db;
+//	next(); // make sure we go to the next routes and don't stop here
+//});
 app.use(cookieParser());
 app.use(bodyParser());
 app.use(session({secret: 'healing center'}));
@@ -102,14 +118,10 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
@@ -119,7 +131,6 @@ ContactData.find(function(err, contactitems){
      });
     }); 
     });
-  });
   });  
   });  
 });
@@ -135,14 +146,10 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
@@ -150,7 +157,6 @@ ContactData.find(function(err, contactitems){
        bootstrappedUser: req.user,
        page: 'about'
      });
-    }); 
     });
   });
   });  
@@ -158,7 +164,7 @@ ContactData.find(function(err, contactitems){
 });
 });
 
-app.get('/about:id', function(req, res, next) {
+app.get('/about/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){
@@ -167,21 +173,16 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
        volunteerlist: volunteeritems,
        bootstrappedUser: req.user,
        page: 'about'
-     });
     }); 
     });
   });
@@ -199,14 +200,10 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
@@ -215,7 +212,6 @@ ContactData.find(function(err, contactitems){
        page: 'blog'
      });
     }); 
-    });
   });
   });  
   });  
@@ -223,7 +219,7 @@ ContactData.find(function(err, contactitems){
 });
 
 
-app.get('/blog:id', function(req, res, next) {
+app.get('/blog/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){
@@ -232,14 +228,10 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
@@ -248,7 +240,6 @@ ContactData.find(function(err, contactitems){
        page: 'blog'
      });
     }); 
-    });
   });
   });  
   });  
@@ -264,14 +255,10 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
@@ -279,7 +266,6 @@ ContactData.find(function(err, contactitems){
        bootstrappedUser: req.user,
        page: 'contact'
      });
-    }); 
     });
   });
   });  
@@ -287,7 +273,7 @@ ContactData.find(function(err, contactitems){
 });
 });
 
-app.get('/contact:id', function(req, res, next) {
+app.get('/contact/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){
@@ -296,14 +282,10 @@ GiveData.find(function(err, giveitems){
      if(err) { return next(err); }  
 ContactData.find(function(err, contactitems){
      if(err) { return next(err); }  
-  BlogData.find(function(err, blogitems){
-     if(err) { return next(err); } 
    AboutData.find(function(err, items){
      if(err) { return next(err); }
      res.render('index.ejs',{
-       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
        aboutlist: items,
-       bloglist: blogitems,
        contactlist: contactitems,
        givelist: giveitems,
        servicelist: serviceitems,
@@ -312,7 +294,6 @@ ContactData.find(function(err, contactitems){
        page: 'blog'
      });
     }); 
-    });
   });
   });  
   });  
@@ -352,7 +333,7 @@ ContactData.find(function(err, contactitems){
 });
 });
 
-app.get('/events:id', function(req, res, next) {
+app.get('/events/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){
@@ -429,7 +410,7 @@ ContactData.find(function(err, contactitems){
 });
 });
 
-app.get('/give:id', function(req, res, next) {
+app.get('/give/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){
@@ -493,7 +474,8 @@ ContactData.find(function(err, contactitems){
 });
 });
 
-app.get('/services:id', function(req, res, next) {
+
+app.get('/services/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){
@@ -558,7 +540,7 @@ ContactData.find(function(err, contactitems){
 });
 
 
-app.get('/volunteer:id', function(req, res, next) {
+app.get('/volunteer/:id', function(req, res, next) {
 VolunteerData.find(function(err, volunteeritems){
      if(err) { return next(err); }    
 ServicesData.find(function(err, serviceitems){

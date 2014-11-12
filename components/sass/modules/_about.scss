@@ -3,7 +3,7 @@ header{
   position: relative;
   height:400px;
    @include breakpoint(max-width $small){
-    height:200px;
+    height:150px;
   }//breakpoint
   background: $red;
     h1{
@@ -13,6 +13,11 @@ header{
     left:50px;
     font-size: 4rem;
     @include text-shadow;
+    @include breakpoint(max-width $small){
+    font-size: 2rem;
+    left:30px;  
+    bottom:7px;  
+  }//breakpoint
     }
   }//heroEvents
   
@@ -138,12 +143,16 @@ h5{
   @include breakpoint(max-width $small){
     @include span(12);
     padding-top: 25px;
+    padding-right: 0px;
   }//breakpoint
   padding-top: 50px;
   padding-right: 40px;
   h2{
   font-size:5rem;
   font-weight: $thin;
+  @include breakpoint(max-width $small){
+    font-size:3rem;
+  }//breakpoint  
     &.partnerHeading{
     font-size:3.5rem;
     }
@@ -157,6 +166,9 @@ h5{
   }
   .cmsContent{
   @include container(80%);
+  @include breakpoint(max-width $small){
+    @include container(90%);
+  }//breakpoint  
     p{
   font-weight: $normal;
   }//p
