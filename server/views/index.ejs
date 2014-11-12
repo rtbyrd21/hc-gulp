@@ -201,7 +201,7 @@
         <a class="servicesHide" href="/<%= homelist[2] %>"><li><p><%= homelist[2] %></p><i class="fa fa-chevron-right"></i></li></a>
         <ul id="hideMe" class="hideServices">
           <% for(var i=0; i< servicelist.length; i++) { %>
-        <a href="/about/<%= servicelist[i].shortname %>"><li><p><%= servicelist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <a href="/services/<%= servicelist[i].shortname %>"><li><p><%= servicelist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
         <% } %> 
         </ul>
         
@@ -212,7 +212,7 @@
         <a class="volunteerHide" href="/<%= homelist[4] %>"><li><p><%= homelist[4] %></p><i class="fa fa-chevron-right"></i></li></a>
         <ul id="hideMe" class="hideVolunteer">
           <% for(var i=0; i< volunteerlist.length; i++) { %>
-        <a href="/contact/<%= volunteerlist[i].shortname %>"><li><p><%= volunteerlist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <a href="/volunteer/<%= volunteerlist[i].shortname %>"><li><p><%= volunteerlist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
         <% } %> 
         </ul>
         
@@ -227,14 +227,14 @@
         <a class="giveHide" href="/<%= homelist[6] %>"><li><p><%= homelist[6] %></p><i class="fa fa-chevron-right"></i></li></a>
         <ul id="hideMe" class="hideGive">
           <% for(var i=0; i< givelist.length; i++) { %>
-        <a href="/about/<%= givelist[i].shortname %>"><li><p><%= givelist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <a href="/give/<%= givelist[i].shortname %>"><li><p><%= givelist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
         <% } %> 
         </ul>
         
         <a class="blogHide" href="/<%= homelist[7] %>"><li><p><%= homelist[7] %></p><i class="fa fa-chevron-right"></i></li></a>
         <ul id="hideMe" class="hideBlog">
           <% for(var i=0; i< bloglist.length; i++) { %>
-        <a href="/about/<%= bloglist[i].shortname %>"><li><p><%= bloglist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <a href="/blog/<%= bloglist[i].shortname %>"><li><p><%= bloglist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
         <% } %> 
         </ul>
         
