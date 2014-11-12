@@ -9,6 +9,4 @@ var GiveSchema   = new Schema({
     category: String
 });
 
-
-
 module.exports = mongoose.model('GiveData',  GiveSchema);

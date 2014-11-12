@@ -40,11 +40,13 @@
 <!--</div>Body container for slider logic-->
 
 <div class="sb-slidebar sb-left">
-    <ul ng-repeat="service in services">
-    <% appdata.services.forEach(function(item) { %>
-      <a href="/services/{{service.name}}"><li>{{service.name}}</li></a>
+      <ul>
+   <a href="/give/"><h5>Give Overview</h5></a>
+      <li ng-repeat="giv in give | filter:{category: '!Partner'}"><a href="/give/{{giv.shortname}}">{{giv.title}}</li></a>
+      <h5>Our Partners</h5>
+      <li ng-repeat="giv in give | filter:{category: 'Partner'} | orderBy:'title'"><a href="/give/{{giv.shortname}}">{{giv.title}}</li></a>
   </ul>
-
+</div>
 
 
 

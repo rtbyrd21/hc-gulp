@@ -472,11 +472,30 @@ CONTACT.API.query(function(results) {
   
   $scope.$on('$viewContentLoaded', function () 
  {
+   
+   
 
+//$('.aboutHide').on('click', function(event) {
+//        event.preventDefault();
+//        console.log("aloha");
+//        $('#hideMe').slideUp();
+//      });
 
-var index = window.location.pathname.split('/')[1];
+  
+
+var index = window.location.pathname.split('/')[1];   
+//if(index == 'services'){
+//$(".sb-left ul").html("<li ng-repeat=\"service in services\"><a href=\"/services/{{service.shortname}}\">{{service.title}}</a></li>"); 
+//}      
+//
+//if(index == 'contact'){
+//$(".sb-left ul").html("<li>contact worked<li>"); 
+//}         
+   
 $('.navlinks li').removeClass('active');
 $('li.' + index).addClass('active');
+
+   
    
 var index = window.location.pathname.split('/')[1];
 $('.navlinks li').removeClass('active');
@@ -490,7 +509,6 @@ $('li.active:nth-of-type(4)').css({borderBottomColor: "#e25135"});
 $('li.active:nth-of-type(5)').css({borderBottomColor: "#28b3c9"});
 $('li.active:nth-of-type(6)').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});   
- console.log('callll'); 
 
 
 		$('#calendar').fullCalendar({

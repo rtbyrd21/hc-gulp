@@ -44,12 +44,12 @@ var app            = express();
 	
 // config files
 //var db = require('./config/db');
-//if(env === 'development'){
-//mongoose.connect('mongodb://localhost:27017/mean-demo');
-//}else{
+if(env === 'development'){
+mongoose.connect('mongodb://localhost:27017/mean-demo');
+}else{
 mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 
-//}
+}
 var db = mongoose.connection;
 
 db.on('error', function callback () {
@@ -60,12 +60,36 @@ db.once('open', function callback () {
   console.log("Mongo working!");
 });
 
-var User = mongoose.model('User');
+exports.givedata = function givedata(title,callback){
+ var Givedata = mongoose.model( 'GiveData' );
+ Givedata.find({'Title':title}, function (err, list) {
+  if(err){
+   console.log(err);
+  }else{
+   console.log(list);
+   callback("",list);
+  }
+ })// end Team.find
+}// end exports.teamlist
+
+
+var AboutData    = mongoose.model( 'AboutData' );
+var BlogData     = mongoose.model( 'BlogData' );
+var ContactData  = mongoose.model( 'ContactData' );
+var GiveData     = mongoose.model( 'GiveData' );
+var ServicesData = mongoose.model( 'HealingCenterData' );
+var VolunteerData = mongoose.model( 'VolunteerData' );
+var User      = mongoose.model('User');
+
+
+
+
 
 
 app.use(function(req, res, next) {
 	// do logging
 	console.log('Something is happening.');
+    req.db = db;
 	next(); // make sure we go to the next routes and don't stop here
 });
 app.use(cookieParser());
@@ -79,106 +103,507 @@ require('./server/config/passport.js')();
 
 
 
-app.get('/', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'home'
-        });
+
+
+app.get('/', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'home'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
 });
 
-app.get('/services', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'services'
-        });
+
+app.get('/about', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'about'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
 });
 
-app.get('/services/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'services'
-        });
+app.get('/about:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'about'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
 });
 
-app.get('/blog', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'blog'
-        });
+app.get('/blog', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'blog'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
 });
 
-app.get('/blog/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'blog'
-        });
+
+app.get('/blog:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'blog'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
 });
 
-app.get('/events', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
+app.get('/contact', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'contact'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
 });
 
-app.get('/events/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
+app.get('/contact:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'blog'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
 });
-app.get('/volunteer', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
-});
-
-app.get('/volunteer/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
-});
-app.get('/give', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
-});
-
-app.get('/give/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
-});
-app.get('/about', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'about'
-        });
 });
 
-app.get('/about/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'about'
-        });
+
+app.get('/events', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'events'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
 });
-app.get('/contact', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
 });
 
-app.get('/contact/:id', function(req, res) {
-		res.render('index.ejs',{
-          bootstrappedUser: req.user,
-          page: 'events'
-        });
+app.get('/events:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'events'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
 });
+});
+
+
+//app.get('/give', function(req, res, next) {       
+//   GiveData.find(function(err, items){
+//     if(err) { return next(err); }
+//     res.render('index.ejs',{
+//       givelist: items,
+//       bootstrappedUser: req.user,
+//       page: 'give'
+//     });
+//  });
+//});
+
+
+app.get('/give', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'give'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
+});
+
+app.get('/give:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'give'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
+});
+
+app.get('/services', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'services'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
+});
+
+app.get('/services:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'services'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
+});
+
+app.get('/volunteer', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'volunteer'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
+});
+
+
+app.get('/volunteer:id', function(req, res, next) {
+VolunteerData.find(function(err, volunteeritems){
+     if(err) { return next(err); }    
+ServicesData.find(function(err, serviceitems){
+     if(err) { return next(err); }  
+GiveData.find(function(err, giveitems){
+     if(err) { return next(err); }  
+ContactData.find(function(err, contactitems){
+     if(err) { return next(err); }  
+  BlogData.find(function(err, blogitems){
+     if(err) { return next(err); } 
+   AboutData.find(function(err, items){
+     if(err) { return next(err); }
+     res.render('index.ejs',{
+       homelist: ['home', 'about', 'services', 'calendar', 'volunteer', 'contact', 'give', 'blog'],
+       aboutlist: items,
+       bloglist: blogitems,
+       contactlist: contactitems,
+       givelist: giveitems,
+       servicelist: serviceitems,
+       volunteerlist: volunteeritems,
+       bootstrappedUser: req.user,
+       page: 'volunteer'
+     });
+    }); 
+    });
+  });
+  });  
+  });  
+});
+});
+
+
+
 
 
 app.use('/js', express.static(__dirname + '/client/js'));

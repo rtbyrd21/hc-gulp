@@ -1,0 +1,15 @@
+
+      
+     
+    
+    <% if (page == 'blog') { %>
+        <% for(var i=0; i< bloglist.length; i++) { %>
+        <a href="/blog/<%= bloglist[i].shortname %>"><li><%= bloglist[i].title %></li></a>
+        <% } %> 
+    <% } %> 
+      
+    <% if (page == 'about') { %>
+        <% for(var i=0; i< aboutlist.length; i++) { %>
+        <a href="/about/<%= aboutlist[i].shortname %>"><li><%= aboutlist[i].title %></li></a>
+        <% } %> 
+    <% } %> 

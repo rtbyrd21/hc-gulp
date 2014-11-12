@@ -1,0 +1,34 @@
+body > div.sb-slidebar.sb-left.sb-active{
+background-color: $lightgrey;
+  li{
+  @include container();
+  border-bottom: 1px solid $midgrey;
+  }
+  a{
+  text-decoration: none;
+  }
+  i{
+  @include span(last 2);
+  color:black;
+  padding-top: 15px;
+  }
+  p{
+  @include span(first 9);
+  color:black;
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: 600;
+  }
+}
+
+#hideMe{
+display:none;
+p{
+color:black;
+font-weight: 500;
+font-size:.7rem;
+padding-top: 7px;
+padding-bottom: 7px;
+}  
+
+}

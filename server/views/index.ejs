@@ -85,7 +85,7 @@
 <!-- HEADER -->
 <% if (page!= 'admin') { %>
 
-
+<div id="sb-site">
     
     <nav id="nav">
      <div class="headLogo"><a href="/"><img src="/builds/development/images/hc_logo.svg"></a>
@@ -117,7 +117,7 @@
     
     
   <% } %>
-<div id="sb-site">
+
 
  
  <script type='text/javascript'>
@@ -184,22 +184,107 @@
   </div><!-- wrapper -->
 </footer> <!--footer -->
 
+</div>
 
 
 <div class="sb-slidebar sb-left">
-      <ul>
-    <% if (page!= 'home') { %>
-        <a href="/"><li>home</li></a>
-        <li>nav 2</li>
-        <li>nav 3</li>
-    <% } else{ %>  
-      <a href="/"><li>homemmmm</li></a>
-        <li>nav 2</li>
-        <li>nav 3</li>
-    <% } %>  
+            <ul>
+
+        <a href="/<%= homelist[0] %>"><li><p><%= homelist[0] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <a class="aboutHide" href="/<%= homelist[1] %>"><li><p><%= homelist[1] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <ul id="hideMe" class="hideAbout">
+          <% for(var i=0; i< aboutlist.length; i++) { %>
+        <a href="/about/<%= aboutlist[i].shortname %>"><li><p><%= aboutlist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <% } %> 
+        </ul>
+        
+        <a class="servicesHide" href="/<%= homelist[2] %>"><li><p><%= homelist[2] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <ul id="hideMe" class="hideServices">
+          <% for(var i=0; i< servicelist.length; i++) { %>
+        <a href="/about/<%= servicelist[i].shortname %>"><li><p><%= servicelist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <% } %> 
+        </ul>
+        
+        
+        <a class="calendarHide" href="/events"><li><p><%= homelist[3] %></p><i class="fa fa-chevron-right"></i></li></a>
+        
+        
+        <a class="volunteerHide" href="/<%= homelist[4] %>"><li><p><%= homelist[4] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <ul id="hideMe" class="hideVolunteer">
+          <% for(var i=0; i< volunteerlist.length; i++) { %>
+        <a href="/contact/<%= volunteerlist[i].shortname %>"><li><p><%= volunteerlist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <% } %> 
+        </ul>
+        
+        
+        <a class="contactHide" href="/<%= homelist[5] %>"><li><p><%= homelist[5] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <ul id="hideMe" class="hideContact">
+          <% for(var i=0; i< contactlist.length; i++) { %>
+        <a href="/contact/<%= contactlist[i].shortname %>"><li><p><%= contactlist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <% } %> 
+        </ul>
+        
+        <a class="giveHide" href="/<%= homelist[6] %>"><li><p><%= homelist[6] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <ul id="hideMe" class="hideGive">
+          <% for(var i=0; i< givelist.length; i++) { %>
+        <a href="/about/<%= givelist[i].shortname %>"><li><p><%= givelist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <% } %> 
+        </ul>
+        
+        <a class="blogHide" href="/<%= homelist[7] %>"><li><p><%= homelist[7] %></p><i class="fa fa-chevron-right"></i></li></a>
+        <ul id="hideMe" class="hideBlog">
+          <% for(var i=0; i< bloglist.length; i++) { %>
+        <a href="/about/<%= bloglist[i].shortname %>"><li><p><%= bloglist[i].title %></p><i class="fa fa-chevron-right"></i></li></a>
+        <% } %> 
+        </ul>
+        
+
+  
+       
+
         
       </ul>
+      
+  
+  
+      
+
+      
+      
+      
     </div>
+
+
+<script>
+$('.aboutHide').on('click', function(event) {
+//        event.preventDefault();
+        $('.hideAbout').slideToggle();
+      });
+  
+$('.blogHide').on('click', function(event) {
+//        event.preventDefault();
+        $('.hideBlog').slideToggle();
+      });
+$('.contactHide').on('click', function(event) {
+//        event.preventDefault();
+        $('.hideContact').slideToggle();
+      });  
+$('.giveHide').on('click', function(event) {
+//        event.preventDefault();
+        $('.hideGive').slideToggle();
+      });  
+$('.servicesHide').on('click', function(event) {
+//        event.preventDefault();
+        $('.hideServices').slideToggle();
+      });   
+$('.volunteerHide').on('click', function(event) {
+//        event.preventDefault();
+        $('.hideVolunteer').slideToggle();
+      });    
+  
+
+</script>
+
 
 
 <script src="libs/Slidebars/development/slidebars.js"></script>
@@ -224,6 +309,8 @@
   }) (jQuery);
 </script>
 <% } %>
+
+  
 
 </body>
 </html>
