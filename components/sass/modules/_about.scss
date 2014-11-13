@@ -216,6 +216,13 @@ h5{
 } 
 }
 
+#contentRight.calendar{
+  .cmsContent {
+ max-width: 93%;
+} 
+
+}
+
 #contentRight.blog{
   #{headings()} {
  color: black;
@@ -310,37 +317,6 @@ display: block;
 margin-top: 50px;
 }
 
-//.fc-header-left, .fc-header-center, .fc-header-right{
-//border: 0px !important;
-//}
-//
-//.fc-button {
-//position: relative;
-//display: inline-block;
-//padding: 0 .6em;
-//overflow: hidden;
-//height: 1.9em;
-//line-height: 1.9em;
-//white-space: nowrap;
-//cursor: pointer;
-//}
-//
-//.fc .fc-header-space {
-//padding-left: 10px;
-//}
-//
-//.fc-state-default.fc-corner-left {
-//border-top-left-radius: 4px;
-//border-bottom-left-radius: 4px;
-//}
-
-//.fc-text-arrow {
-//margin: 0 .1em;
-//font-size: 2em;
-//font-family: $fontfamily;
-//vertical-align: baseline;
-//}
-//
 .fc-grid .fc-other-month .fc-day-number {
 color: black;
 background: rgba(255,255,255,.0);
@@ -421,6 +397,12 @@ display: none;
 }
 }
 
+#mobileCalendar{
+@include breakpoint(min-width $small){
+display: none;
+}
+}
+
 
 #\23 calendar_list > div > label{
 font-size: .9rem;
@@ -434,3 +416,9 @@ float:right;
   }
 }
 
+#map_canvas {
+        width: 500px;
+        height: 400px;
+        background-color: #CCC;
+      }
+.angular-google-map-container { height: 400px; }

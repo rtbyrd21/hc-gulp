@@ -14,7 +14,7 @@ $scope.json.shortname=$routeParams.id;
 $scope.month={};
 $scope.month=$routeParams.id; 
   
- 
+$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 }; 
   
  $scope.createService = function() {
       var service = new HC.API();
@@ -58,42 +58,15 @@ $scope.removeItem = function(id) {
   
   
   
- $scope.$on('$viewContentLoaded', function () 
- {
+ $scope.$on('$viewContentLoaded', function () {
 var $window = $(window);
   
- function checkWidth() {
-   var windowsize = $window.width();
-   if (windowsize < 750) {
-   $('.branding img').css({display: "none"});
-$(".artist .toHide").hide();
-$(".artist").click(function(){
-    console.log('yes');
-    $(".toHide",this).slideToggle(500);
-    $("i",this).toggleClass("fa-chevron-circle-down fa-chevron-circle-up");
-    
-
-  });
 
 
 
    
-  $(window).bind('resize', function(e)
-{
-  if (window.RT) clearTimeout(window.RT);
-  window.RT = setTimeout(function()
-  {
-    this.location.reload(false); /* false to get page from cache */
-  }, 100);
-});  
 
-     
-   }
-   
-}  
-
-checkWidth();
-$(window).resize(checkWidth);   
+  
    
 var str=location.href.toLowerCase();
 $(".navlinks li a").each(function() {
@@ -103,7 +76,8 @@ $(this).parent().addClass("active");
   
 }
  });
-console.log(str);
+   
+console.log('str');
 $('li.active:nth-of-type(1)').css({borderBottomColor: "#28b3c9"});
 $('.services.active:nth-of-type(2)').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(3)').css({borderBottomColor: "#6bdb94"});
@@ -113,40 +87,7 @@ $('li.active:nth-of-type(6)').css({borderBottomColor: "#ffd26b"});
 $('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});  
  
 
-   
-//HERO////////////
 
-
-
-//HERO////////////   
-   
-   
-// function initialize() {
-//        var myLatlng = new google.maps.LatLng(39.281203, -84.455547);
-//        var mapOptions = {
-//          center: new google.maps.LatLng(39.281203, -84.455547),
-//          zoom: 15,
-//          draggable: true
-//        };
-//        var map = new google.maps.Map(document.getElementById("map-canvas"),
-//            mapOptions);
-//        var marker = new google.maps.Marker({
-//      position: myLatlng,
-//      map: map,
-//      title: 'Hello World!'
-//  });
-//      
-//      }
-//$(document).ready(function(){   
-// google.maps.event.addDomListener(window, 'click', initialize);
-//  
-//  
-//  
-//});     
-     
-
-  
-  
  
    
    

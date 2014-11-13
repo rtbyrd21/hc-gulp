@@ -475,13 +475,18 @@ CONTACT.API.query(function(results) {
    
    
 
-//$('.aboutHide').on('click', function(event) {
-//        event.preventDefault();
-//        console.log("aloha");
-//        $('#hideMe').slideUp();
-//      });
+function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
 
-  
+  console.log('home');
 
 var index = window.location.pathname.split('/')[1];   
 //if(index == 'services'){

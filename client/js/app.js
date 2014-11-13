@@ -1,4 +1,4 @@
-var app = angular.module('hcApp', ['ngResource', 'filters', 'ngRoute', 'appRoutes', 'ui', 'ui.filters', 'xeditable', 'customFilters', 'theFilters', 'textAngular', 'ngSanitize']);
+var app = angular.module('hcApp', ['ngResource', 'filters', 'ngRoute', 'appRoutes', 'ui', 'ui.filters', 'xeditable', 'customFilters', 'theFilters', 'textAngular', 'ngSanitize', 'google-maps'.ns()]);
 
 angular.module('hcApp')
     .filter('to_trusted', ['$sce', function($sce){
