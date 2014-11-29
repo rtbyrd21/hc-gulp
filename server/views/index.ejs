@@ -44,6 +44,7 @@
     <script src="libs/textangular/textAngular.min.js"></script>
     <script src="libs/fullcalendar/fullcalendar.min.js"></script>
     <script src="libs/fullcalendar/gcal.js"></script>
+<!--   <script src="//cdn.jsdelivr.net/fullcalendar/2.0.1/gcal.js"></script>-->
     <script src="libs/lodash/dist/lodash.js"></script>
     <script src="libs/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
@@ -126,30 +127,33 @@
  <script type='text/javascript'>
 
 
-   $(document).ready(function() {
-	
-		$('#calendar').fullCalendar({
-		
-			// US Holidays
-			events: 'https://www.google.com/calendar/feeds/vineyardcincinnati.com_qf3lhle372j52hp43b4a424bic%40group.calendar.google.com/public/basic',
-			
-			eventClick: function(event) {
-				// opens events in a popup window
-				window.open(event.url, 'gcalevent', 'width=700,height=600');
-				return false;
-			},
-			
-			loading: function(bool) {
-				if (bool) {
-					$('#loading').show();
-				}else{
-					$('#loading').hide();
-				}
-			}
-			
-		});
-		
-	}); 
+//   $(document).ready(function() {
+//	
+//		$('#calendar').fullCalendar({
+//		
+//			// US Holidays
+//			events: 'https://www.google.com/calendar/feeds/vineyardcincinnati.com_qf3lhle372j52hp43b4a424bic%40group.calendar.google.com/public/basic',
+//			
+//			eventClick: function(event) {
+//				// opens events in a popup window
+//				window.open(event.url, 'gcalevent', 'width=700,height=600');
+//				return false;
+//			},
+//			
+//			loading: function(bool) {
+//				if (bool) {
+//					$('#loading').show();
+//				}else{
+//					$('#loading').hide();
+//				}
+//			}
+//			
+//		});
+//     
+//     
+//    
+//		
+//	}); 
    
 
 

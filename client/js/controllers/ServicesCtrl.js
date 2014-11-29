@@ -517,6 +517,7 @@ $('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});
 
 
 		$('#calendar').fullCalendar({
+           googleCalendarApiKey: 'AIzaSyCQbp1lYYWXcE7LJEgpo4Z8SR2jhFS9PoQ',
 		    height: 700,
           header: {
 		left: 'title',
@@ -527,20 +528,18 @@ $('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});
         'agenda': 4, // adjust to 6 only for agendaWeek/agendaDay
         'default': true // give the default value to other views
             },
-			// US Holidays
-//			events: 'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic',
           eventSources: [
 				{
                     
-					url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic"
+					googleCalendarId: '2dbh6n25178r5eedmp0nbckmt4@group.calendar.google.com'
 				},
 			
 				{
                     title: 'Event1',
-					url: 'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic'
+					googleCalendarId: 'r2i5uvgmpn912i21lckn2ip64s@group.calendar.google.com'
 				},
             {
-            url: "https://www.google.com/calendar/feeds/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic"
+                  googleCalendarId: 'dis5qtgm54nv86g78u9gh438d4@group.calendar.google.com'
 				}
 			],
 			
@@ -561,40 +560,40 @@ $('li.active:nth-of-type(7)').css({borderBottomColor: "#e25135"});
 		});
 		
 
-$( "#target" ).click(function() {
-  alert( "Handler for .click() called." );
-  $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
-});
-
-   $( "#target2" ).click(function() {
-  alert( "Handler for .click() called." );
-  $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
-});
+//$( "#target" ).click(function() {
+//  alert( "Handler for .click() called." );
+//  $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+//});
+//
+//   $( "#target2" ).click(function() {
+//  alert( "Handler for .click() called." );
+//  $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+//});
    
 $(".checkbox0").change(function() {
     if(this.checked) {
-      $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+      $('#calendar').fullCalendar( 'addEventSource',  '2dbh6n25178r5eedmp0nbckmt4@group.calendar.google.com' );
     }
     else{
-    $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/vineyardcincinnati.com_o6jncckm5ka55fpragnbp4mk9c%40group.calendar.google.com/public/basic' );
+    $('#calendar').fullCalendar( 'removeEventSource',  '2dbh6n25178r5eedmp0nbckmt4@group.calendar.google.com' );
     }
 });
    
 $(".checkbox1").change(function() {
     if(this.checked) {
-      $('#calendar').fullCalendar( 'addEventSource',  "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic" );
+      $('#calendar').fullCalendar( 'addEventSource',  "r2i5uvgmpn912i21lckn2ip64s@group.calendar.google.com" );
     }
     else{
-    $('#calendar').fullCalendar( 'removeEventSource',  "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic" );
+    $('#calendar').fullCalendar( 'removeEventSource',  "r2i5uvgmpn912i21lckn2ip64s@group.calendar.google.com" );
     }
 });
    
 $(".checkbox2").change(function() {
     if(this.checked) {
-      $('#calendar').fullCalendar( 'addEventSource',  'https://www.google.com/calendar/feeds/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic' );
+      $('#calendar').fullCalendar( 'addEventSource',  'dis5qtgm54nv86g78u9gh438d4@group.calendar.google.com' );
     }
     else{
-    $('#calendar').fullCalendar( 'removeEventSource',  'https://www.google.com/calendar/feeds/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic' );
+    $('#calendar').fullCalendar( 'removeEventSource',  'dis5qtgm54nv86g78u9gh438d4@group.calendar.google.com' );
     }
 });   
    
