@@ -45,9 +45,9 @@ var app            = express();
 // config files
 //var db = require('./config/db');
 //if(env === 'development'){
-//mongoose.connect('mongodb://localhost:27017/mean-demo');
+mongoose.connect('mongodb://localhost:27017/mean-demo');
 //}else{
-mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
+//mongoose.connect('mongodb://hccincinnati:letmein@ds041160.mongolab.com:41160/healingcenter');
 //}
 
 var db = mongoose.connection;
@@ -98,12 +98,12 @@ app.use(function(req, res, next) {
 //});
 app.use(cookieParser());
 app.use(bodyParser());
-app.use(session({secret: 'healing center'}));
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(session({secret: 'healing center'}));
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 
-require('./server/config/passport.js')();
+//require('./server/config/passport.js')();
 
 
 
